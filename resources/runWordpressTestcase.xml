@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Wordpress" parallel="tests" thread-count="2">
+	<parameter name="url"
+		value="https://automationfc.wordpress.com/wp-admin/" />
+	<listeners>
+		<listener class-name="commons.MethodListener" />
+		<!-- extentReport version 2 -->
+		<!-- <listener class-name="reportConfig.ExtentReportListener" /> -->
+
+		<!-- extentReport version 3 -->
+		<!-- <listener class-name="reportConfig.ExtentTestListener" /> -->
+
+		<!-- extentReport version 4 -->
+		<listener class-name="reportConfig.ExtentListener" />
+
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener
+			class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+	<test name="Run on CHROME">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="com.wordpress.post.Post_01_Create_View_Edit_Delete" />
+		</classes>
+	</test>
+
+</suite>
