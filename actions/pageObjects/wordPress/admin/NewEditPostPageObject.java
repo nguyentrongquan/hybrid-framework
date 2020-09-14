@@ -16,7 +16,7 @@ public class NewEditPostPageObject extends AbstractPage {
 	public void clickToPublishButton() {
 		// wait click able
 		waitElementClickable(driver, NewEditPostPageUI.PUBLISH_BUTTON);
-		clickToElement(driver,NewEditPostPageUI.PUBLISH_BUTTON);
+		clickToElementByJS(driver,NewEditPostPageUI.PUBLISH_BUTTON);
 		// click
 
 	}
@@ -47,9 +47,9 @@ public class NewEditPostPageObject extends AbstractPage {
 	}
 
 	public void selectCategoryCheckbox(String categoryValue) {
-		scrollToElement(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
 		waitElementClickable(driver,NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
-		clickToElement(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
+		scrollToElement(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
+		clickToElementByJS(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
 		
 	}
 
@@ -88,8 +88,8 @@ public class NewEditPostPageObject extends AbstractPage {
 
 	public boolean isUploadFilesImageDisplayed(String imageValue) {
 		String[] file= imageValue.split("\\.");
-		waitElementVisible(driver, NewEditPostPageUI.FEATURE_IMAGE_THUMNAIL,file[0]);
-		return isElementDisplayed(driver, NewEditPostPageUI.FEATURE_IMAGE_THUMNAIL,file[0]);
+		waitElementVisible(driver, NewEditPostPageUI.FEATURE_IMAGE_THUMNAIL,file[0].toLowerCase());
+		return isElementDisplayed(driver, NewEditPostPageUI.FEATURE_IMAGE_THUMNAIL,file[0].toLowerCase());
 	}
 
 }

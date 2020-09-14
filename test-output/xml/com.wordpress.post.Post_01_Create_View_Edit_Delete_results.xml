@@ -4,25 +4,47 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="5.758">
+           time="56.047">
   <properties />
-            <testcase name="TC_Post_01_Create_New_Post_At_Admin_Page" time="5.758" classname="com.wordpress.post.Post_01_Create_View_Edit_Delete">
-                <failure type="org.openqa.selenium.ElementClickInterceptedException"
-                  message="element click intercepted: Element &lt;label class=&quot;selectit&quot;&gt;...&lt;/label&gt; is not clickable at point (1140, 8). Other element would receive the click: &lt;div id=&quot;wpadminbar&quot; class=&quot;nojq ltr&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=85.0.4183.102)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;KHOPHANMEM24H&apos;, ip: &apos;192.168.0.101&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_211&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54075}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 5d3a4a4233695cbcbffba3fbfac92007"
+            <testcase name="TC_Post_01_Create_New_Post_At_Admin_Page" time="56.047" classname="com.wordpress.post.Post_01_Create_View_Edit_Delete">
+                <failure type="org.openqa.selenium.TimeoutException"
+                  message="Expected condition failed: waiting for visibility of element located by By.xpath: //a[text()=&apos;NEW LIVE CODING&apos;]/parent::p/following-sibling::h2/a[text()=&apos;[QUANNT] NEW POST TITLE76427&apos;]/parent::h2/following-sibling::p/a[text()=&apos;14/09/2020&apos;] (tried for 30 second(s) with 500 milliseconds interval)"
               >
-<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <label class="selectit">...</label> is not clickable at point (1140, 8). Other element would receive the click: <div id="wpadminbar" class="nojq ltr">...</div>
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //a[text()='NEW LIVE CODING']/parent::p/following-sibling::h2/a[text()='[QUANNT] NEW POST TITLE76427']/parent::h2/following-sibling::p/a[text()='14/09/2020'] (tried for 30 second(s) with 500 milliseconds interval)
+  org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+  commons.AbstractPage.waitElementVisible(AbstractPage.java:428)
+  pageObject.wordPress.user.HomePageObject.isNewPostDisplayedOnLatestPost(HomePageObject.java:26)
+  com.wordpress.post.Post_01_Create_View_Edit_Delete.TC_Post_01_Create_New_Post_At_Admin_Page(Post_01_Create_View_Edit_Delete.java:81)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+  org.testng.TestRunner.privateRun(TestRunner.java:648)
+  org.testng.TestRunner.run(TestRunner.java:505)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+  org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+  org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+  org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+  java.util.concurrent.FutureTask.run(FutureTask.java:266)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+  java.lang.Thread.run(Thread.java:748)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[text()='NEW LIVE CODING']/parent::p/following-sibling::h2/a[text()='[QUANNT] NEW POST TITLE76427']/parent::h2/following-sibling::p/a[text()='14/09/2020']"}
   (Session info: chrome=85.0.4183.102)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
-System info: host: 'KHOPHANMEM24H', ip: '192.168.0.101', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_211'
+System info: host: 'KHOPHANMEM24H', ip: '192.168.0.102', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_211'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54075}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 5d3a4a4233695cbcbffba3fbfac92007
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56341}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: bb6c52e040a52f2a644e7cc21e3c455a
+*** Element info: {Using=xpath, value=//a[text()='NEW LIVE CODING']/parent::p/following-sibling::h2/a[text()='[QUANNT] NEW POST TITLE76427']/parent::h2/following-sibling::p/a[text()='14/09/2020']}
   sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
   sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
   sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -33,11 +55,16 @@ Session ID: 5d3a4a4233695cbcbffba3fbfac92007
   org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
   org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
   org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-  org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-  org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-  commons.AbstractPage.clickToElement(AbstractPage.java:142)
-  pageObjects.wordPress.admin.NewEditPostPageObject.selectCategoryCheckbox(NewEditPostPageObject.java:52)
-  com.wordpress.post.Post_01_Create_View_Edit_Delete.TC_Post_01_Create_New_Post_At_Admin_Page(Post_01_Create_View_Edit_Delete.java:59)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+  org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+  org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+  org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+  org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+  commons.AbstractPage.waitElementVisible(AbstractPage.java:428)
+  pageObject.wordPress.user.HomePageObject.isNewPostDisplayedOnLatestPost(HomePageObject.java:26)
+  com.wordpress.post.Post_01_Create_View_Edit_Delete.TC_Post_01_Create_New_Post_At_Admin_Page(Post_01_Create_View_Edit_Delete.java:81)
   sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

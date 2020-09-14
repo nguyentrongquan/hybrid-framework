@@ -2,44 +2,60 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
     <line>
-      <![CDATA[2020-09-13 22:34:56,019 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - Open browser
+      <![CDATA[2020-09-14 22:32:37,762 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - Open browser
 ]]>
     </line>
     <line>
-      <![CDATA[2020-09-13 22:35:04,410 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 01: Open Login Page Admin
+      <![CDATA[2020-09-14 22:32:47,915 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 01: Open Login Page Admin
 ]]>
     </line>
     <line>
-      <![CDATA[2020-09-13 22:35:04,413 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 02: Input To 'Email' textbox 
+      <![CDATA[2020-09-14 22:32:47,936 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 02: Input To 'Email' textbox 
 ]]>
     </line>
     <line>
-      <![CDATA[2020-09-13 22:35:04,811 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 03: Click to 'Continue' button
+      <![CDATA[2020-09-14 22:32:48,295 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 03: Click to 'Continue' button
 ]]>
     </line>
     <line>
-      <![CDATA[2020-09-13 22:35:04,969 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 04: Input to 'Password' textbox
+      <![CDATA[2020-09-14 22:32:48,462 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 04: Input to 'Password' textbox
 ]]>
     </line>
     <line>
-      <![CDATA[2020-09-13 22:35:05,688 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 05: Click to 'Login' button
+      <![CDATA[2020-09-14 22:32:49,206 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 05: Click to 'Login' button
 ]]>
     </line>
     <line>
-      <![CDATA[2020-09-13 22:35:05,805 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 06: Verify Dashboard Header Displayed
+      <![CDATA[2020-09-14 22:32:49,323 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 06: Verify Dashboard Header Displayed
 ]]>
     </line>
     <line>
-      <![CDATA[2020-09-13 22:35:14,286 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post condition - Close browser 
+      <![CDATA[2020-09-14 22:33:03,650 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+]]>
+    </line>
+    <line>
+      <![CDATA[2020-09-14 22:33:04,572 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+]]>
+    </line>
+    <line>
+      <![CDATA[2020-09-14 22:33:14,304 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+]]>
+    </line>
+    <line>
+      <![CDATA[2020-09-14 22:33:17,811 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+]]>
+    </line>
+    <line>
+      <![CDATA[2020-09-14 22:33:48,967 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post condition - Close browser 
 ]]>
     </line>
   </reporter-output>
-  <suite name="Wordpress" duration-ms="18301" started-at="2020-09-13T15:34:55Z" finished-at="2020-09-13T15:35:14Z">
+  <suite name="Wordpress" duration-ms="71231" started-at="2020-09-14T15:32:37Z" finished-at="2020-09-14T15:33:48Z">
     <groups>
     </groups>
-    <test name="Run on CHROME" duration-ms="18301" started-at="2020-09-13T15:34:55Z" finished-at="2020-09-13T15:35:14Z">
+    <test name="Run on CHROME" duration-ms="71231" started-at="2020-09-14T15:32:37Z" finished-at="2020-09-14T15:33:48Z">
       <class name="com.wordpress.post.Post_01_Create_View_Edit_Delete">
-        <test-method status="PASS" signature="beforeClass(java.lang.String, java.lang.String)[pri:0, instance:com.wordpress.post.Post_01_Create_View_Edit_Delete@670b40af]" name="beforeClass" is-config="true" duration-ms="12515" started-at="2020-09-13T15:34:55Z" finished-at="2020-09-13T15:35:08Z">
+        <test-method status="PASS" signature="beforeClass(java.lang.String, java.lang.String)[pri:0, instance:com.wordpress.post.Post_01_Create_View_Edit_Delete@670b40af]" name="beforeClass" is-config="true" duration-ms="15110" started-at="2020-09-14T15:32:37Z" finished-at="2020-09-14T15:32:52Z">
           <params>
             <param index="0">
               <value>
@@ -54,69 +70,47 @@
           </params>
           <reporter-output>
             <line>
-              <![CDATA[2020-09-13 22:34:56,019 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - Open browser
+              <![CDATA[2020-09-14 22:32:37,762 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - Open browser
 ]]>
             </line>
             <line>
-              <![CDATA[2020-09-13 22:35:04,410 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 01: Open Login Page Admin
+              <![CDATA[2020-09-14 22:32:47,915 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 01: Open Login Page Admin
 ]]>
             </line>
             <line>
-              <![CDATA[2020-09-13 22:35:04,413 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 02: Input To 'Email' textbox 
+              <![CDATA[2020-09-14 22:32:47,936 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 02: Input To 'Email' textbox 
 ]]>
             </line>
             <line>
-              <![CDATA[2020-09-13 22:35:04,811 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 03: Click to 'Continue' button
+              <![CDATA[2020-09-14 22:32:48,295 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 03: Click to 'Continue' button
 ]]>
             </line>
             <line>
-              <![CDATA[2020-09-13 22:35:04,969 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 04: Input to 'Password' textbox
+              <![CDATA[2020-09-14 22:32:48,462 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 04: Input to 'Password' textbox
 ]]>
             </line>
             <line>
-              <![CDATA[2020-09-13 22:35:05,688 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 05: Click to 'Login' button
+              <![CDATA[2020-09-14 22:32:49,206 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 05: Click to 'Login' button
 ]]>
             </line>
             <line>
-              <![CDATA[2020-09-13 22:35:05,805 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 06: Verify Dashboard Header Displayed
+              <![CDATA[2020-09-14 22:32:49,323 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 06: Verify Dashboard Header Displayed
 ]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="FAIL" signature="TC_Post_01_Create_New_Post_At_Admin_Page()[pri:0, instance:com.wordpress.post.Post_01_Create_View_Edit_Delete@670b40af]" name="TC_Post_01_Create_New_Post_At_Admin_Page" duration-ms="5758" started-at="2020-09-13T15:35:08Z" finished-at="2020-09-13T15:35:14Z">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+        <test-method status="FAIL" signature="TC_Post_01_Create_New_Post_At_Admin_Page()[pri:0, instance:com.wordpress.post.Post_01_Create_View_Edit_Delete@670b40af]" name="TC_Post_01_Create_New_Post_At_Admin_Page" duration-ms="56047" started-at="2020-09-14T15:32:52Z" finished-at="2020-09-14T15:33:48Z">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[element click intercepted: Element <label class="selectit">...</label> is not clickable at point (1140, 8). Other element would receive the click: <div id="wpadminbar" class="nojq ltr">...</div>
-  (Session info: chrome=85.0.4183.102)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
-System info: host: 'KHOPHANMEM24H', ip: '192.168.0.101', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_211'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54075}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 5d3a4a4233695cbcbffba3fbfac92007]]>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //a[text()='NEW LIVE CODING']/parent::p/following-sibling::h2/a[text()='[QUANNT] NEW POST TITLE76427']/parent::h2/following-sibling::p/a[text()='14/09/2020'] (tried for 30 second(s) with 500 milliseconds interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <label class="selectit">...</label> is not clickable at point (1140, 8). Other element would receive the click: <div id="wpadminbar" class="nojq ltr">...</div>
-  (Session info: chrome=85.0.4183.102)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
-System info: host: 'KHOPHANMEM24H', ip: '192.168.0.101', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_211'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54075}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 5d3a4a4233695cbcbffba3fbfac92007
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-at commons.AbstractPage.clickToElement(AbstractPage.java:142)
-at pageObjects.wordPress.admin.NewEditPostPageObject.selectCategoryCheckbox(NewEditPostPageObject.java:52)
-at com.wordpress.post.Post_01_Create_View_Edit_Delete.TC_Post_01_Create_New_Post_At_Admin_Page(Post_01_Create_View_Edit_Delete.java:59)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //a[text()='NEW LIVE CODING']/parent::p/following-sibling::h2/a[text()='[QUANNT] NEW POST TITLE76427']/parent::h2/following-sibling::p/a[text()='14/09/2020'] (tried for 30 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at commons.AbstractPage.waitElementVisible(AbstractPage.java:428)
+at pageObject.wordPress.user.HomePageObject.isNewPostDisplayedOnLatestPost(HomePageObject.java:26)
+at com.wordpress.post.Post_01_Create_View_Edit_Delete.TC_Post_01_Create_New_Post_At_Admin_Page(Post_01_Create_View_Edit_Delete.java:81)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -137,16 +131,59 @@ at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 at java.lang.Thread.run(Thread.java:748)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[text()='NEW LIVE CODING']/parent::p/following-sibling::h2/a[text()='[QUANNT] NEW POST TITLE76427']/parent::h2/following-sibling::p/a[text()='14/09/2020']"}
+  (Session info: chrome=85.0.4183.102)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'KHOPHANMEM24H', ip: '192.168.0.102', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_211'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56341}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: bb6c52e040a52f2a644e7cc21e3c455a
+*** Element info: {Using=xpath, value=//a[text()='NEW LIVE CODING']/parent::p/following-sibling::h2/a[text()='[QUANNT] NEW POST TITLE76427']/parent::h2/following-sibling::p/a[text()='14/09/2020']}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+... 23 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_Post_01_Create_New_Post_At_Admin_Page -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.wordpress.post.Post_01_Create_View_Edit_Delete@670b40af]" name="afterClass" is-config="true" duration-ms="1" started-at="2020-09-13T15:35:14Z" finished-at="2020-09-13T15:35:14Z">
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
             <line>
-              <![CDATA[2020-09-13 22:35:14,286 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post condition - Close browser 
+              <![CDATA[2020-09-14 22:33:03,650 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+]]>
+            </line>
+            <line>
+              <![CDATA[2020-09-14 22:33:04,572 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+]]>
+            </line>
+            <line>
+              <![CDATA[2020-09-14 22:33:14,304 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+]]>
+            </line>
+            <line>
+              <![CDATA[2020-09-14 22:33:17,811 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_Post_01_Create_New_Post_At_Admin_Page -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.wordpress.post.Post_01_Create_View_Edit_Delete@670b40af]" name="afterClass" is-config="true" duration-ms="1" started-at="2020-09-14T15:33:48Z" finished-at="2020-09-14T15:33:48Z">
+          <reporter-output>
+            <line>
+              <![CDATA[2020-09-14 22:33:48,967 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post condition - Close browser 
 ]]>
             </line>
           </reporter-output>

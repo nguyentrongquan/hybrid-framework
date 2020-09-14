@@ -252,6 +252,14 @@ public abstract class AbstractPage {
 		
 
 	}
+	public boolean isElementDisplayed(WebDriver driver, String xpathValue, String... values) {
+		try {
+			return find(driver, castToObject(xpathValue, values)).isDisplayed();
+		} catch (NoSuchElementException noSuchException) {
+			return false;
+		}
+
+	}
 	public void overrideGlobalTimeout(WebDriver driver, long timeout) {
 		
 		driver.manage().timeouts().implicitlyWait(timeout,TimeUnit.SECONDS);
@@ -295,10 +303,7 @@ public abstract class AbstractPage {
 		}
 	}
 
-	public boolean isElementDisplayed(WebDriver driver, String xpathValue, String... values) {
-		return find(driver, castToObject(xpathValue, values)).isDisplayed();
-
-	}
+	
 
 	public boolean isElementSelected(WebDriver driver, String xpathValue) {
 		return find(driver, xpathValue).isSelected();
@@ -368,6 +373,10 @@ public abstract class AbstractPage {
 	public void clickToElementByJS(WebDriver driver, String xpathValue) {
 		jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("arguments[0].click();", find(driver, xpathValue));
+	}
+	public void clickToElementByJS(WebDriver driver, String xpathValue, String... values) {
+		jsExecutor = (JavascriptExecutor) driver;
+		jsExecutor.executeScript("arguments[0].click();", find(driver, castToObject(xpathValue, values)));
 	}
 
 	public void scrollToElement(WebDriver driver, String xpathValue) {

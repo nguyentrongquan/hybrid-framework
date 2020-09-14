@@ -67,18 +67,18 @@ public class Post_01_Create_View_Edit_Delete extends AbstractTest {
 		verifyTrue(newEditPostAdminPage.isUploadFilesImageDisplayed(featureImage));
 		newEditPostAdminPage.clickToPublishButton();
 		verifyTrue(newEditPostAdminPage.isPostSuccessMessageDisplayedWithValue("Post published."));
-		newEditPostAdminPage.openMenuPageByPageName(driver, "Post");
+		newEditPostAdminPage.openMenuPageByPageName(driver, "Posts");
 		postAdminPage = PageGeneratorManager.getPostAdminPage(driver);
 
 		// Search_Post_At_Admin_Page
-		postAdminPage.inputToSearchPostTextbox("title");
+		postAdminPage.inputToSearchPostTextbox(newPostTitle);
 		postAdminPage.clickToSearchPostButton();
-		verifyTrue(postAdminPage.isOnlyOneRowDisplayed(newPostTitle, newPostTitle, newPostCategory, newPostTag));
+		verifyTrue(postAdminPage.isOnlyOneRowDisplayed(newPostTitle, author, newPostCategory, newPostTag));
 
 		// View_Post_At_User_Page
 		homeUserPage = postAdminPage.openEndUserPage(driver);
 
-		verifyTrue(homeUserPage.isNewPostDisplayedOnLatestPost(newPostCategory, newPostTitle, "13/09/2020"));
+		verifyTrue(homeUserPage.isNewPostDisplayedOnLatestPost(newPostCategory, newPostTitle, datecreate));
 //		verifyTrue(homeUserPage.isPostImageDisplayedAtPostTitleName("title", "image"));
 //
 //		// Go_Post_Detail At_User_Page
@@ -179,12 +179,13 @@ public class Post_01_Create_View_Edit_Delete extends AbstractTest {
 	}
 	private WebDriver driver;
 	int fakeNumber = randomNumber();
+	String datecreate="14/09/2020";
 	String featureImage ="Coding-automation.jpeg";
 	String newPostTitle="[QUANNT] NEW POST TITLE"+ fakeNumber;
 	String newPostCategory="NEW LIVE CODING";
 	String newPostContent="[QUANNT] NEW POST CONTENT"+ fakeNumber;
-	String author=" Automation FC";
-	String newPostTag="NEW POST CONTENT"+ fakeNumber;
+	String author="Automation FC";
+	String newPostTag="NEW Post Tag"+ fakeNumber;
 	
 	LoginPageObject loginAdminPage;
 	DashboardPageObject dashboardAdminPage;

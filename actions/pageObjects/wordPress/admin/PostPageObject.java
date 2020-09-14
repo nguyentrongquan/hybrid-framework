@@ -38,7 +38,8 @@ public class PostPageObject extends AbstractPage {
 
 	public boolean isOnlyOneRowDisplayed(String titleValue, String authorValue , String categoryValue, String tagValue) {
 		waitElementVisible(driver, PostPageUI.SEARCH_ONLY_ONE_ROW, titleValue,authorValue,categoryValue,tagValue);
-		return isElementDisplayed(driver,PostPageUI.SEARCH_ONLY_ONE_ROW, titleValue,authorValue,categoryValue,tagValue);
+		int rowNumber = countElementNumber(driver,PostPageUI.SEARCH_ONLY_ONE_ROW, titleValue,authorValue,categoryValue,tagValue);
+		return rowNumber == 1 && isElementDisplayed(driver,PostPageUI.SEARCH_ONLY_ONE_ROW, titleValue,authorValue,categoryValue,tagValue);
 	}
 
 	
