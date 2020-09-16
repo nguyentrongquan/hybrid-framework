@@ -20,7 +20,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObject.wordPress.user.HomePageObject;
 import pageObject.wordPress.user.SearchResultPageObject;
 import pageObjects.wordPress.admin.LoginPageObject;
-import pageUIs.wordPress.admin.AbstractWordPressPageUIs;
 
 
 public abstract class AbstractPage {

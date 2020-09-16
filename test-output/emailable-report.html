@@ -9,47 +9,22 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Wordpress</th></tr>
-<tr><td><a href="#t0">Run on CHROME</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">71,231</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Run on CHROME</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">33,751</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Wordpress</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Run on CHROME &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.wordpress.post.Post_01_Create_View_Edit_Delete</td><td><a href="#m0">TC_Post_01_Create_New_Post_At_Admin_Page</a></td><td rowspan="1">1600097572861</td><td rowspan="1">56047</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Wordpress</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Run on CHROME &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.wordpress.post.Post_01_Create_View_Edit_Delete</td><td><a href="#m0">TC_Post_01_Create_New_Post_At_Admin_Page</a></td><td rowspan="1">1600251619614</td><td rowspan="1">22765</td></tr></tbody>
 </table>
-<h2>Run on CHROME</h2><h3 id="m0">com.wordpress.post.Post_01_Create_View_Edit_Delete#TC_Post_01_Create_New_Post_At_Admin_Page</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">2020-09-14 22:33:03,650 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
-<br/>2020-09-14 22:33:04,572 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
-<br/>2020-09-14 22:33:14,304 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
-<br/>2020-09-14 22:33:17,811 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
-</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //a[text()=&apos;NEW LIVE CODING&apos;]/parent::p/following-sibling::h2/a[text()=&apos;[QUANNT] NEW POST TITLE76427&apos;]/parent::h2/following-sibling::p/a[text()=&apos;14/09/2020&apos;] (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at commons.AbstractPage.waitElementVisible(AbstractPage.java:428)
-	at pageObject.wordPress.user.HomePageObject.isNewPostDisplayedOnLatestPost(HomePageObject.java:26)
-	at com.wordpress.post.Post_01_Create_View_Edit_Delete.TC_Post_01_Create_New_Post_At_Admin_Page(Post_01_Create_View_Edit_Delete.java:81)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[text()=&apos;NEW LIVE CODING&apos;]/parent::p/following-sibling::h2/a[text()=&apos;[QUANNT] NEW POST TITLE76427&apos;]/parent::h2/following-sibling::p/a[text()=&apos;14/09/2020&apos;]&quot;}
-  (Session info: chrome=85.0.4183.102)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;KHOPHANMEM24H&apos;, ip: &apos;192.168.0.102&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_211&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56341}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: bb6c52e040a52f2a644e7cc21e3c455a
-*** Element info: {Using=xpath, value=//a[text()=&apos;NEW LIVE CODING&apos;]/parent::p/following-sibling::h2/a[text()=&apos;[QUANNT] NEW POST TITLE76427&apos;]/parent::h2/following-sibling::p/a[text()=&apos;14/09/2020&apos;]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 23 more
-... Removed 20 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Run on CHROME</h2><h3 id="m0">com.wordpress.post.Post_01_Create_View_Edit_Delete#TC_Post_01_Create_New_Post_At_Admin_Page</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">2020-09-16 17:20:28,748 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+<br/>2020-09-16 17:20:29,520 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+<br/>2020-09-16 17:20:37,644 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+<br/>2020-09-16 17:20:39,664 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+<br/>2020-09-16 17:20:40,432 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+<br/>2020-09-16 17:20:40,470 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+<br/>2020-09-16 17:20:41,309 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+<br/>2020-09-16 17:20:41,347 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+<br/>2020-09-16 17:20:41,390 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+<br/>2020-09-16 17:20:41,431 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+<br/>2020-09-16 17:20:41,475 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+<br/>2020-09-16 17:20:41,516 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

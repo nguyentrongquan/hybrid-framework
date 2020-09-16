@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Wordpress">
-              <span class="suite-name border-failed">Wordpress</span>
+              <span class="suite-name border-passed">Wordpress</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Wordpress">
-                    <span>E:\Hoc online\03-Hybrid -Framework 01\resources\runWordpressTestcase.xml</span>
+                    <span>G:\QUAN\Hybrid-Framwork 01\hybrid-framework\resources\runWordpressTestcase.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Wordpress" class="hide-methods failed suite-Wordpress"> (hide)</a> <!-- hide-methods failed suite-Wordpress -->
-                      <a href="#" panel-name="suite-Wordpress" class="show-methods failed suite-Wordpress"> (show)</a> <!-- show-methods failed suite-Wordpress -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Wordpress" class="hide-methods passed suite-Wordpress"> (hide)</a> <!-- hide-methods passed suite-Wordpress -->
+                      <a href="#" panel-name="suite-Wordpress" class="show-methods passed suite-Wordpress"> (show)</a> <!-- show-methods passed suite-Wordpress -->
                     </span>
-                    <div class="method-list-content failed suite-Wordpress">
+                    <div class="method-list-content passed suite-Wordpress">
                       <span>
-                        <img width="3%" src="failed.png"/>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Wordpress" title="com.wordpress.post.Post_01_Create_View_Edit_Delete" hash-for-method="TC_Post_01_Create_New_Post_At_Admin_Page">TC_Post_01_Create_New_Post_At_Admin_Page</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Wordpress -->
+                    </div> <!-- method-list-content passed suite-Wordpress -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,9 +117,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Wordpress" class="panel Wordpress">
-          <div class="suite-Wordpress-class-failed">
+          <div class="suite-Wordpress-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">com.wordpress.post.Post_01_Create_View_Edit_Delete</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -128,49 +128,14 @@
                   <a name="TC_Post_01_Create_New_Post_At_Admin_Page">
                   </a> <!-- TC_Post_01_Create_New_Post_At_Admin_Page -->
                   <span class="method-name">TC_Post_01_Create_New_Post_At_Admin_Page</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //a[text()=&apos;NEW LIVE CODING&apos;]/parent::p/following-sibling::h2/a[text()=&apos;[QUANNT] NEW POST TITLE76427&apos;]/parent::h2/following-sibling::p/a[text()=&apos;14/09/2020&apos;] (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at commons.AbstractPage.waitElementVisible(AbstractPage.java:428)
-	at pageObject.wordPress.user.HomePageObject.isNewPostDisplayedOnLatestPost(HomePageObject.java:26)
-	at com.wordpress.post.Post_01_Create_View_Edit_Delete.TC_Post_01_Create_New_Post_At_Admin_Page(Post_01_Create_View_Edit_Delete.java:81)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[text()=&apos;NEW LIVE CODING&apos;]/parent::p/following-sibling::h2/a[text()=&apos;[QUANNT] NEW POST TITLE76427&apos;]/parent::h2/following-sibling::p/a[text()=&apos;14/09/2020&apos;]&quot;}
-  (Session info: chrome=85.0.4183.102)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;KHOPHANMEM24H&apos;, ip: &apos;192.168.0.102&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_211&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56341}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: bb6c52e040a52f2a644e7cc21e3c455a
-*** Element info: {Using=xpath, value=//a[text()=&apos;NEW LIVE CODING&apos;]/parent::p/following-sibling::h2/a[text()=&apos;[QUANNT] NEW POST TITLE76427&apos;]/parent::h2/following-sibling::p/a[text()=&apos;14/09/2020&apos;]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 23 more
-... Removed 20 stack frames
-</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Wordpress-class-failed -->
+          </div> <!-- suite-Wordpress-class-passed -->
         </div> <!-- panel Wordpress -->
         <div panel-name="test-xml-Wordpress" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">E:\Hoc online\03-Hybrid -Framework 01\resources\runWordpressTestcase.xml</span>
+            <span class="header-content">G:\QUAN\Hybrid-Framwork 01\hybrid-framework\resources\runWordpressTestcase.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -231,12 +196,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'TC_Post_01_Create_New_Post_At_Admin_Page')
 data.setCell(0, 2, 'com.wordpress.post.Post_01_Create_View_Edit_Delete')
-data.setCell(0, 3, 56047);
+data.setCell(0, 3, 22765);
 window.suiteTableData['Wordpress']= { tableData: data, tableDiv: 'times-div-Wordpress'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 56 seconds</span>
+              <span class="suite-total-time">Total running time: 22 seconds</span>
               <div id="times-div-Wordpress">
               </div> <!-- times-div-Wordpress -->
             </div> <!-- times-div -->
@@ -250,13 +215,29 @@ return data;
             <div class="reporter-method-div">
               <span class="reporter-method-name">TC_Post_01_Create_New_Post_At_Admin_Page</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">2020-09-14 22:33:03,650 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+                <span class="reporter-method-output">2020-09-16 17:20:28,748 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 </span>
-                <span class="reporter-method-output">2020-09-14 22:33:04,572 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+                <span class="reporter-method-output">2020-09-16 17:20:29,520 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 </span>
-                <span class="reporter-method-output">2020-09-14 22:33:14,304 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+                <span class="reporter-method-output">2020-09-16 17:20:37,644 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 </span>
-                <span class="reporter-method-output">2020-09-14 22:33:17,811 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+                <span class="reporter-method-output">2020-09-16 17:20:39,664 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+</span>
+                <span class="reporter-method-output">2020-09-16 17:20:40,432 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+</span>
+                <span class="reporter-method-output">2020-09-16 17:20:40,470 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+</span>
+                <span class="reporter-method-output">2020-09-16 17:20:41,309 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+</span>
+                <span class="reporter-method-output">2020-09-16 17:20:41,347 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+</span>
+                <span class="reporter-method-output">2020-09-16 17:20:41,390 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+</span>
+                <span class="reporter-method-output">2020-09-16 17:20:41,431 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+</span>
+                <span class="reporter-method-output">2020-09-16 17:20:41,475 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+</span>
+                <span class="reporter-method-output">2020-09-16 17:20:41,516 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 </span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
@@ -281,14 +262,12 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">TC_Post_01_Create_New_Post_At_Admin_Page</span>
-                <span class="method-start">15115 ms</span>
+                <span class="method-start">10974 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">71221 ms</span>
+                <span class="method-start">33741 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

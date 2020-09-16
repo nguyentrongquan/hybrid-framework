@@ -3,15 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.wordpress.post.Admin_01_Create_View_Edit_Delete">
+      <class name="com.wordpress.post.Post_01_Create_View_Edit_Delete">
         <methods>
-          <include name="TC_Post_03_Delete_Post_At_Admin_Page"/>
           <include name="beforeClass"/>
-          <include name="TC_Post_02_Edit_Post_At_Admin_Page"/>
           <include name="TC_Post_01_Create_New_Post_At_Admin_Page"/>
           <include name="afterClass"/>
         </methods>
-      </class> <!-- com.wordpress.post.Admin_01_Create_View_Edit_Delete -->
+      </class> <!-- com.wordpress.post.Post_01_Create_View_Edit_Delete -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

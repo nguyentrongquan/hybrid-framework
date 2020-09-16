@@ -77,21 +77,21 @@ public class Post_01_Create_View_Edit_Delete extends AbstractTest {
 
 		// View_Post_At_User_Page
 		homeUserPage = postAdminPage.openEndUserPage(driver);
+		verifyTrue(homeUserPage.isPostDisplayedOnLatestPost(newPostCategory,newPostTitle,datecreate));
+		verifyTrue(homeUserPage.isPostImageDisplayedAtPostTitleName(featureImage));
+		
 
-		verifyTrue(homeUserPage.isNewPostDisplayedOnLatestPost(newPostCategory, newPostTitle, datecreate));
-//		verifyTrue(homeUserPage.isPostImageDisplayedAtPostTitleName("title", "image"));
-//
 //		// Go_Post_Detail At_User_Page
-//		postDetailPage = homeUserPage.clickToDetailWithTitleName();
-//		verifyTrue(postDetailPage.isPostDetailTitleNameDisplayed("title"));
-//		verifyTrue(postDetailPage.isPostDetailCategoryNameDisplayed("category"));
-//		verifyTrue(postDetailPage.isPostDetailImageNameDisplayed("image"));
-//		verifyTrue(postDetailPage.isPostDetailContentDisplayed("conntent"));
-//		verifyTrue(postDetailPage.isPostDetailDateCreatedDisplayed("date created"));
-//		verifyTrue(postDetailPage.isPostDetailAuthorDisplayed("Author"));
-//
+		postDetailPage = homeUserPage.clickToDetailWithTitleName(newPostTitle);
+		verifyTrue(postDetailPage.isPostDetailTitleNameDisplayed(newPostTitle));
+		verifyTrue(postDetailPage.isPostDetailCategoryNameDisplayed(newPostCategory));
+		verifyTrue(postDetailPage.isPostDetailImageNameDisplayed(featureImage));
+		verifyTrue(postDetailPage.isPostDetailContentDisplayed(newPostContent));
+		verifyTrue(postDetailPage.isPostDetailDateCreatedDisplayed(datecreate));
+		verifyTrue(postDetailPage.isPostDetailAuthorDisplayed(author));
+
 //		// Search_Post_At_User_Page
-//		searchResultPage = postDetailPage.inputToSearchTexboxAtEndUserPage(driver, "title");
+		searchResultPage = postDetailPage.inputToSearchTexboxAtEndUserPage(driver, newPostTitle);
 //		// design trong abstractpage
 //		verifyTrue(searchResultPage.isNewPostDisplayedOnLatestPost("category", "title", "date"));
 //		verifyTrue(searchResultPage.isPostImageDisplayedAtPostTitleName("title", "image"));
@@ -179,9 +179,9 @@ public class Post_01_Create_View_Edit_Delete extends AbstractTest {
 	}
 	private WebDriver driver;
 	int fakeNumber = randomNumber();
-	String datecreate="14/09/2020";
+	String datecreate=getToday();
 	String featureImage ="Coding-automation.jpeg";
-	String newPostTitle="[QUANNT] NEW POST TITLE"+ fakeNumber;
+	String newPostTitle="[QUANNT] NEW_POST_TITLE"+ fakeNumber;
 	String newPostCategory="NEW LIVE CODING";
 	String newPostContent="[QUANNT] NEW POST CONTENT"+ fakeNumber;
 	String author="Automation FC";

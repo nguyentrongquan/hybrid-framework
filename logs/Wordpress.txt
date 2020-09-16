@@ -1,12 +1,20 @@
-2020-09-14 22:32:37,762 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - Open browser
-2020-09-14 22:32:47,915 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 01: Open Login Page Admin
-2020-09-14 22:32:47,936 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 02: Input To 'Email' textbox 
-2020-09-14 22:32:48,295 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 03: Click to 'Continue' button
-2020-09-14 22:32:48,462 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 04: Input to 'Password' textbox
-2020-09-14 22:32:49,206 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 05: Click to 'Login' button
-2020-09-14 22:32:49,323 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 06: Verify Dashboard Header Displayed
-2020-09-14 22:33:03,650 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
-2020-09-14 22:33:04,572 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
-2020-09-14 22:33:14,304 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
-2020-09-14 22:33:17,811 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
-2020-09-14 22:33:48,967 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post condition - Close browser 
+2020-09-16 17:20:08,651 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - Open browser
+2020-09-16 17:20:16,996 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 01: Open Login Page Admin
+2020-09-16 17:20:16,999 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 02: Input To 'Email' textbox 
+2020-09-16 17:20:17,155 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 03: Click to 'Continue' button
+2020-09-16 17:20:17,240 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 04: Input to 'Password' textbox
+2020-09-16 17:20:17,877 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 05: Click to 'Login' button
+2020-09-16 17:20:17,939 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 06: Verify Dashboard Header Displayed
+2020-09-16 17:20:28,748 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-16 17:20:29,520 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-16 17:20:37,644 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-16 17:20:39,664 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-16 17:20:40,432 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-16 17:20:40,470 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-16 17:20:41,309 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-16 17:20:41,347 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-16 17:20:41,390 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-16 17:20:41,431 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-16 17:20:41,475 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-16 17:20:41,516 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-16 17:20:42,381 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post condition - Close browser 
