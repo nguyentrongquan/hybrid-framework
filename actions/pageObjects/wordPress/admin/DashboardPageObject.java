@@ -21,11 +21,4 @@ public class DashboardPageObject extends AbstractPage {
 	}
 
 
-	public NewEditPostPageObject clickToPostDetailByTitleName(String string) {
-		
-		
-		return PageGeneratorManager.getNewEditPostAdminPage(driver);
-		
-	}
-
 }

@@ -19,7 +19,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pageObject.wordPress.user.HomePageObject;
 import pageObject.wordPress.user.SearchResultPageObject;
+import pageObjects.wordPress.admin.DashboardPageObject;
 import pageObjects.wordPress.admin.LoginPageObject;
+import pageUIs.wordPress.user.HomePageUI;
 
 
 public abstract class AbstractPage {
@@ -414,6 +416,18 @@ public abstract class AbstractPage {
 		} else {
 			return false;
 		}
+		
+	}
+	public boolean isImageLoaded(WebDriver driver, String xpathValue, String... values) {
+		jsExecutor = (JavascriptExecutor) driver;
+		boolean status = (boolean) jsExecutor.executeScript(
+				"return  arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",
+				find(driver, castToObject(xpathValue, values)));
+		if (status) {
+			return true;
+		} else {
+			return false;
+		}
 
 	}
 
@@ -609,17 +623,32 @@ public abstract class AbstractPage {
 		openPageUrl(driver, GlobalConstants.USER_WORDPRESS_URL);
 		return PageGeneratorManager.getHomeUserPage(driver);
 	}
-	public LoginPageObject openAdminPage(WebDriver driver) {
+	public DashboardPageObject openAdminPage(WebDriver driver) {
 		openPageUrl(driver, GlobalConstants.ADMIN_WORDPRESS_URL);
-		return PageGeneratorManager.getLoginAdminPage(driver);
+		return PageGeneratorManager.getDashboardAdminPage(driver);
 		
 	}
-	public SearchResultPageObject inputToSearchTexboxAtEndUserPage(WebDriver driver) {
-		//wait
-		//senkey
-		//click
+	public SearchResultPageObject inputToSearchTexboxAtEndUserPage(WebDriver driver, String titleValue) {
+		waitElementClickable(driver,AbstractWordPressPageUIs.SEARCH_POST_ACTIVE_BUTTON_USER_PAGE );
+		clickToElement(driver,AbstractWordPressPageUIs.SEARCH_POST_ACTIVE_BUTTON_USER_PAGE);
+		waitElementVisible(driver,AbstractWordPressPageUIs.SEARCH_POST_BY_TITLE_USER_PAGE,titleValue );
+		sendkeyToElement(driver,AbstractWordPressPageUIs.SEARCH_POST_BY_TITLE_USER_PAGE, titleValue);
+		waitElementClickable(driver, AbstractWordPressPageUIs.SEARCH_POST_BUTTON_USER_PAGE);
+		clickToElement(driver, AbstractWordPressPageUIs.SEARCH_POST_BUTTON_USER_PAGE);
+		// TODO Auto-generated method stub
 		return PageGeneratorManager.getSearchRultUserPage(driver);
 	}
+	public boolean isPostImageDisplayedAtPostTitleName(WebDriver driver,String titleValue,String imageValue) {
+		String[] file= imageValue.split("\\.");
+		waitElementVisible(driver, AbstractWordPressPageUIs.DYNAMIC_IMAGE_AVATAR_POST_AT_TITLE,titleValue,file[0].toLowerCase());
+		return isElementDisplayed(driver, AbstractWordPressPageUIs.DYNAMIC_IMAGE_AVATAR_POST_AT_TITLE,titleValue,file[0].toLowerCase());
+			//	&& isImageLoaded(driver,AbstractWordPressPageUIs.DYNAMIC_IMAGE_AVATAR_POST_AT_TITLE,titleValue,file[0].toLowerCase());
+	}
+	public boolean isPostDisplayedOnLatestPost(WebDriver driver,String titleValue,String categoryValue,String dateValue) {
+		waitElementVisible(driver, AbstractWordPressPageUIs.LATEST_POST, titleValue,categoryValue,dateValue);
+		return isElementDisplayed(driver, AbstractWordPressPageUIs.LATEST_POST,titleValue,categoryValue,dateValue);
+	}
+
 	private Actions action;
 	private WebDriverWait explicitWait;
 	private JavascriptExecutor jsExecutor;

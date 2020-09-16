@@ -53,16 +53,7 @@ public class PostDetailPageObject extends AbstractPage {
 	}
 
 
-	public SearchResultPageObject inputToSearchTexboxAtEndUserPage(WebDriver driver, String titleValue) {
-		waitElementClickable(driver,AbstractWordPressPageUIs.SEARCH_POST_ACTIVE_BUTTON_USER_PAGE );
-		clickToElement(driver,AbstractWordPressPageUIs.SEARCH_POST_ACTIVE_BUTTON_USER_PAGE);
-		waitElementVisible(driver,AbstractWordPressPageUIs.SEARCH_POST_BY_TITLE_USER_PAGE,titleValue );
-		sendkeyToElement(driver,AbstractWordPressPageUIs.SEARCH_POST_BY_TITLE_USER_PAGE, titleValue);
-		waitElementClickable(driver, AbstractWordPressPageUIs.SEARCH_POST_BUTTON_USER_PAGE);
-		clickToElement(driver, AbstractWordPressPageUIs.SEARCH_POST_BUTTON_USER_PAGE);
-		// TODO Auto-generated method stub
-		return PageGeneratorManager.getSearchRultUserPage(driver);
-	}
+	
 
 
 }

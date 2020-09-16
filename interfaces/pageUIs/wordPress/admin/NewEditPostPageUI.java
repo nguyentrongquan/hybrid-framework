@@ -13,6 +13,7 @@ public class NewEditPostPageUI {
 	public static final String PUBLISH_BUTTON="//input[@id='publish']";
 	public static final String POST_SUCCESS_MESSAGE="//div[@id='message']/p[contains(text(),'%s')]";
 	public static final String FEATURE_IMAGE_THUMNAIL="//img[contains(@src,'%s')]";
+	public static final String REMOVE_TAG_BUTTON_BY_NAME="//li[text()='%s']//preceding-sibling::button";
 
 	
 	

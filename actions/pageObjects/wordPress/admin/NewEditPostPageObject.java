@@ -49,6 +49,7 @@ public class NewEditPostPageObject extends AbstractPage {
 	public void selectCategoryCheckbox(String categoryValue) {
 		waitElementClickable(driver,NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
 		scrollToElement(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
+		sleepInSecond(1);
 		clickToElementByJS(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
 		
 	}
@@ -90,6 +91,18 @@ public class NewEditPostPageObject extends AbstractPage {
 		String[] file= imageValue.split("\\.");
 		waitElementVisible(driver, NewEditPostPageUI.FEATURE_IMAGE_THUMNAIL,file[0].toLowerCase());
 		return isElementDisplayed(driver, NewEditPostPageUI.FEATURE_IMAGE_THUMNAIL,file[0].toLowerCase());
+	}
+
+	public void deSelectCategoryCheckbox(String categoryValue) {
+		waitElementClickable(driver,NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
+		scrollToElement(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
+		sleepInSecond(1);
+		clickToElementByJS(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
+	}
+
+	public void clickToDeleteWithTagName(String newPostTag) {
+		waitElementClickable(driver, NewEditPostPageUI.REMOVE_TAG_BUTTON_BY_NAME);
+		clickToElement(driver,  NewEditPostPageUI.REMOVE_TAG_BUTTON_BY_NAME);
 	}
 
 }

@@ -21,7 +21,20 @@ import pageObjects.wordPress.admin.NewEditPostPageObject;
 import pageObjects.wordPress.admin.PostPageObject;
 
 public class Post_01_Create_View_Edit_Delete extends AbstractTest {
-
+	private WebDriver driver;
+	int fakeNumber = randomNumber();
+	String datecreate=getToday();
+	String featureImage ="Coding-automation.jpeg";
+	String newPostTitle="[QUANNT] NEW_POST_TITLE"+ fakeNumber;
+	String newPostCategory="NEW LIVE CODING";
+	String newPostContent="[QUANNT] NEW POST CONTENT"+ fakeNumber;
+	String author="Automation FC";
+	String newPostTag="NEW Post Tag"+ fakeNumber;
+	String editPostTitle = "[QUANNT] EDIT_POST_TITLE\"+ fakeNumber";
+	String editPostCategory="EDIT LIVE CODING";
+	String editPostContent="[QUANNT] EDIT POST CONTENT"+ fakeNumber;
+	String editPostTag="Edit Post Tag"+ fakeNumber;
+	
 	@Parameters({ "browser", "url" })
 	@BeforeClass
 	public void beforeClass(String browserName, String appUrl) {
@@ -77,11 +90,11 @@ public class Post_01_Create_View_Edit_Delete extends AbstractTest {
 
 		// View_Post_At_User_Page
 		homeUserPage = postAdminPage.openEndUserPage(driver);
-		verifyTrue(homeUserPage.isPostDisplayedOnLatestPost(newPostCategory,newPostTitle,datecreate));
-		verifyTrue(homeUserPage.isPostImageDisplayedAtPostTitleName(featureImage));
+		verifyTrue(homeUserPage.isPostDisplayedOnLatestPost(driver, newPostCategory,newPostTitle,datecreate));
+		verifyTrue(homeUserPage.isPostImageDisplayedAtPostTitleName(driver, newPostTitle,featureImage));
 		
 
-//		// Go_Post_Detail At_User_Page
+		// Go_Post_Detail At_User_Page
 		postDetailPage = homeUserPage.clickToDetailWithTitleName(newPostTitle);
 		verifyTrue(postDetailPage.isPostDetailTitleNameDisplayed(newPostTitle));
 		verifyTrue(postDetailPage.isPostDetailCategoryNameDisplayed(newPostCategory));
@@ -90,56 +103,58 @@ public class Post_01_Create_View_Edit_Delete extends AbstractTest {
 		verifyTrue(postDetailPage.isPostDetailDateCreatedDisplayed(datecreate));
 		verifyTrue(postDetailPage.isPostDetailAuthorDisplayed(author));
 
-//		// Search_Post_At_User_Page
+		// Search_Post_At_User_Page
 		searchResultPage = postDetailPage.inputToSearchTexboxAtEndUserPage(driver, newPostTitle);
-//		// design trong abstractpage
-//		verifyTrue(searchResultPage.isNewPostDisplayedOnLatestPost("category", "title", "date"));
-//		verifyTrue(searchResultPage.isPostImageDisplayedAtPostTitleName("title", "image"));
+		
+		verifyTrue(homeUserPage.isPostDisplayedOnLatestPost(driver, newPostCategory,newPostTitle,datecreate));
+		verifyTrue(homeUserPage.isPostImageDisplayedAtPostTitleName(driver, newPostTitle,featureImage));
 
 	}
-//	@Test
-//	public void TC_Post_02_Edit_Post_At_Admin_Page() {
-//		// navigate to amdin site
-//		dashboardAdminPage = searchResultPage.openAdminPage(driver);
-//
-//		// Search_Post_At_Admin_Page
-//		dashboardAdminPage.inputToSearchPostTextbox();
-//		dashboardAdminPage.clickToSearchPostButton();
-//		verifyTrue(dashboardAdminPage.isOnlyOneRowDisplayed("title", "author", "category", "tag"));
-//
-//		// edit post
-//		newEditPostAdminPage = dashboardAdminPage.clickToPostDetailByTitleName("title");
-//		newEditPostAdminPage.inputToPostTitleTextbox();
-//		newEditPostAdminPage.inputToPostContentTextbox();
-//		newEditPostAdminPage.deSelectCategoryCheckbox("new live coding");
-//		newEditPostAdminPage.SelectCategoryCheckbox("edit live coding");
-//		newEditPostAdminPage.inputToTagTextbox("tag edit name");
-//		newEditPostAdminPage.clickToTagButton();
-//		newEditPostAdminPage.clickToDeleteWithTagName("");
-//		newEditPostAdminPage.clickToUpdateButton();
-//		verifyTrue(newEditPostAdminPage.isPostSuccessMessageDisplayedWithValue("update"));
-//
-//		// View_Post_At_User_Page
-//		homeUserPage = newEditPostAdminPage.openEndUserPage(driver);
-//
-//		verify(homeUserPage.isNewPostDisplayedOnLatestPost("edit_category", "edit_title", "date"));
-//		verify(homeUserPage.isPostImageDisplayedAtPostTitleName("edit_title", "image"));
-//
-//		// Go_Post_Detail At_User_Page
-//		postDetailPage = homeUserPage.clickToDetailWithTitleName();
-//		verifyTrue(postDetailPage.isPostDetailTitleNameDisplayed("edit_title"));
-//		verifyTrue(postDetailPage.isPostDetailCategoryNameDisplayed("edit_category"));
-//		verifyTrue(postDetailPage.isPostDetailImageNameDisplayed("image"));
-//		verifyTrue(postDetailPage.isPostDetailContentDisplayed("edit_conntent"));
-//		verifyTrue(postDetailPage.isPostDetailDateCreatedDisplayed("date created"));
-//		verifyTrue(postDetailPage.isPostDetailAuthorDisplayed("Author"));
-//
-//		// Search_Post_At_User_Page
-//		searchResultPage = postDetailPage.inputToSearchTexboxAtEndUserPage(driver, "title");
-//		// design trong abstractpage
-//		verifyTrue(searchResultPage.isNewPostDisplayedOnLatestPost("category", "title", "date"));
-//		verifyTrue(searchResultPage.isPostImageDisplayedAtPostTitleName("title", "image"));
-//	}
+	@Test
+	public void TC_Post_02_Edit_Post_At_Admin_Page() {
+		// navigate to amdin site
+		dashboardAdminPage = searchResultPage.openAdminPage(driver);
+
+		// Search_Post_At_Admin_Page
+		dashboardAdminPage.openMenuPageByPageName(driver, "Posts");
+		postAdminPage = PageGeneratorManager.getPostAdminPage(driver);
+		postAdminPage.inputToSearchPostTextbox(newPostTitle);
+		postAdminPage.clickToSearchPostButton();
+		verifyTrue(postAdminPage.isOnlyOneRowDisplayed(newPostTitle, author, newPostCategory, newPostTag));
+
+		// edit post
+		newEditPostAdminPage = postAdminPage.clickToPostWithTitleName(editPostTitle);
+		newEditPostAdminPage.inputToPostTitleTextbox(editPostTitle);
+		newEditPostAdminPage.inputToPostContentTextbox(editPostContent);
+		newEditPostAdminPage.deSelectCategoryCheckbox(newPostCategory);
+		newEditPostAdminPage.selectCategoryCheckbox(editPostCategory);
+		newEditPostAdminPage.inputToTagTextbox(editPostTag);
+		newEditPostAdminPage.clickToTagButton();
+		newEditPostAdminPage.clickToDeleteWithTagName(newPostTag);
+		newEditPostAdminPage.clickToUpdateButton();
+		verifyTrue(newEditPostAdminPage.isPostSuccessMessageDisplayedWithValue("Post updated."));
+
+		// View_Post_At_User_Page
+		homeUserPage = newEditPostAdminPage.openEndUserPage(driver);
+
+		verifyTrue(homeUserPage.isPostDisplayedOnLatestPost(driver, editPostCategory,editPostTitle,datecreate));
+		verifyTrue(homeUserPage.isPostImageDisplayedAtPostTitleName(driver, editPostTitle,featureImage));
+
+		// Go_Post_Detail At_User_Page
+		postDetailPage = homeUserPage.clickToDetailWithTitleName(editPostTitle);
+		verifyTrue(postDetailPage.isPostDetailTitleNameDisplayed(editPostTitle));
+		verifyTrue(postDetailPage.isPostDetailCategoryNameDisplayed(editPostCategory));
+		verifyTrue(postDetailPage.isPostDetailImageNameDisplayed(featureImage));
+		verifyTrue(postDetailPage.isPostDetailContentDisplayed(editPostContent));
+		verifyTrue(postDetailPage.isPostDetailDateCreatedDisplayed(datecreate));
+		verifyTrue(postDetailPage.isPostDetailAuthorDisplayed(author));
+
+		// Search_Post_At_User_Page
+		searchResultPage = postDetailPage.inputToSearchTexboxAtEndUserPage(driver, editPostTitle);
+				
+		verifyTrue(homeUserPage.isPostDisplayedOnLatestPost(driver, editPostCategory,editPostTitle,datecreate));
+		verifyTrue(homeUserPage.isPostImageDisplayedAtPostTitleName(driver, editPostTitle,featureImage));
+	}
 //	@Test
 //	
 //	public void TC_Post_03_Delete_Post_At_Admin_Page() {
@@ -175,17 +190,8 @@ public class Post_01_Create_View_Edit_Delete extends AbstractTest {
 	@AfterClass(alwaysRun = true)
 	public void afterClass() {
 		log.info("Post condition - Close browser ");
-	//	closeBrowserAndDriver(driver);
+		closeBrowserAndDriver(driver);
 	}
-	private WebDriver driver;
-	int fakeNumber = randomNumber();
-	String datecreate=getToday();
-	String featureImage ="Coding-automation.jpeg";
-	String newPostTitle="[QUANNT] NEW_POST_TITLE"+ fakeNumber;
-	String newPostCategory="NEW LIVE CODING";
-	String newPostContent="[QUANNT] NEW POST CONTENT"+ fakeNumber;
-	String author="Automation FC";
-	String newPostTag="NEW Post Tag"+ fakeNumber;
 	
 	LoginPageObject loginAdminPage;
 	DashboardPageObject dashboardAdminPage;
