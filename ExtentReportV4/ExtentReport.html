@@ -46,7 +46,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Sep 16, 2020 10:37:56 PM</span>
+			<span class='label blue darken-3 suite-start-time'>Sep 17, 2020 04:52:17 PM</span>
 			</a>
 		</ul>
 	</div>
@@ -128,15 +128,15 @@
 			<ul id='test-collection' class='test-collection'>
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>TC_Post_02_Edit_Post_At_Admin_Page</span>
-						<span class='test-time'>Sep 16, 2020 10:37:20 PM</span>
+						<span class='test-name'>TC_Post_01_Create_New_Post_At_Admin_Page</span>
+						<span class='test-time'>Sep 17, 2020 04:51:37 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 16, 2020 10:37:20 PM</span>
-	<span class='label end-time'>Sep 16, 2020 10:37:56 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 35s+359ms</span>
+	<span class='label start-time'>Sep 17, 2020 04:51:37 PM</span>
+	<span class='label end-time'>Sep 17, 2020 04:52:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 40s+211ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -150,14 +150,16 @@
 		<tbody>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>10:37:56 PM</td>
+				<td class='timestamp'>4:52:17 PM</td>
 				<td class='step-details'>
-						<textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //td[@data-colname='Title']//a[text()='[QUANNT] EDIT_POST_TITLE"+ fakeNumber'] (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at commons.AbstractPage.waitElementClickable(AbstractPage.java:452)
-	at pageObjects.wordPress.admin.PostPageObject.clickToPostWithTitleName(PostPageObject.java:45)
-	at com.wordpress.post.Post_01_Create_View_Edit_Delete.TC_Post_02_Edit_Post_At_Admin_Page(Post_01_Create_View_Edit_Delete.java:126)
+						<textarea disabled class="code-block">java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at commons.AbstractTest.checkTrue(AbstractTest.java:111)
+	at commons.AbstractTest.verifyTrue(AbstractTest.java:151)
+	at com.wordpress.post.Post_01_Create_View_Edit_Delete.TC_Post_01_Create_New_Post_At_Admin_Page(Post_01_Create_View_Edit_Delete.java:101)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -178,35 +180,6 @@
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//td[@data-colname='Title']//a[text()='[QUANNT] EDIT_POST_TITLE"+ fakeNumber']"}
-  (Session info: chrome=85.0.4183.102)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
-System info: host: 'KHOPHANMEM24H', ip: '192.168.0.101', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_211'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:49804}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 4411e00d5074e766f08e9010e80e4c34
-*** Element info: {Using=xpath, value=//td[@data-colname='Title']//a[text()='[QUANNT] EDIT_POST_TITLE"+ fakeNumber']}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 23 more
 </textarea>
 					
 				</td>
@@ -218,15 +191,15 @@ Session ID: 4411e00d5074e766f08e9010e80e4c34
 				</li>
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
 					<div class='test-heading'>
-						<span class='test-name'>TC_Post_01_Create_New_Post_At_Admin_Page</span>
-						<span class='test-time'>Sep 16, 2020 10:36:47 PM</span>
+						<span class='test-name'>TC_Post_02_Edit_Post_At_Admin_Page</span>
+						<span class='test-time'>Sep 17, 2020 04:52:00 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 16, 2020 10:36:47 PM</span>
-	<span class='label end-time'>Sep 16, 2020 10:37:56 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 8s+543ms</span>
+	<span class='label start-time'>Sep 17, 2020 04:52:00 PM</span>
+	<span class='label end-time'>Sep 17, 2020 04:52:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 17s+231ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -240,7 +213,7 @@ Session ID: 4411e00d5074e766f08e9010e80e4c34
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>10:37:56 PM</td>
+				<td class='timestamp'>4:52:17 PM</td>
 				<td class='step-details'>
 						Test passed
 					
@@ -291,7 +264,7 @@ Session ID: 4411e00d5074e766f08e9010e80e4c34
 			<ul id='exception-collection' class='exception-collection'>
 				<li class='exception displayed active'>
 					<div class='exception-heading'>
-						<span class='exception-name'>org.openqa.selenium.TimeoutException</span>
+						<span class='exception-name'>java.lang.AssertionError</span>
 						<span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
 					</div>
 					<div class='exception-content hide'>
@@ -306,15 +279,17 @@ Session ID: 4411e00d5074e766f08e9010e80e4c34
 								</thead>
 								<tbody>
 									<tr>
-										<td>Sep 16, 2020 10:37:20 PM</td>
-										<td class='linked' test-id='1'>TC_Post_02_Edit_Post_At_Admin_Page</td>
+										<td>Sep 17, 2020 04:51:37 PM</td>
+										<td class='linked' test-id='1'>TC_Post_01_Create_New_Post_At_Admin_Page</td>
 										<td>
-											<textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //td[@data-colname='Title']//a[text()='[QUANNT] EDIT_POST_TITLE"+ fakeNumber'] (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at commons.AbstractPage.waitElementClickable(AbstractPage.java:452)
-	at pageObjects.wordPress.admin.PostPageObject.clickToPostWithTitleName(PostPageObject.java:45)
-	at com.wordpress.post.Post_01_Create_View_Edit_Delete.TC_Post_02_Edit_Post_At_Admin_Page(Post_01_Create_View_Edit_Delete.java:126)
+											<textarea disabled class="code-block">java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at commons.AbstractTest.checkTrue(AbstractTest.java:111)
+	at commons.AbstractTest.verifyTrue(AbstractTest.java:151)
+	at com.wordpress.post.Post_01_Create_View_Edit_Delete.TC_Post_01_Create_New_Post_At_Admin_Page(Post_01_Create_View_Edit_Delete.java:101)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -335,35 +310,6 @@ Session ID: 4411e00d5074e766f08e9010e80e4c34
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//td[@data-colname='Title']//a[text()='[QUANNT] EDIT_POST_TITLE"+ fakeNumber']"}
-  (Session info: chrome=85.0.4183.102)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
-System info: host: 'KHOPHANMEM24H', ip: '192.168.0.101', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_211'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:49804}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 4411e00d5074e766f08e9010e80e4c34
-*** Element info: {Using=xpath, value=//td[@data-colname='Title']//a[text()='[QUANNT] EDIT_POST_TITLE"+ fakeNumber']}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 23 more
 </textarea>
 										</td>
 									</tr>
@@ -401,19 +347,19 @@ Session ID: 4411e00d5074e766f08e9010e80e4c34
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Sep 16, 2020 10:37:56 PM</div>
+					<div class='panel-lead'>Sep 17, 2020 04:52:17 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Sep 16, 2020 10:37:56 PM</div>
+			 		<div class='panel-lead'>Sep 17, 2020 04:52:17 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 0s+168ms</div>
+					<div class='panel-lead'>0h 0m 0s+57ms</div>
 				</div>
 			</div>
 		</div>
@@ -425,51 +371,77 @@ Session ID: 4411e00d5074e766f08e9010e80e4c34
 		<h5>TestRunner Logs</h5>
 		
 		<div class='card-panel'>
-				2020-09-16 22:36:33,977 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - Open browser
+				2020-09-17 16:51:26,099 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - Open browser
 
-				2020-09-16 22:36:43,256 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 01: Open Login Page Admin
+				2020-09-17 16:51:34,524 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 01: Open Login Page Admin
 
-				2020-09-16 22:36:43,258 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 02: Input To 'Email' textbox 
+				2020-09-17 16:51:34,527 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 02: Input To 'Email' textbox 
 
-				2020-09-16 22:36:43,607 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 03: Click to 'Continue' button
+				2020-09-17 16:51:34,719 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 03: Click to 'Continue' button
 
-				2020-09-16 22:36:43,756 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 04: Input to 'Password' textbox
+				2020-09-17 16:51:34,806 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 04: Input to 'Password' textbox
 
-				2020-09-16 22:36:44,494 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 05: Click to 'Login' button
+				2020-09-17 16:51:35,452 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 05: Click to 'Login' button
 
-				2020-09-16 22:36:44,613 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 06: Verify Dashboard Header Displayed
+				2020-09-17 16:51:35,517 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 06: Verify Dashboard Header Displayed
 
-				2020-09-16 22:37:01,485 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+				2020-09-17 16:51:48,122 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 
-				2020-09-16 22:37:02,412 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+				2020-09-17 16:51:48,859 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 
-				2020-09-16 22:37:11,324 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+				2020-09-17 16:51:55,556 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 
-				2020-09-16 22:37:14,232 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+				2020-09-17 16:51:57,761 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 
-				2020-09-16 22:37:15,902 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+				2020-09-17 16:51:58,712 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 
-				2020-09-16 22:37:16,003 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+				2020-09-17 16:51:58,774 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 
-				2020-09-16 22:37:18,885 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+				2020-09-17 16:51:59,508 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 
-				2020-09-16 22:37:18,956 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+				2020-09-17 16:51:59,550 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 
-				2020-09-16 22:37:19,038 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+				2020-09-17 16:51:59,608 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- FAILED -------------------------- 
 
-				2020-09-16 22:37:19,131 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+				2020-09-17 16:51:59,653 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 
-				2020-09-16 22:37:19,198 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+				2020-09-17 16:51:59,702 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 
-				2020-09-16 22:37:19,269 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+				2020-09-17 16:51:59,745 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 
-				2020-09-16 22:37:20,919 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+				2020-09-17 16:52:00,605 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 
-				2020-09-16 22:37:20,982 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+				2020-09-17 16:52:00,643 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 
-				2020-09-16 22:37:24,752 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+				2020-09-17 16:52:00,703 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 
-				2020-09-16 22:37:54,866 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post condition - Close browser 
+				2020-09-17 16:52:03,338 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+
+				2020-09-17 16:52:14,316 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+
+				2020-09-17 16:52:15,069 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+
+				2020-09-17 16:52:15,123 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+
+				2020-09-17 16:52:15,959 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+
+				2020-09-17 16:52:15,995 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+
+				2020-09-17 16:52:16,055 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+
+				2020-09-17 16:52:16,105 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+
+				2020-09-17 16:52:16,144 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+
+				2020-09-17 16:52:16,187 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+
+				2020-09-17 16:52:17,027 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+
+				2020-09-17 16:52:17,067 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+
+				2020-09-17 16:52:17,116 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+
+				2020-09-17 16:52:17,117 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post condition - Close browser 
 
 		</div>
 	</div>
@@ -510,7 +482,7 @@ Session ID: 4411e00d5074e766f08e9010e80e4c34
 		</script>
 		<script>
 			var timeline = {
-			        "TC_Post_02_Edit_Post_At_Admin_Page":35.359,"TC_Post_01_Create_New_Post_At_Admin_Page":68.543
+			        "TC_Post_01_Create_New_Post_At_Admin_Page":40.211,"TC_Post_02_Edit_Post_At_Admin_Page":17.231
 			};
 		</script>
 		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/js/extent.js' type='text/javascript'></script>
