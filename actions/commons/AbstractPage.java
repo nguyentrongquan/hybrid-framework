@@ -13,9 +13,12 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.sun.java.swing.plaf.windows.resources.windows;
 
 import pageObject.wordPress.user.HomePageObject;
 import pageObject.wordPress.user.SearchResultPageObject;
@@ -231,7 +234,7 @@ public abstract class AbstractPage {
 	public void checkTheCheckbox(WebDriver driver, String xpathValue,String... values) {
 		element = find(driver, castToObject(xpathValue, values));
 		if (!element.isSelected()) {
-			element.click();
+			clickToElementByJS(driver, castToObject(xpathValue, values));
 		}
 		
 	}
@@ -246,7 +249,7 @@ public abstract class AbstractPage {
 	public void uncheckToTheCheckbox(WebDriver driver, String xpathValue,String... values) {
 		element = find(driver, castToObject(xpathValue, values));
 		if (element.isSelected()) {
-			element.click();
+			clickToElementByJS(driver, castToObject(xpathValue, values));
 		}
 		
 	}
@@ -399,17 +402,33 @@ public abstract class AbstractPage {
 		jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", find(driver, xpathValue));
 	}
+	public void scrollToTopPage(WebDriver driver) {
+		
+		jsExecutor = (JavascriptExecutor) driver;
+		jsExecutor.executeScript("windows.scrollBy(0,0)");
+	}
+	public void scrollToBottomPage(WebDriver driver) {
+		
+		jsExecutor = (JavascriptExecutor) driver;
+		jsExecutor.executeScript("windows.scrollBy(0,document.body.scrollHeight)");
+	}
 	public void scrollToElement(WebDriver driver, String xpathValue, String... values) {
 
 		jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", find(driver,castToObject(xpathValue, values)));
 	}
 
-	public void sendkeyToElementByJS(WebDriver driver, String xpathValue, String value) {
+	public void sendkeyToElementByJS(WebDriver driver, String xpathValue, String textValue) {
+		
+		jsExecutor = (JavascriptExecutor) driver;
+		jsExecutor.executeScript("arguments[0].setAttribute('value', '" + textValue + "')", find(driver, xpathValue));
+	}
+	public void sendkeyToElementByJS(WebDriver driver, String xpathValue, String textValue,String... values) {
 
 		jsExecutor = (JavascriptExecutor) driver;
-		jsExecutor.executeScript("arguments[0].setAttribute('value', '" + value + "')", find(driver, xpathValue));
+		jsExecutor.executeScript("arguments[0].setAttribute('value', '" + textValue + "')", find(driver, castToObject(xpathValue, values)));
 	}
+
 
 	public void removeAttributeInDOM(WebDriver driver, String xpathValue, String attributeRemove) {
 		jsExecutor = (JavascriptExecutor) driver;
@@ -444,6 +463,36 @@ public abstract class AbstractPage {
 		}
 
 	}
+	public boolean waitForJStoLoad(WebDriver driver) {
+
+		explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		jsExecutor = (JavascriptExecutor) driver;
+
+	    // wait for jQuery to load
+	    ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
+	      @Override
+	      public Boolean apply(WebDriver driver) {
+	        try {
+	          return ((Long)jsExecutor.executeScript("return jQuery.active") == 0);
+	        }
+	        catch (Exception e) {
+	          return true;
+	        }
+	      }
+	    };
+
+	    // wait for Javascript to load
+	    ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
+	      @Override
+	      public Boolean apply(WebDriver driver) {
+	        return jsExecutor.executeScript("return document.readyState")
+	            .toString().equals("complete");
+	      }
+	    };
+
+	  return explicitWait.until(jQueryLoad) && explicitWait.until(jsLoad);
+	}
+	
 
 	public void waitElementVisible(WebDriver driver, String xpathValue) {
 		explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
@@ -643,17 +692,18 @@ public abstract class AbstractPage {
 		
 	}
 	public SearchResultPageObject inputToSearchTexboxAtEndUserPage(WebDriver driver, String titleValue) {
+		//scrollToTopPage(driver);
 		waitElementClickable(driver,AbstractWordPressPageUIs.SEARCH_POST_ICON);
 		clickToElement(driver,AbstractWordPressPageUIs.SEARCH_POST_ICON);
 		waitElementVisible(driver,AbstractWordPressPageUIs.SEARCH_POST_TEXTBOX );
 		sendkeyToElement(driver,AbstractWordPressPageUIs.SEARCH_POST_TEXTBOX, titleValue);
 		waitElementClickable(driver, AbstractWordPressPageUIs.SEARCH_POST_BUTTON);
 		clickToElement(driver, AbstractWordPressPageUIs.SEARCH_POST_BUTTON);
-		// TODO Auto-generated method stub
 		return PageGeneratorManager.getSearchRultUserPage(driver);
 	}
 	public boolean isPostImageDisplayedAtPostTitleName(WebDriver driver,String titleValue,String imageValue) {
 		imageValue= imageValue.split("\\.")[0].toLowerCase();
+		waitForJStoLoad(driver);
 		waitElementVisible(driver, AbstractWordPressPageUIs.DYNAMIC_IMAGE_AVATAR_POST_AT_TITLE,titleValue,imageValue);
 		return isElementDisplayed(driver, AbstractWordPressPageUIs.DYNAMIC_IMAGE_AVATAR_POST_AT_TITLE,titleValue,imageValue)
 				&& isImageLoaded(driver,AbstractWordPressPageUIs.DYNAMIC_IMAGE_AVATAR_POST_AT_TITLE,titleValue,imageValue);

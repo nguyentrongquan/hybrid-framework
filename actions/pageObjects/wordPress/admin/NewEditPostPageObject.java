@@ -44,7 +44,6 @@ public class NewEditPostPageObject extends AbstractPage {
 
 	public void selectCategoryCheckbox(String categoryValue) {
 		waitElementClickable(driver,NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
-		scrollToElement(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
 		sleepInSecond(1);
 		checkTheCheckbox(driver,  NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
 		//clickToElementByJS(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
@@ -52,7 +51,6 @@ public class NewEditPostPageObject extends AbstractPage {
 	}
 	public void deSelectCategoryCheckbox(String categoryValue) {
 		waitElementClickable(driver,NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
-		scrollToElement(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
 		sleepInSecond(1);
 		uncheckToTheCheckbox(driver,NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
 		//clickToElementByJS(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);

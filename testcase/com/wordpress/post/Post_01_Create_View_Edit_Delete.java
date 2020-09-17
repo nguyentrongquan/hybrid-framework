@@ -106,9 +106,7 @@ public class Post_01_Create_View_Edit_Delete extends AbstractTest {
 
 		// Search_Post_At_User_Page
 		searchResultPage = postDetailPage.inputToSearchTexboxAtEndUserPage(driver, newPostTitle);
-		
 		verifyTrue(searchResultPage.isPostTitleDisplayedOnHeader(newPostTitle));
-		
 		verifyTrue(searchResultPage.isPostDisplayedOnLatestPost(driver, newPostCategory,newPostTitle,datecreate));
 		verifyTrue(searchResultPage.isPostImageDisplayedAtPostTitleName(driver, newPostTitle,featureImage));
 
