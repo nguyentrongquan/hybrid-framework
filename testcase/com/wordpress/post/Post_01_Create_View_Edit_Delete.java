@@ -30,7 +30,7 @@ public class Post_01_Create_View_Edit_Delete extends AbstractTest {
 	String newPostContent="[QUANNT] NEW POST CONTENT"+ fakeNumber;
 	String author="Automation FC";
 	String newPostTag="NEW Post Tag"+ fakeNumber;
-	String editPostTitle = "[QUANNT] EDIT_POST_TITLE\"+ fakeNumber";
+	String editPostTitle = "[QUANNT] EDIT_POST_TITLE"+ fakeNumber;
 	String editPostCategory="EDIT LIVE CODING";
 	String editPostContent="[QUANNT] EDIT POST CONTENT"+ fakeNumber;
 	String editPostTag="Edit Post Tag"+ fakeNumber;
@@ -100,14 +100,17 @@ public class Post_01_Create_View_Edit_Delete extends AbstractTest {
 		verifyTrue(postDetailPage.isPostDetailCategoryNameDisplayed(newPostCategory));
 		verifyTrue(postDetailPage.isPostDetailImageNameDisplayed(featureImage));
 		verifyTrue(postDetailPage.isPostDetailContentDisplayed(newPostContent));
+		verifyTrue(postDetailPage.isPostDetailTagDisplayed(newPostTag));
 		verifyTrue(postDetailPage.isPostDetailDateCreatedDisplayed(datecreate));
 		verifyTrue(postDetailPage.isPostDetailAuthorDisplayed(author));
 
 		// Search_Post_At_User_Page
 		searchResultPage = postDetailPage.inputToSearchTexboxAtEndUserPage(driver, newPostTitle);
 		
-		verifyTrue(homeUserPage.isPostDisplayedOnLatestPost(driver, newPostCategory,newPostTitle,datecreate));
-		verifyTrue(homeUserPage.isPostImageDisplayedAtPostTitleName(driver, newPostTitle,featureImage));
+		verifyTrue(searchResultPage.isPostTitleDisplayedOnHeader(newPostTitle));
+		
+		verifyTrue(searchResultPage.isPostDisplayedOnLatestPost(driver, newPostCategory,newPostTitle,datecreate));
+		verifyTrue(searchResultPage.isPostImageDisplayedAtPostTitleName(driver, newPostTitle,featureImage));
 
 	}
 	@Test
@@ -123,7 +126,7 @@ public class Post_01_Create_View_Edit_Delete extends AbstractTest {
 		verifyTrue(postAdminPage.isOnlyOneRowDisplayed(newPostTitle, author, newPostCategory, newPostTag));
 
 		// edit post
-		newEditPostAdminPage = postAdminPage.clickToPostWithTitleName(editPostTitle);
+		newEditPostAdminPage = postAdminPage.clickToPostWithTitleName(newPostTitle);
 		newEditPostAdminPage.inputToPostTitleTextbox(editPostTitle);
 		newEditPostAdminPage.inputToPostContentTextbox(editPostContent);
 		newEditPostAdminPage.deSelectCategoryCheckbox(newPostCategory);
@@ -142,8 +145,12 @@ public class Post_01_Create_View_Edit_Delete extends AbstractTest {
 
 		// Go_Post_Detail At_User_Page
 		postDetailPage = homeUserPage.clickToDetailWithTitleName(editPostTitle);
+		verifyTrue(postDetailPage.isPostDetailTitleNameUnDisplayed(newPostTitle));
 		verifyTrue(postDetailPage.isPostDetailTitleNameDisplayed(editPostTitle));
+		verifyTrue(postDetailPage.isPostDetailCategoryNameUnDisplayed(newPostCategory));
 		verifyTrue(postDetailPage.isPostDetailCategoryNameDisplayed(editPostCategory));
+		verifyTrue(postDetailPage.isPostDetailTagUnDisplayed(newPostTag));
+		verifyTrue(postDetailPage.isPostDetailTagDisplayed(editPostTag));
 		verifyTrue(postDetailPage.isPostDetailImageNameDisplayed(featureImage));
 		verifyTrue(postDetailPage.isPostDetailContentDisplayed(editPostContent));
 		verifyTrue(postDetailPage.isPostDetailDateCreatedDisplayed(datecreate));
@@ -151,9 +158,9 @@ public class Post_01_Create_View_Edit_Delete extends AbstractTest {
 
 		// Search_Post_At_User_Page
 		searchResultPage = postDetailPage.inputToSearchTexboxAtEndUserPage(driver, editPostTitle);
-				
-		verifyTrue(homeUserPage.isPostDisplayedOnLatestPost(driver, editPostCategory,editPostTitle,datecreate));
-		verifyTrue(homeUserPage.isPostImageDisplayedAtPostTitleName(driver, editPostTitle,featureImage));
+		verifyTrue(searchResultPage.isPostTitleDisplayedOnHeader(editPostTitle));		
+		verifyTrue(searchResultPage.isPostDisplayedOnLatestPost(driver, editPostCategory,editPostTitle,datecreate));
+		verifyTrue(searchResultPage.isPostImageDisplayedAtPostTitleName(driver, editPostTitle,featureImage));
 	}
 //	@Test
 //	

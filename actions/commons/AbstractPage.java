@@ -228,6 +228,13 @@ public abstract class AbstractPage {
 
 	}
 
+	public void checkTheCheckbox(WebDriver driver, String xpathValue,String... values) {
+		element = find(driver, castToObject(xpathValue, values));
+		if (!element.isSelected()) {
+			element.click();
+		}
+		
+	}
 	public void checkTheCheckbox(WebDriver driver, String xpathValue) {
 		element = find(driver, xpathValue);
 		if (!element.isSelected()) {
@@ -236,6 +243,13 @@ public abstract class AbstractPage {
 
 	}
 
+	public void uncheckToTheCheckbox(WebDriver driver, String xpathValue,String... values) {
+		element = find(driver, castToObject(xpathValue, values));
+		if (element.isSelected()) {
+			element.click();
+		}
+		
+	}
 	public void uncheckToTheCheckbox(WebDriver driver, String xpathValue) {
 		element = find(driver, xpathValue);
 		if (element.isSelected()) {
@@ -629,20 +643,20 @@ public abstract class AbstractPage {
 		
 	}
 	public SearchResultPageObject inputToSearchTexboxAtEndUserPage(WebDriver driver, String titleValue) {
-		waitElementClickable(driver,AbstractWordPressPageUIs.SEARCH_POST_ACTIVE_BUTTON_USER_PAGE );
-		clickToElement(driver,AbstractWordPressPageUIs.SEARCH_POST_ACTIVE_BUTTON_USER_PAGE);
-		waitElementVisible(driver,AbstractWordPressPageUIs.SEARCH_POST_BY_TITLE_USER_PAGE,titleValue );
-		sendkeyToElement(driver,AbstractWordPressPageUIs.SEARCH_POST_BY_TITLE_USER_PAGE, titleValue);
-		waitElementClickable(driver, AbstractWordPressPageUIs.SEARCH_POST_BUTTON_USER_PAGE);
-		clickToElement(driver, AbstractWordPressPageUIs.SEARCH_POST_BUTTON_USER_PAGE);
+		waitElementClickable(driver,AbstractWordPressPageUIs.SEARCH_POST_ICON);
+		clickToElement(driver,AbstractWordPressPageUIs.SEARCH_POST_ICON);
+		waitElementVisible(driver,AbstractWordPressPageUIs.SEARCH_POST_TEXTBOX );
+		sendkeyToElement(driver,AbstractWordPressPageUIs.SEARCH_POST_TEXTBOX, titleValue);
+		waitElementClickable(driver, AbstractWordPressPageUIs.SEARCH_POST_BUTTON);
+		clickToElement(driver, AbstractWordPressPageUIs.SEARCH_POST_BUTTON);
 		// TODO Auto-generated method stub
 		return PageGeneratorManager.getSearchRultUserPage(driver);
 	}
 	public boolean isPostImageDisplayedAtPostTitleName(WebDriver driver,String titleValue,String imageValue) {
-		String[] file= imageValue.split("\\.");
-		waitElementVisible(driver, AbstractWordPressPageUIs.DYNAMIC_IMAGE_AVATAR_POST_AT_TITLE,titleValue,file[0].toLowerCase());
-		return isElementDisplayed(driver, AbstractWordPressPageUIs.DYNAMIC_IMAGE_AVATAR_POST_AT_TITLE,titleValue,file[0].toLowerCase());
-			//	&& isImageLoaded(driver,AbstractWordPressPageUIs.DYNAMIC_IMAGE_AVATAR_POST_AT_TITLE,titleValue,file[0].toLowerCase());
+		imageValue= imageValue.split("\\.")[0].toLowerCase();
+		waitElementVisible(driver, AbstractWordPressPageUIs.DYNAMIC_IMAGE_AVATAR_POST_AT_TITLE,titleValue,imageValue);
+		return isElementDisplayed(driver, AbstractWordPressPageUIs.DYNAMIC_IMAGE_AVATAR_POST_AT_TITLE,titleValue,imageValue)
+				&& isImageLoaded(driver,AbstractWordPressPageUIs.DYNAMIC_IMAGE_AVATAR_POST_AT_TITLE,titleValue,imageValue);
 	}
 	public boolean isPostDisplayedOnLatestPost(WebDriver driver,String titleValue,String categoryValue,String dateValue) {
 		waitElementVisible(driver, AbstractWordPressPageUIs.LATEST_POST, titleValue,categoryValue,dateValue);

@@ -19,7 +19,7 @@ public class HomePageObject extends AbstractPage {
 
 	public PostDetailPageObject clickToDetailWithTitleName(String titleValue) {
 		waitElementVisible(driver, HomePageUI.TITLE_POST_DETAIL_LINK,titleValue) ;
-		clickToElementByJS(driver, HomePageUI.TITLE_POST_DETAIL_LINK, titleValue);
+		clickToElement(driver, HomePageUI.TITLE_POST_DETAIL_LINK, titleValue);
 		return PageGeneratorManager.getDetailPostUserPage(driver);
 	}
 

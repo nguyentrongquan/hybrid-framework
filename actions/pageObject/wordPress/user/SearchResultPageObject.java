@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
 import pageUIs.wordPress.admin.DashboardPageUI;
+import pageUIs.wordPress.user.SearchReSultPageUI;
 
 public class SearchResultPageObject extends AbstractPage {
 	private WebDriver driver;
@@ -13,16 +14,9 @@ public class SearchResultPageObject extends AbstractPage {
 		this.driver = driver;
 	}
 
-
-	public boolean isNewPostDisplayedOnLatestPost(String string, String string2, String string3) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
-	public boolean isPostImageDisplayedAtPostTitleName(String string, String string2) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean isPostTitleDisplayedOnHeader(String newPostTitle) {
+		waitElementVisible(driver, SearchReSultPageUI.POST_TITLE_ON_HEADER, newPostTitle);
+		return isElementDisplayed(driver, SearchReSultPageUI.POST_TITLE_ON_HEADER, newPostTitle);
 	}
 
 

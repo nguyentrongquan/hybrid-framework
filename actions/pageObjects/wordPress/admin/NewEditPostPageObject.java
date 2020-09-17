@@ -14,18 +14,14 @@ public class NewEditPostPageObject extends AbstractPage {
 	}
 
 	public void clickToPublishButton() {
-		// wait click able
 		waitElementClickable(driver, NewEditPostPageUI.PUBLISH_BUTTON);
 		clickToElementByJS(driver,NewEditPostPageUI.PUBLISH_BUTTON);
-		// click
 
 	}
 
 	public void clickToUpdateButton() {
-
-		// wait click able
-		// click
-		// wait invisible icon
+		waitElementClickable(driver, NewEditPostPageUI.PUBLISH_BUTTON);
+		clickToElementByJS(driver,NewEditPostPageUI.PUBLISH_BUTTON);
 	}
 
 	public PostPageObject clickToMoveTrashButton() {
@@ -50,8 +46,16 @@ public class NewEditPostPageObject extends AbstractPage {
 		waitElementClickable(driver,NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
 		scrollToElement(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
 		sleepInSecond(1);
-		clickToElementByJS(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
+		checkTheCheckbox(driver,  NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
+		//clickToElementByJS(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
 		
+	}
+	public void deSelectCategoryCheckbox(String categoryValue) {
+		waitElementClickable(driver,NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
+		scrollToElement(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
+		sleepInSecond(1);
+		uncheckToTheCheckbox(driver,NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
+		//clickToElementByJS(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
 	}
 
 	public void inputToTagTextbox(String tagValue) {
@@ -93,16 +97,11 @@ public class NewEditPostPageObject extends AbstractPage {
 		return isElementDisplayed(driver, NewEditPostPageUI.FEATURE_IMAGE_THUMNAIL,file[0].toLowerCase());
 	}
 
-	public void deSelectCategoryCheckbox(String categoryValue) {
-		waitElementClickable(driver,NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
-		scrollToElement(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
-		sleepInSecond(1);
-		clickToElementByJS(driver, NewEditPostPageUI.CATEGORY_CHECKBOX, categoryValue);
-	}
+	
 
 	public void clickToDeleteWithTagName(String newPostTag) {
-		waitElementClickable(driver, NewEditPostPageUI.REMOVE_TAG_BUTTON_BY_NAME);
-		clickToElement(driver,  NewEditPostPageUI.REMOVE_TAG_BUTTON_BY_NAME);
+		waitElementClickable(driver, NewEditPostPageUI.REMOVE_TAG_BUTTON_BY_NAME,newPostTag);
+		clickToElement(driver,  NewEditPostPageUI.REMOVE_TAG_BUTTON_BY_NAME,newPostTag);
 	}
 
 }

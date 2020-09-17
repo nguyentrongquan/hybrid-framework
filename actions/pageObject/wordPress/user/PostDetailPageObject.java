@@ -29,9 +29,11 @@ public class PostDetailPageObject extends AbstractPage {
 
 
 	public boolean isPostDetailImageNameDisplayed(String imageName) {
-		String[] file= imageName.split("\\.");
-		waitElementVisible(driver,PostDetailPageUI.DETAIL_POST_IMAGE, file[0].toLowerCase());
-		return isElementDisplayed(driver,PostDetailPageUI.DETAIL_POST_IMAGE, file[0].toLowerCase());
+		imageName= imageName.split("\\.")[0].toLowerCase();
+		waitElementVisible(driver,PostDetailPageUI.DETAIL_POST_IMAGE,imageName);
+		return isElementDisplayed(driver,PostDetailPageUI.DETAIL_POST_IMAGE,imageName)
+				&& isImageLoaded(driver,PostDetailPageUI.DETAIL_POST_IMAGE,imageName);
+		
 	}
 
 
@@ -50,6 +52,27 @@ public class PostDetailPageObject extends AbstractPage {
 	public boolean isPostDetailAuthorDisplayed(String authorName) {
 		waitElementVisible(driver,PostDetailPageUI.DETAIL_POST_AUTHOR, authorName);
 		return isElementDisplayed(driver,PostDetailPageUI.DETAIL_POST_AUTHOR, authorName);
+	}
+
+
+	public boolean isPostDetailTagDisplayed(String postTag) {
+		waitElementVisible(driver,PostDetailPageUI.DETAIL_POST_TAG, postTag);
+		return isElementDisplayed(driver,PostDetailPageUI.DETAIL_POST_TAG, postTag);
+	}
+
+
+	public boolean isPostDetailTitleNameUnDisplayed(String newPostTitle) {
+		return isElementUndisplayed(driver, PostDetailPageUI.DETAIL_POST_TITLE, newPostTitle);
+	}
+
+
+	public boolean isPostDetailCategoryNameUnDisplayed(String newPostCategory) {
+		return isElementUndisplayed(driver, PostDetailPageUI.DETAIL_POST_CATEGORY, newPostCategory);
+	}
+
+
+	public boolean isPostDetailTagUnDisplayed(String postTag) {
+		return isElementUndisplayed(driver,PostDetailPageUI.DETAIL_POST_TAG, postTag);
 	}
 
 

@@ -7,6 +7,7 @@ public class PostDetailPageUI {
 	public static final String DETAIL_POST_DATE_CREATED ="//span[@class='post-meta-date']/a[text()='%s']";
 	public static final String DETAIL_POST_AUTHOR ="//span[@class='post-meta-author']/a[text()='%s']";
 	public static final String DETAIL_POST_IMAGE ="//img[contains(@src,'%s')]";
+	public static final String DETAIL_POST_TAG ="//div[@class='post-tags']//a[text()='%s']";
 	
 
 }
