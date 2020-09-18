@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
 import commons.PageGeneratorManager;
+import pageUIs.wordPress.admin.NewEditPostPageUI;
 import pageUIs.wordPress.admin.PostPageUI;
 
 public class PostPageObject extends AbstractPage {
@@ -45,6 +46,26 @@ public class PostPageObject extends AbstractPage {
 		waitElementClickable(driver, PostPageUI.EDIT_POST_BY_TITLE_NAME, editPostTitle);
 		clickToElement(driver, PostPageUI.EDIT_POST_BY_TITLE_NAME, editPostTitle);
 		return PageGeneratorManager.getNewEditPostAdminPage(driver);
+	}
+
+
+	public boolean isPostSuccessMessageDisplayedWithValue(String textMessageValue) {
+		waitElementVisible(driver, PostPageUI.POST_SUCCESS_MESSAGE, textMessageValue);
+		return isElementDisplayed(driver,PostPageUI.POST_SUCCESS_MESSAGE, textMessageValue);
+	}
+
+
+	public boolean isNoPostFoundMessageDisplayed(String textMessage) {
+		waitElementVisible(driver, PostPageUI.POST_SEARCH_NO_FOUND, textMessage);
+		return isElementDisplayed(driver,PostPageUI.POST_SEARCH_NO_FOUND, textMessage);
+		
+	}
+
+
+	public boolean isPostDeletedUnDisplayedOnSearchPost(String titleValue, String authorValue, String categoryValue,
+			String tagValue) {
+		
+		return isElementUndisplayed(driver,PostPageUI.SEARCH_ONLY_ONE_ROW, titleValue,authorValue,categoryValue,tagValue);
 	}
 
 	

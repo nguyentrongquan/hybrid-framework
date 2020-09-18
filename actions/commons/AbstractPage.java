@@ -502,7 +502,6 @@ public abstract class AbstractPage {
 	public void waitElementVisible(WebDriver driver, String xpathValue, String... values) {
 		explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(byXpath(castToObject(xpathValue, values))));
-		System.out.println(castToObject(xpathValue, values));
 	}
 
 	public void waitElementClickable(WebDriver driver, String xpathValue) {
@@ -513,7 +512,6 @@ public abstract class AbstractPage {
 	public void waitElementClickable(WebDriver driver, String xpathValue, String... values) {
 		explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(byXpath(castToObject(xpathValue, values))));
-		System.out.println(castToObject(xpathValue, values));
 	}
 
 	public void waitElementInvisible(WebDriver driver, String xpathValue) {
@@ -684,6 +682,7 @@ public abstract class AbstractPage {
 //	}
 	public HomePageObject openEndUserPage(WebDriver driver) {
 		openPageUrl(driver, GlobalConstants.USER_WORDPRESS_URL);
+		sleepInSecond(2);
 		return PageGeneratorManager.getHomeUserPage(driver);
 	}
 	public DashboardPageObject openAdminPage(WebDriver driver) {
@@ -699,18 +698,26 @@ public abstract class AbstractPage {
 		sendkeyToElement(driver,AbstractWordPressPageUIs.SEARCH_POST_TEXTBOX, titleValue);
 		waitElementClickable(driver, AbstractWordPressPageUIs.SEARCH_POST_BUTTON);
 		clickToElement(driver, AbstractWordPressPageUIs.SEARCH_POST_BUTTON);
+		sleepInSecond(2);
 		return PageGeneratorManager.getSearchRultUserPage(driver);
 	}
 	public boolean isPostImageDisplayedAtPostTitleName(WebDriver driver,String titleValue,String imageValue) {
 		imageValue= imageValue.split("\\.")[0].toLowerCase();
-		waitForJStoLoad(driver);
 		waitElementVisible(driver, AbstractWordPressPageUIs.DYNAMIC_IMAGE_AVATAR_POST_AT_TITLE,titleValue,imageValue);
 		return isElementDisplayed(driver, AbstractWordPressPageUIs.DYNAMIC_IMAGE_AVATAR_POST_AT_TITLE,titleValue,imageValue)
 				&& isImageLoaded(driver,AbstractWordPressPageUIs.DYNAMIC_IMAGE_AVATAR_POST_AT_TITLE,titleValue,imageValue);
 	}
+	public boolean isPostImageUnDisplayedAtPostTitleName(WebDriver driver,String titleValue,String imageValue) {
+		imageValue= imageValue.split("\\.")[0].toLowerCase();
+		return isElementUndisplayed(driver, AbstractWordPressPageUIs.DYNAMIC_IMAGE_AVATAR_POST_AT_TITLE,titleValue,imageValue);
+				
+	}
 	public boolean isPostDisplayedOnLatestPost(WebDriver driver,String titleValue,String categoryValue,String dateValue) {
 		waitElementVisible(driver, AbstractWordPressPageUIs.LATEST_POST, titleValue,categoryValue,dateValue);
 		return isElementDisplayed(driver, AbstractWordPressPageUIs.LATEST_POST,titleValue,categoryValue,dateValue);
+	}
+	public boolean isPostUnDisplayedOnLatestPost(WebDriver driver,String titleValue,String categoryValue,String dateValue) {
+		return isElementUndisplayed(driver, AbstractWordPressPageUIs.LATEST_POST,titleValue,categoryValue,dateValue);
 	}
 
 	private Actions action;

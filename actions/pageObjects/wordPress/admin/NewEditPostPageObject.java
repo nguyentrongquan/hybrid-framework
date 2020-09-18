@@ -25,7 +25,8 @@ public class NewEditPostPageObject extends AbstractPage {
 	}
 
 	public PostPageObject clickToMoveTrashButton() {
-		// TODO Auto-generated method stub
+		waitElementClickable(driver, NewEditPostPageUI.MOVE_TO_TRASH_BUTTON);
+		clickToElement(driver, NewEditPostPageUI.MOVE_TO_TRASH_BUTTON);
 		return PageGeneratorManager.getPostAdminPage(driver);
 	}
 

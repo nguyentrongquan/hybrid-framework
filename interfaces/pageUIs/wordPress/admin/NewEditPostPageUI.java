@@ -2,7 +2,7 @@ package pageUIs.wordPress.admin;
 
 public class NewEditPostPageUI {
 	public static final String POST_TITLE_TEXTBOX="//input[@id='title']";
-	public static final String POST_CONTENT_TEXTBOX="//body[@id='tinymce']/p";
+	public static final String POST_CONTENT_TEXTBOX="//body[@id='tinymce']";
 	public static final String TINY_MCE_IFRAME="//iframe[@id='content_ifr']";
 	public static final String CATEGORY_CHECKBOX="//label[contains(text(),'%s')]//input";
 	public static final String TAG_TEXTBOX="//input[@id='new-tag-post_tag']";
@@ -14,6 +14,7 @@ public class NewEditPostPageUI {
 	public static final String POST_SUCCESS_MESSAGE="//div[@id='message']/p[contains(text(),'%s')]";
 	public static final String FEATURE_IMAGE_THUMNAIL="//img[contains(@src,'%s')]";
 	public static final String REMOVE_TAG_BUTTON_BY_NAME="//li[text()='%s']//button";
+	public static final String MOVE_TO_TRASH_BUTTON="//a[@class='submitdelete deletion' and text()='Move to Trash']";
 
 	
 	
