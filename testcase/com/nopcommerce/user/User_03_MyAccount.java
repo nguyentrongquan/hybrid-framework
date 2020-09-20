@@ -76,10 +76,15 @@ public class User_03_MyAccount extends AbstractTest {
 	}
 	@Test
 	public void MyAccount_02_Address() {
-		myAccountPage.clickToAddressPageMenu();//li[@class='customer-addresses active']//a[contains(text(),'Addresses')]
-		myAccountPage.clickToAddNewButton();//input[@class='button-1 add-address-button']
-		myAccountPage.inputToFirstNameTextbox();//input[@id='Address_FirstName']
-		myAccountPage.intputToLastNameTextbox();
+//		myAccountPage.clickToAddressPageMenu();//li[@class='customer-addresses active']//a[contains(text(),'Addresses')]
+//		myAccountPage.clickToAddNewButton();//input[@class='button-1 add-address-button']
+//		myAccountPage.inputToFirstNameTextbox();//input[@id='Address_FirstName']
+//		myAccountPage.intputToLastNameTextbox();
+//		myAccountPage.intputToLastNameTextbox();
+//		myAccountPage.intputToLastNameTextbox();
+//		myAccountPage.intputToLastNameTextbox();
+//		myAccountPage.intputToLastNameTextbox();
+//		
 		
 	}
 
