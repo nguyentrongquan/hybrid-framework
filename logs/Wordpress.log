@@ -1265,3 +1265,141 @@ Session ID: aebef267-d833-4197-9bcc-8eecc61b96b4
 2020-09-18 16:33:10,226 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 2020-09-18 16:33:15,247 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
 2020-09-18 16:33:15,248 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post condition - Close browser 
+2020-09-18 21:46:37,582 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - Open browser
+2020-09-18 21:46:51,511 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 01: Open Login Page Admin
+2020-09-18 21:46:51,517 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 02: Input To 'Email' textbox 
+2020-09-18 21:46:51,944 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 03: Click to 'Continue' button
+2020-09-18 21:46:52,297 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 04: Input to 'Password' textbox
+2020-09-18 21:46:53,553 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 05: Click to 'Login' button
+2020-09-18 21:46:53,834 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Pre-condition - STEP 06: Verify Dashboard Header Displayed
+2020-09-18 21:46:56,265 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 01: click menu 'Post' Page
+2020-09-18 21:46:57,778 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 02: click to 'Add New' post button
+2020-09-18 21:47:01,444 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 03: input 'post tile' textbox
+2020-09-18 21:47:01,624 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 04:input 'post content' textbox
+2020-09-18 21:47:02,305 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 05: select category 'newPostCategory' checkbox
+2020-09-18 21:47:03,497 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 06: input 'Tag' textbox
+2020-09-18 21:47:03,697 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 07: click to 'Tag' button
+2020-09-18 21:47:04,119 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 08: click to 'SetFeatureImage' link
+2020-09-18 21:47:04,994 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 09: click to 'UploadFiles' tab 
+2020-09-18 21:47:05,921 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 10:  upload file 'Select Files' 
+2020-09-18 21:47:06,162 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 11: verify 'File Upload' displayed
+2020-09-18 21:47:12,332 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:12,332 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 12: click to 'Set FeatureImage' button
+2020-09-18 21:47:12,836 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 13: verify 'Image thumnail' displayed
+2020-09-18 21:47:13,450 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:13,451 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 14: click to 'Publish' button
+2020-09-18 21:47:13,545 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 15: verify success message'Post published' displayed 
+2020-09-18 21:47:21,045 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:21,045 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 16: click to menu 'Post' page 
+2020-09-18 21:47:22,728 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 16: input to 'Search Post' textbox
+2020-09-18 21:47:22,835 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 17: click to 'Search Post' button
+2020-09-18 21:47:24,220 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 18: verify only one row 'Post' displayed 
+2020-09-18 21:47:24,318 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:24,318 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 19: open user Page
+2020-09-18 21:47:27,519 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 20: verify 'latest Post' displayed
+2020-09-18 21:47:27,592 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:27,592 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 21: verify image 'latest post' at title displayed
+2020-09-18 21:47:27,687 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:27,687 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 22: click to 'Title' post 
+2020-09-18 21:47:27,736 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 23: verify detail 'Title' name displayed
+2020-09-18 21:47:28,551 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:28,551 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 24: verify detail 'Category' name displayed
+2020-09-18 21:47:28,664 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:28,664 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 25: verify detail 'Image' name displayed
+2020-09-18 21:47:29,404 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:29,404 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 26: verify detail 'Content' displayed
+2020-09-18 21:47:29,597 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:29,597 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 27: verify detail 'Tag' displayed
+2020-09-18 21:47:29,674 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:29,674 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 28: verify detail 'Date created' displayed
+2020-09-18 21:47:29,733 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:29,733 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 29: verify detail 'Author' displayed
+2020-09-18 21:47:29,794 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:29,794 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 30: input 'Search' textbox and click to 'Search' button
+2020-09-18 21:47:33,030 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 31: verify 'Post Title' on header displayed
+2020-09-18 21:47:33,092 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:33,092 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 32: verify 'post' displayed
+2020-09-18 21:47:33,151 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:33,151 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_01_Create_New_Post_At_Admin_Page- STEP 33: verify 'Image Post' displayed
+2020-09-18 21:47:33,312 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:33,327 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 01: open Admin Post Page
+2020-09-18 21:47:34,411 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 02: click to menu'Posts' Page
+2020-09-18 21:47:35,535 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 03: input to 'Search Posts' textbox
+2020-09-18 21:47:35,632 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 04: click to 'Search Posts' button
+2020-09-18 21:47:36,834 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 05: verify only one row 'Post' displayed
+2020-09-18 21:47:36,930 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:36,930 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 06: click to 'Title Name' post 
+2020-09-18 21:47:38,948 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 07: input to 'Title' edit textbox
+2020-09-18 21:47:39,228 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 08: input to 'Content' edit textbox
+2020-09-18 21:47:39,457 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 09: deselect 'newCategory' checkbox
+2020-09-18 21:47:40,543 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 10: select 'editCategory' checkbox 
+2020-09-18 21:47:41,741 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 11: input to 'Tag' textbox
+2020-09-18 21:47:41,826 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 12: click to 'Tag' button
+2020-09-18 21:47:42,132 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 13: click to 'Delete Tag' button
+2020-09-18 21:47:42,429 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 14: click to 'Update' button
+2020-09-18 21:47:42,505 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 15: verify success message'Post updated' displayed
+2020-09-18 21:47:48,235 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:48,235 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 16: open url 'User' Post Page
+2020-09-18 21:47:51,278 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 17: verify 'Latest Post' displayed
+2020-09-18 21:47:51,342 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:51,342 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 18: verify 'Image Post' displayed
+2020-09-18 21:47:51,409 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:51,409 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 19: click to 'Title Name'post 
+2020-09-18 21:47:51,453 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 20: verify 'Title new_Post' on detail undisplayed 
+2020-09-18 21:47:56,480 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:56,481 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 21: verify 'Title edit_Post' on detail displayed
+2020-09-18 21:47:56,545 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:47:56,545 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 22: verify 'Category new_post' on detail undisplayed 
+2020-09-18 21:48:01,572 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:01,572 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 23: verify 'Category edit_post' on detail displayed
+2020-09-18 21:48:01,633 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:01,634 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 24: verify 'Tag new_post' on detail undisplayed
+2020-09-18 21:48:06,650 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:06,650 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 25: verify 'Tag edit_post' on detail displayed
+2020-09-18 21:48:06,765 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:06,765 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 26: verify 'Image Post' on detail displayed
+2020-09-18 21:48:06,901 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:06,901 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 27: verify 'Content edit_post' on detail displayed
+2020-09-18 21:48:07,043 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:07,043 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 28: verify 'date created' on detail displayed
+2020-09-18 21:48:07,110 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:07,110 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 29: verify 'Author' on detail displayed
+2020-09-18 21:48:07,171 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:07,171 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 30: input to 'Search' textbox and click to 'Search' button
+2020-09-18 21:48:10,399 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 31: verify 'Post Title' on header displayed
+2020-09-18 21:48:10,462 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:10,462 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 32: verify 'edit_post' displayed
+2020-09-18 21:48:10,533 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:10,534 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_02_Edit_Post_At_Admin_Page- STEP 33: verify 'Image Post' displayed
+2020-09-18 21:48:10,613 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:10,616 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 01: open url 'Admin' Page
+2020-09-18 21:48:11,547 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 02: click to menu'Posts' Page
+2020-09-18 21:48:12,725 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 03: input to 'Search Posts' textbox
+2020-09-18 21:48:12,814 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 04:  click to 'Search Posts' button
+2020-09-18 21:48:14,116 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 05: verify only one row 'Post' displayed
+2020-09-18 21:48:14,482 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:14,482 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 06:  click to 'Title Name' post
+2020-09-18 21:48:16,361 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 07: click to 'Move to Trash' button
+2020-09-18 21:48:20,982 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 08: verify messages success 'Move to Trash' displayed
+2020-09-18 21:48:21,123 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:21,123 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 09: input to 'Search Posts' textbox
+2020-09-18 21:48:21,220 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 10: click to 'Search Posts' button
+2020-09-18 21:48:22,533 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 11: verify post deleted Undisplayed
+2020-09-18 21:48:27,547 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:27,547 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 12: verify Message 'No Post Found' displayed
+2020-09-18 21:48:27,650 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:27,651 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 13: open url 'User' Page
+2020-09-18 21:48:30,433 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 14: verify 'Post' on latest post undisplayed
+2020-09-18 21:48:35,447 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:35,447 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 15: verify 'image_Post' on latest post undisplayed
+2020-09-18 21:48:40,469 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:40,470 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 16: input to 'Search' textbox and click to 'Search' button
+2020-09-18 21:48:43,648 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 17: verify 'Post Title' on header displayed
+2020-09-18 21:48:43,701 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:43,702 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 18: verify message post no found displayed
+2020-09-18 21:48:43,765 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:43,765 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 19:verify 'post' undisplayed 
+2020-09-18 21:48:48,776 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:48,777 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post_03_Delete_Post_At_Admin_Page - STEP 20: verify 'Image_Post' undisplayed
+2020-09-18 21:48:53,798 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete -  -------------------------- PASSED -------------------------- 
+2020-09-18 21:48:53,801 INFO  com.wordpress.post.Post_01_Create_View_Edit_Delete - Post condition - Close browser 

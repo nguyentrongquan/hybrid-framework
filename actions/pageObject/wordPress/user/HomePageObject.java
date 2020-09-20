@@ -3,7 +3,7 @@ package pageObject.wordPress.user;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
-import commons.PageGeneratorManager;
+import commons.PageGeneratorWordPressManager;
 import pageUIs.wordPress.admin.DashboardPageUI;
 import pageUIs.wordPress.admin.NewEditPostPageUI;
 import pageUIs.wordPress.user.HomePageUI;
@@ -20,7 +20,7 @@ public class HomePageObject extends AbstractPage {
 	public PostDetailPageObject clickToDetailWithTitleName(String titleValue) {
 		waitElementVisible(driver, HomePageUI.TITLE_POST_DETAIL_LINK,titleValue) ;
 		clickToElementByJS(driver, HomePageUI.TITLE_POST_DETAIL_LINK, titleValue);
-		return PageGeneratorManager.getDetailPostUserPage(driver);
+		return PageGeneratorWordPressManager.getDetailPostUserPage(driver);
 		
 	}
 

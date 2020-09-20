@@ -10,7 +10,7 @@ import pageObjects.wordPress.admin.LoginPageObject;
 import pageObjects.wordPress.admin.NewEditPostPageObject;
 import pageObjects.wordPress.admin.PostPageObject;
 
-public class PageGeneratorManager {
+public class PageGeneratorWordPressManager {
 	public static LoginPageObject getLoginAdminPage(WebDriver driver) {
 		return new LoginPageObject(driver);
 		

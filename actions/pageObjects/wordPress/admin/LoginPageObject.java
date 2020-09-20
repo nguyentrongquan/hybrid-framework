@@ -3,7 +3,7 @@ package pageObjects.wordPress.admin;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
-import commons.PageGeneratorManager;
+import commons.PageGeneratorWordPressManager;
 import pageUIs.wordPress.admin.LoginPageUI;
 
 public class LoginPageObject extends AbstractPage {
@@ -40,7 +40,7 @@ public class LoginPageObject extends AbstractPage {
 	public DashboardPageObject clickToLoginButton(WebDriver driver) {
 		waitElementClickable(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver,LoginPageUI.LOGIN_BUTTON);
-		return PageGeneratorManager.getDashboardAdminPage(driver);
+		return PageGeneratorWordPressManager.getDashboardAdminPage(driver);
 	}
 
 }

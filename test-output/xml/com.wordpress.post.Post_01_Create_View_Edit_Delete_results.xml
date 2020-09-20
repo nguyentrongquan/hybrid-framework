@@ -4,12 +4,12 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="104.916">
+           time="117.533">
   <properties />
   
   
-            <testcase name="TC_Post_02_Edit_Post_At_Admin_Page" time="34.943" classname="com.wordpress.post.Post_01_Create_View_Edit_Delete" />
-                <testcase name="TC_Post_03_Delete_Post_At_Admin_Page" time="40.514" classname="com.wordpress.post.Post_01_Create_View_Edit_Delete" />
-                <testcase name="TC_Post_01_Create_New_Post_At_Admin_Page" time="29.459" classname="com.wordpress.post.Post_01_Create_View_Edit_Delete" />
+            <testcase name="Post_02_Edit_Post_At_Admin_Page" time="37.289" classname="com.wordpress.post.Post_01_Create_View_Edit_Delete" />
+                <testcase name="Post_03_Delete_Post_At_Admin_Page" time="43.184" classname="com.wordpress.post.Post_01_Create_View_Edit_Delete" />
+                <testcase name="Post_01_Create_New_Post_At_Admin_Page" time="37.060" classname="com.wordpress.post.Post_01_Create_View_Edit_Delete" />
       
 </testsuite>

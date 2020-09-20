@@ -3,7 +3,7 @@ package pageObjects.wordPress.admin;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
-import commons.PageGeneratorManager;
+import commons.PageGeneratorWordPressManager;
 import pageUIs.wordPress.admin.DashboardPageUI;
 
 public class DashboardPageObject extends AbstractPage {

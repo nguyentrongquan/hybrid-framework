@@ -3,7 +3,7 @@ package pageObjects.wordPress.admin;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
-import commons.PageGeneratorManager;
+import commons.PageGeneratorWordPressManager;
 import pageUIs.wordPress.admin.NewEditPostPageUI;
 
 public class NewEditPostPageObject extends AbstractPage {
@@ -27,7 +27,7 @@ public class NewEditPostPageObject extends AbstractPage {
 	public PostPageObject clickToMoveTrashButton() {
 		waitElementClickable(driver, NewEditPostPageUI.MOVE_TO_TRASH_BUTTON);
 		clickToElement(driver, NewEditPostPageUI.MOVE_TO_TRASH_BUTTON);
-		return PageGeneratorManager.getPostAdminPage(driver);
+		return PageGeneratorWordPressManager.getPostAdminPage(driver);
 	}
 
 	public void inputToPostTitleTextbox(String titleValue) {

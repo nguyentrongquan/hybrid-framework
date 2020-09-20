@@ -1,6 +1,10 @@
 package commons;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -18,13 +22,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.sun.java.swing.plaf.windows.resources.windows;
-
 import pageObject.wordPress.user.HomePageObject;
 import pageObject.wordPress.user.SearchResultPageObject;
 import pageObjects.wordPress.admin.DashboardPageObject;
-import pageObjects.wordPress.admin.LoginPageObject;
-import pageUIs.wordPress.user.HomePageUI;
 
 
 public abstract class AbstractPage {
@@ -683,11 +683,11 @@ public abstract class AbstractPage {
 	public HomePageObject openEndUserPage(WebDriver driver) {
 		openPageUrl(driver, GlobalConstants.USER_WORDPRESS_URL);
 		sleepInSecond(2);
-		return PageGeneratorManager.getHomeUserPage(driver);
+		return PageGeneratorWordPressManager.getHomeUserPage(driver);
 	}
 	public DashboardPageObject openAdminPage(WebDriver driver) {
 		openPageUrl(driver, GlobalConstants.ADMIN_WORDPRESS_URL);
-		return PageGeneratorManager.getDashboardAdminPage(driver);
+		return PageGeneratorWordPressManager.getDashboardAdminPage(driver);
 		
 	}
 	public SearchResultPageObject inputToSearchTexboxAtEndUserPage(WebDriver driver, String titleValue) {
@@ -699,7 +699,7 @@ public abstract class AbstractPage {
 		waitElementClickable(driver, AbstractWordPressPageUIs.SEARCH_POST_BUTTON);
 		clickToElement(driver, AbstractWordPressPageUIs.SEARCH_POST_BUTTON);
 		sleepInSecond(2);
-		return PageGeneratorManager.getSearchRultUserPage(driver);
+		return PageGeneratorWordPressManager.getSearchRultUserPage(driver);
 	}
 	public boolean isPostImageDisplayedAtPostTitleName(WebDriver driver,String titleValue,String imageValue) {
 		imageValue= imageValue.split("\\.")[0].toLowerCase();
@@ -719,6 +719,159 @@ public abstract class AbstractPage {
 	public boolean isPostUnDisplayedOnLatestPost(WebDriver driver,String titleValue,String categoryValue,String dateValue) {
 		return isElementUndisplayed(driver, AbstractWordPressPageUIs.LATEST_POST,titleValue,categoryValue,dateValue);
 	}
+	public boolean isNameSortAscending(WebDriver driver, String xpathValue) {
+		ArrayList<String> arrayList = new ArrayList<>();
+		List<WebElement> elementList = finds(driver,xpathValue);
+		
+		for(WebElement element : elementList) {
+			arrayList.add(element.getText());
+		}
+		System.out.println("-------- Dữ liệu trên UI:---------");
+		for(String name: arrayList) {
+			System.out.println(name);
+		}
+		ArrayList<String> sortedList = new ArrayList<>();
+		for(String child: arrayList) {
+			sortedList.add(child);
+		}
+		//thuc hien sort asc
+		Collections.sort(arrayList);
+		System.out.println("---------Dữ liệu đã SORT ASC:--------");
+		for(String name:arrayList) {
+			System.out.println(name);
+		}
+		return sortedList.equals(arrayList);
+		
+	}
+	public boolean isNameSortDecending(WebDriver driver, String xpathValue) {
+		ArrayList<String> arrayList = new ArrayList<>();
+		List<WebElement> elementList = finds(driver,xpathValue);
+		
+		for(WebElement element : elementList) {
+			arrayList.add(element.getText());
+		}
+		System.out.println("-------- Dữ liệu trên UI:---------");
+		for(String name: arrayList) {
+			System.out.println(name);
+		}
+		ArrayList<String> sortedList = new ArrayList<>();
+		for(String child: arrayList) {
+			sortedList.add(child);
+		}
+		//thuc hien sort asc
+		Collections.sort(arrayList);
+		System.out.println("---------Dữ liệu đã SORT ASC:--------");
+		for(String name:arrayList) {
+			System.out.println(name);
+		}
+		//rever data de sort des
+		Collections.reverse(arrayList);
+		System.out.println("---------Dữ liệu đã SORT DES:--------");
+		for(String name:arrayList) {
+			System.out.println(name);
+		}
+		return sortedList.equals(arrayList);
+	}
+	public boolean isPriceSortAscending(WebDriver driver, String xpathValue) {
+		ArrayList<Float> arrayList = new ArrayList<Float>();
+		List<WebElement> elementList = finds(driver,xpathValue);
+		
+		for(WebElement element : elementList) {
+			arrayList.add(Float.parseFloat(element.getText().replace("$","").trim()));
+		}
+		System.out.println("-------- Dữ liệu trên UI:---------");
+		for(Float name: arrayList) {
+			System.out.println(name);
+		}
+		//coppy qua new arrylist
+		ArrayList<Float> sortedList = new ArrayList<Float>();
+		for(Float child: arrayList) {
+			sortedList.add(child);
+		}
+		//thuc hien sort asc
+		Collections.sort(arrayList);
+		System.out.println("---------Dữ liệu đã SORT ASC:--------");
+		for(Float name:arrayList) {
+			System.out.println(name);
+		}
+		
+		return sortedList.equals(arrayList);
+	}
+	public boolean isPriceSortDecending(WebDriver driver, String xpathValue) {
+		ArrayList<Float> arrayList = new ArrayList<Float>();
+		List<WebElement> elementList = finds(driver,xpathValue);
+		
+		for(WebElement element : elementList) {
+			arrayList.add(Float.parseFloat(element.getText().replace("$","").trim()));
+		}
+		System.out.println("-------- Dữ liệu trên UI:---------");
+		for(Float name: arrayList) {
+			System.out.println(name);
+		}
+		//coppy qua new arrylist
+		ArrayList<Float> sortedList = new ArrayList<Float>();
+		for(Float child: arrayList) {
+			sortedList.add(child);
+		}
+		//thuc hien sort asc
+		Collections.sort(arrayList);
+		System.out.println("---------Dữ liệu đã SORT ASC:--------");
+		for(Float name:arrayList) {
+			System.out.println(name);
+		}
+		//rever data de sort des
+		Collections.reverse(arrayList);
+		System.out.println("---------Dữ liệu đã SORT DES:--------");
+		for(Float name:arrayList) {
+			System.out.println(name);
+		}
+		return sortedList.equals(arrayList);
+	}
+	public boolean isDateSortAscending(WebDriver driver, String xpathValue) {
+		ArrayList<Date> arrayList = new ArrayList<Date>();
+		List<WebElement> elementList = finds(driver,xpathValue);
+		
+		for(WebElement element : elementList) {
+			arrayList.add(convertStringToDate(element.getText()));
+		}
+		System.out.println("-------- Dữ liệu trên UI:---------");
+		for(Date name: arrayList) {
+			System.out.println(name);
+		}
+		ArrayList<Date> sortedList = new ArrayList<Date>();
+		for(Date child: arrayList) {
+			sortedList.add(child);
+		}
+		//thuc hien sort asc
+		Collections.sort(arrayList);
+		System.out.println("---------Dữ liệu đã SORT ASC:--------");
+		for(Date name:arrayList) {
+			System.out.println(name);
+		}
+		return sortedList.equals(arrayList);
+		
+	}
+	public Date convertStringToDate(String dateInString) {
+		dateInString = dateInString.replace(",", "");
+		SimpleDateFormat formatter = new SimpleDateFormat("MMM dd yyyy");
+		Date date = null;
+		try {
+			date = formatter.parse(dateInString);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return date;
+	}
+	/*Dynamic Nopcommerce page*/
+	public void openMenuHeaderPageByPageName(WebDriver driver, String pageName) {
+		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_HEADER_PAGE_BY_PAGE_NAME, pageName);
+		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_HEADER_PAGE_BY_PAGE_NAME, pageName);
+	}
+	
+	
+	/*Dynamic Nopcommerce page*/
+	
+	
 
 	private Actions action;
 	private WebDriverWait explicitWait;

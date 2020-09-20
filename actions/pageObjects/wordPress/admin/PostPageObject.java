@@ -3,7 +3,7 @@ package pageObjects.wordPress.admin;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
-import commons.PageGeneratorManager;
+import commons.PageGeneratorWordPressManager;
 import pageUIs.wordPress.admin.NewEditPostPageUI;
 import pageUIs.wordPress.admin.PostPageUI;
 
@@ -19,7 +19,7 @@ public class PostPageObject extends AbstractPage {
 	public NewEditPostPageObject clickToAddNewButton() {
 		waitElementVisible(driver, PostPageUI.ADD_NEW_POST_BUTTON);
 		clickToElement(driver, PostPageUI.ADD_NEW_POST_BUTTON);
-		return PageGeneratorManager.getNewEditPostAdminPage(driver);
+		return PageGeneratorWordPressManager.getNewEditPostAdminPage(driver);
 	}
 
 
@@ -45,7 +45,7 @@ public class PostPageObject extends AbstractPage {
 	public NewEditPostPageObject clickToPostWithTitleName(String editPostTitle) {
 		waitElementClickable(driver, PostPageUI.EDIT_POST_BY_TITLE_NAME, editPostTitle);
 		clickToElement(driver, PostPageUI.EDIT_POST_BY_TITLE_NAME, editPostTitle);
-		return PageGeneratorManager.getNewEditPostAdminPage(driver);
+		return PageGeneratorWordPressManager.getNewEditPostAdminPage(driver);
 	}
 
 

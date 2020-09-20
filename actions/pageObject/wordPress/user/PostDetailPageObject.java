@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
 import commons.AbstractWordPressPageUIs;
-import commons.PageGeneratorManager;
+import commons.PageGeneratorWordPressManager;
 import pageUIs.wordPress.user.PostDetailPageUI;
 
 public class PostDetailPageObject extends AbstractPage {

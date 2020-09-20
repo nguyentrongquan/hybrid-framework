@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.wordpress.post.Post_01_Create_View_Edit_Delete">
+      <class name="com.nopcommerce.user.User_03_MyAccount">
         <methods>
+          <include name="MyAccount_01_Customer_Info"/>
           <include name="beforeClass"/>
-          <include name="TC_Post_01_Create_New_Post_At_Admin_Page"/>
           <include name="afterClass"/>
         </methods>
-      </class> <!-- com.wordpress.post.Post_01_Create_View_Edit_Delete -->
+      </class> <!-- com.nopcommerce.user.User_03_MyAccount -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
