@@ -31,7 +31,6 @@ public class PostDetailPageObject extends AbstractPage {
 	public boolean isPostDetailImageNameDisplayed(String imageName) {
 		imageName= imageName.split("\\.")[0].toLowerCase();
 		waitElementVisible(driver,PostDetailPageUI.DETAIL_POST_IMAGE,imageName);
-		waitForJStoLoad(driver);
 		return isElementDisplayed(driver,PostDetailPageUI.DETAIL_POST_IMAGE,imageName)
 				&& isImageLoaded(driver,PostDetailPageUI.DETAIL_POST_IMAGE,imageName);
 		

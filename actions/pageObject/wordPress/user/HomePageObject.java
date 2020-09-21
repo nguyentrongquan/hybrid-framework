@@ -20,6 +20,7 @@ public class HomePageObject extends AbstractPage {
 	public PostDetailPageObject clickToDetailWithTitleName(String titleValue) {
 		waitElementVisible(driver, HomePageUI.TITLE_POST_DETAIL_LINK,titleValue) ;
 		clickToElementByJS(driver, HomePageUI.TITLE_POST_DETAIL_LINK, titleValue);
+		sleepInSecond(2);
 		return PageGeneratorWordPressManager.getDetailPostUserPage(driver);
 		
 	}

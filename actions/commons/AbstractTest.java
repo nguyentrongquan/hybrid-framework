@@ -7,12 +7,12 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -21,25 +21,39 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public abstract class AbstractTest {
 	protected final Log log;
+
 	protected AbstractTest() {
 		log = LogFactory.getLog(getClass());
 	}
+
 	protected static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<WebDriver>();
+
 	protected WebDriver getBrowserDriver(String browserName) {
 		Browser browser = Browser.valueOf(browserName.toUpperCase());
-		if(browser == Browser.FIREFOX) {
+		if (browser == Browser.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			setDriver(new FirefoxDriver());
-		}else if(browser == Browser.CHROME) {
+		} else if (browser == Browser.FIREFOX_HEADLESS) {
+			WebDriverManager.firefoxdriver().setup();
+			FirefoxOptions firefoxOptions = new FirefoxOptions();
+			firefoxOptions.setHeadless(true);
+			setDriver(new FirefoxDriver());
+		} else if (browser == Browser.CHROME) {
 			WebDriverManager.chromedriver().setup();
 			setDriver(new ChromeDriver());
-		}else if(browser == Browser.EDGE) {
+		} else if (browser == Browser.CHROME_HEADLESS) {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("headless");
+			options.addArguments("window-size=1920x1080");
+			setDriver(new ChromeDriver());
+		} else if (browser == Browser.EDGE) {
 			WebDriverManager.edgedriver().setup();
 			setDriver(new EdgeDriver());
-		} else if(browser == Browser.IE) {
+		} else if (browser == Browser.IE) {
 			WebDriverManager.iedriver().arch32().setup();
 			setDriver(new InternetExplorerDriver());
-		}else if(browser == Browser.COCCOC) {
+		} else if (browser == Browser.COCCOC) {
 			WebDriverManager.chromedriver().driverVersion("81.0.4044.138").setup();
 			ChromeOptions options = new ChromeOptions();
 			options.setBinary("C:\\Users\\Admin\\AppData\\Local\\CocCoc\\Browser\\Application\\browser.exe");
@@ -52,22 +66,33 @@ public abstract class AbstractTest {
 		getDriver().manage().window().maximize();
 		return getDriver();
 	}
-	
+
 	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
 		Browser browser = Browser.valueOf(browserName.toUpperCase());
-		if(browser == Browser.FIREFOX) {
+		if (browser == Browser.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			setDriver(new FirefoxDriver());
-		}else if(browser == Browser.CHROME) {
+		}else if (browser == Browser.FIREFOX_HEADLESS) {
+			WebDriverManager.firefoxdriver().setup();
+			FirefoxOptions firefoxOptions = new FirefoxOptions();
+			firefoxOptions.setHeadless(true);
+			setDriver(new FirefoxDriver(firefoxOptions));
+		} else if (browser == Browser.CHROME) {
 			WebDriverManager.chromedriver().setup();
 			setDriver(new ChromeDriver());
-		}else if(browser == Browser.EDGE) {
+		} else if (browser == Browser.CHROME_HEADLESS) {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("headless");
+			options.addArguments("window-size=1920x1080");
+			setDriver(new ChromeDriver(options));
+		} else if (browser == Browser.EDGE) {
 			WebDriverManager.edgedriver().setup();
 			setDriver(new EdgeDriver());
-		} else if(browser == Browser.IE) {
+		} else if (browser == Browser.IE) {
 			WebDriverManager.iedriver().arch32().setup();
 			setDriver(new InternetExplorerDriver());
-		}else if(browser == Browser.COCCOC) {
+		} else if (browser == Browser.COCCOC) {
 			WebDriverManager.chromedriver().driverVersion("83.0.4103.39").setup();
 			ChromeOptions options = new ChromeOptions();
 			options.setBinary("C:\\Users\\Admin\\AppData\\Local\\CocCoc\\Browser\\Application\\browser.exe");
@@ -80,26 +105,30 @@ public abstract class AbstractTest {
 		getDriver().manage().window().maximize();
 		return getDriver();
 	}
+
 	private void setDriver(WebDriver driver) {
 		threadLocalDriver.set(driver);
 	}
-	
+
 	private WebDriver getDriver() {
 		return threadLocalDriver.get();
 	}
+
 	protected void removeDriver() {
 		getDriver().quit();
 		threadLocalDriver.remove();
 	}
+
 	public static Date getDateTimeNow() {
 		Date date = new Date();
 		return date;
 	}
-	
+
 	public int randomEmail() {
-		Random rand= new Random();
+		Random rand = new Random();
 		return rand.nextInt(999);
 	}
+
 	private boolean checkTrue(boolean condition) {
 		boolean pass = true;
 		try {
@@ -118,6 +147,7 @@ public abstract class AbstractTest {
 		}
 		return pass;
 	}
+
 	protected String getCurrentDay() {
 		DateTime nowUTC = new DateTime();
 		int day = nowUTC.getDayOfMonth();
@@ -135,7 +165,7 @@ public abstract class AbstractTest {
 			String monthValue = "0" + month;
 			return monthValue;
 		}
-		return  String.valueOf(month);
+		return String.valueOf(month);
 	}
 
 	protected String getCurrentYear() {
@@ -144,7 +174,7 @@ public abstract class AbstractTest {
 	}
 
 	protected String getToday() {
-		return getCurrentDay()+"/"+ getCurrentMonth() + "/" + getCurrentYear();
+		return getCurrentDay() + "/" + getCurrentMonth() + "/" + getCurrentYear();
 	}
 
 	protected boolean verifyTrue(boolean condition) {
@@ -189,6 +219,7 @@ public abstract class AbstractTest {
 	protected boolean verifyEquals(Object actual, Object expected) {
 		return checkEquals(actual, expected);
 	}
+
 	protected void closeBrowserAndDriver(WebDriver driver) {
 		try {
 			String osName = System.getProperty("os.name").toLowerCase();
