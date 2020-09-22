@@ -1,19 +1,18 @@
 package com.nopcommerce.user;
 
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.AbstractTest;
 import commons.PageGeneratorNopcommerceManager;
+import pageObject.nopcommerce.user.CustomerInfoPageObject;
+import pageObject.nopcommerce.user.HomePageObject;
 import pageObject.nopcommerce.user.LoginPageObject;
 import pageObject.nopcommerce.user.MyAccountPageObject;
 import pageObject.nopcommerce.user.RegisterPageObject;
-import pageObject.wordPress.user.HomePageObject;
-
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 
 public class User_03_MyAccount extends AbstractTest {
 	WebDriver driver;
@@ -21,6 +20,7 @@ public class User_03_MyAccount extends AbstractTest {
 	RegisterPageObject registerPage;
 	LoginPageObject loginPage;
 	MyAccountPageObject myAccountPage;
+	CustomerInfoPageObject customerInfoPage;
 	String firstName="Auto";
 	String lastName="Fc";
 	String email="automationfc12.vn@gmail.com";
@@ -51,28 +51,28 @@ public class User_03_MyAccount extends AbstractTest {
 		verifyTrue(registerPage.isMessageRegisterSuccessDisplayed());
 
 		registerPage.openMenuHeaderPageByPageName(driver, "My account");
-		myAccountPage = PageGeneratorNopcommerceManager.getMyAccountPage(driver);
+		customerInfoPage = PageGeneratorNopcommerceManager.getCustomerInfoPage(driver);
 	}
 
 	@Test
 	public void MyAccount_01_Customer_Info() {
-		myAccountPage.clickToFemaleRadioButon();
-		myAccountPage.inputToFirstNameTextbox(editFirstName);
-		myAccountPage.inputToLastNameTextbox(editLastName);
-		myAccountPage.selectToDateOfBirthDayDropdown(dateOfBirthDay);
-		myAccountPage.selectToDateOfBirthMonthDropdown(dateOfBirthMonth);
-		myAccountPage.selectToDateOfBirthYearDropdown(dateOfBirthYear);
-		myAccountPage.inputToEmailTextbox(editEmail);
-		myAccountPage.inputToCompanyTextbox(company);
-		myAccountPage.clickToSaveButton();
-		verifyTrue(myAccountPage.isFemaleRadioButtonSelected());
-		verifyEquals(myAccountPage.getFirstNameUpdateText("value"),editFirstName);
-		verifyEquals(myAccountPage.getLastNameUpdateText("value"),editLastName);
-		verifyEquals(myAccountPage.getDateOfBirthDayUpdateDropdown(),dateOfBirthDay);
-		verifyEquals(myAccountPage.getDateOfBirthMonthUpdateDropdown(),dateOfBirthMonth);
-		verifyEquals(myAccountPage.getDateOfBirthYearUpdateDropdown(),dateOfBirthYear);
-		verifyEquals(myAccountPage.getEmailUpdateText("value"),editEmail);
-		verifyEquals(myAccountPage.getCompanyNameUpdateText("value"),company);
+		customerInfoPage.clickToFemaleRadioButon();
+		customerInfoPage.inputToFirstNameTextbox(editFirstName);
+		customerInfoPage.inputToLastNameTextbox(editLastName);
+		customerInfoPage.selectToDateOfBirthDayDropdown(dateOfBirthDay);
+		customerInfoPage.selectToDateOfBirthMonthDropdown(dateOfBirthMonth);
+		customerInfoPage.selectToDateOfBirthYearDropdown(dateOfBirthYear);
+		customerInfoPage.inputToEmailTextbox(editEmail);
+		customerInfoPage.inputToCompanyTextbox(company);
+		customerInfoPage.clickToSaveButton();
+		verifyTrue(customerInfoPage.isFemaleRadioButtonSelected());
+		verifyEquals(customerInfoPage.getFirstNameUpdateText("value"),editFirstName);
+		verifyEquals(customerInfoPage.getLastNameUpdateText("value"),editLastName);
+		verifyEquals(customerInfoPage.getDateOfBirthDayUpdateDropdown(),dateOfBirthDay);
+		verifyEquals(customerInfoPage.getDateOfBirthMonthUpdateDropdown(),dateOfBirthMonth);
+		verifyEquals(customerInfoPage.getDateOfBirthYearUpdateDropdown(),dateOfBirthYear);
+		verifyEquals(customerInfoPage.getEmailUpdateText("value"),editEmail);
+		verifyEquals(customerInfoPage.getCompanyNameUpdateText("value"),company);
 	}
 	@Test
 	public void MyAccount_02_Address() {

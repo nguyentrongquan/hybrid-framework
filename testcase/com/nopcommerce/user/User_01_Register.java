@@ -4,9 +4,8 @@ import org.testng.annotations.Test;
 
 import commons.AbstractTest;
 import commons.PageGeneratorNopcommerceManager;
+import pageObject.nopcommerce.user.HomePageObject;
 import pageObject.nopcommerce.user.RegisterPageObject;
-import pageObject.wordPress.user.HomePageObject;
-
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;

@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
 import commons.PageGeneratorWordPressManager;
-import pageUIs.wordPress.admin.DashboardPageUI;
-import pageUIs.wordPress.admin.NewEditPostPageUI;
 import pageUIs.wordPress.user.HomePageUI;
 
 public class HomePageObject extends AbstractPage {
@@ -25,6 +23,8 @@ public class HomePageObject extends AbstractPage {
 		
 	}
 
+
+	
 
 	
 

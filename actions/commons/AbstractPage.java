@@ -345,6 +345,11 @@ public abstract class AbstractPage {
 	public void hoverToElement(WebDriver driver, String xpathValue) {
 		action = new Actions(driver);
 		action.moveToElement(find(driver, xpathValue)).perform();
+		
+	}
+	public void hoverToElement(WebDriver driver, String xpathValue, String... values) {
+		action = new Actions(driver);
+		action.moveToElement(find(driver, castToObject(xpathValue, values))).perform();
 
 	}
 
@@ -777,7 +782,7 @@ public abstract class AbstractPage {
 		List<WebElement> elementList = finds(driver,xpathValue);
 		
 		for(WebElement element : elementList) {
-			arrayList.add(Float.parseFloat(element.getText().replace("$","").trim()));
+			arrayList.add(Float.parseFloat(element.getText().replace("$","").replace(",", "").trim()));
 		}
 		System.out.println("-------- Dữ liệu trên UI:---------");
 		for(Float name: arrayList) {
@@ -802,7 +807,7 @@ public abstract class AbstractPage {
 		List<WebElement> elementList = finds(driver,xpathValue);
 		
 		for(WebElement element : elementList) {
-			arrayList.add(Float.parseFloat(element.getText().replace("$","").trim()));
+			arrayList.add(Float.parseFloat(element.getText().replace("$","").replace(",", "").trim()));
 		}
 		System.out.println("-------- Dữ liệu trên UI:---------");
 		for(Float name: arrayList) {
@@ -866,6 +871,10 @@ public abstract class AbstractPage {
 	public void openMenuHeaderPageByPageName(WebDriver driver, String pageName) {
 		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_HEADER_PAGE_BY_PAGE_NAME, pageName);
 		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_HEADER_PAGE_BY_PAGE_NAME, pageName);
+	}
+	public void openPageMenuHeaderByPageName(WebDriver driver, String pageName) {
+		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_MENU_HEADER_PAGE_BY_PAGE_NAME, pageName);
+		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_HEADER_PAGE_BY_PAGE_NAME, pageName);
 	}
 	
 	
