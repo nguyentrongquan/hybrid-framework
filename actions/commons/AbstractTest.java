@@ -226,6 +226,7 @@ public abstract class AbstractTest {
 
 			String cmd = "";
 			if (driver != null) {
+				driver.manage().deleteAllCookies();
 				driver.quit();
 			}
 

@@ -137,13 +137,24 @@ public abstract class AbstractPage {
 	public By byXpath(String xpathValue) {
 		return By.xpath(xpathValue);
 	}
-
 	public void clickToElement(WebDriver driver, String xpathValue) {
-		find(driver, xpathValue).click();
+		if(driver.toString().contains("internet explorer")) {
+			clickToElementByJS(driver, xpathValue);
+			sleepInSecond(3);
+		}else {
+			find(driver, xpathValue).click();
+		}
+		
 	}
 
 	public void clickToElement(WebDriver driver, String xpathValue, String... values) {
-		find(driver, castToObject(xpathValue, values)).click();
+		if(driver.toString().contains("internet explorer")) {
+			clickToElementByJS(driver, xpathValue);
+			sleepInSecond(3);
+		}else {
+			find(driver, castToObject(xpathValue, values)).click();
+		}
+		
 		
 	}
 
