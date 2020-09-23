@@ -661,41 +661,7 @@ public abstract class AbstractPage {
 		clickToElement(driver, AbstractWordPressPageUIs.DYNAMIC_PAGE_BY_PAGE_NAME, pageName);
 	}
 
-	/* Bank Guru  Dynamic Page Component */
-	
-//	public void inputToDynamicTextbox(WebDriver driver, String nameAttributeValue, String inputValue) {
-//		waitElementVisible(driver, AbstractBankPageUI.DYNAMIC_TEXTBOX, nameAttributeValue);
-//		if(nameAttributeValue.equals("dob")) {
-//			removeAttributeInDOM(driver, AbstractBankPageUI.DYNAMIC_TEXTBOX, "type", nameAttributeValue);
-//		}
-//		sendkeyToElement(driver, AbstractBankPageUI.DYNAMIC_TEXTBOX, inputValue, nameAttributeValue);
-//		
-//	}
-//	public void inputToDynamicTextarea(WebDriver driver, String nameAttributeValue, String inputValue) {
-//		waitElementVisible(driver, AbstractBankPageUI.DYNAMIC_TEXTAREA, nameAttributeValue);
-//		sendkeyToElement(driver, AbstractBankPageUI.DYNAMIC_TEXTAREA, inputValue, nameAttributeValue);	
-//	}
-//	public void clickToDynamicRadioButton(WebDriver driver, String radioButtonValue) {
-//		waitElementClickable(driver, AbstractBankPageUI.DYNAMIC_RADIO_BUTTON, radioButtonValue);
-//		clickToElement(driver, AbstractBankPageUI.DYNAMIC_RADIO_BUTTON, radioButtonValue);
-//	}
-//	public void clickToDynamicButton(WebDriver driver, String buttonValue) {
-//		waitElementClickable(driver, AbstractBankPageUI.DYNAMIC_BUTTON, buttonValue);
-//		clickToElement(driver, AbstractBankPageUI.DYNAMIC_BUTTON, buttonValue);
-//	}
-//	public void clickToDynamicLink(WebDriver driver, String linkPageName) {
-//		waitElementClickable(driver, AbstractBankPageUI.DYNAMIC_LINK, linkPageName);
-//		clickToElement(driver, AbstractBankPageUI.DYNAMIC_LINK, linkPageName);
-//	}
-//	public boolean isDynamicMessageDisplayed(WebDriver driver, String messageText) {
-//		waitElementVisible(driver,AbstractBankPageUI.DYNAMIC_MESSAGE,messageText);
-//		return isElementDisplayed(driver,AbstractBankPageUI.DYNAMIC_MESSAGE,messageText);
-//		
-//	}
-//	public String getDynamicValueColumnName(WebDriver driver, String columnName) {
-//		waitElementVisible(driver,AbstractBankPageUI.DYNAMIC_BY_COMLUMN_NAME, columnName);
-//		return getTextElement(driver, AbstractBankPageUI.DYNAMIC_BY_COMLUMN_NAME, columnName);
-//	}
+
 	public HomePageObject openEndUserPage(WebDriver driver) {
 		openPageUrl(driver, GlobalConstants.USER_WORDPRESS_URL);
 		sleepInSecond(2);
@@ -878,16 +844,23 @@ public abstract class AbstractPage {
 		}
 		return date;
 	}
+	
 	/*Dynamic Nopcommerce page*/
 	public void openMenuHeaderPageByPageName(WebDriver driver, String pageName) {
 		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_HEADER_PAGE_BY_PAGE_NAME, pageName);
 		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_HEADER_PAGE_BY_PAGE_NAME, pageName);
+		sleepInSecond(1);
 	}
 	public void openPageMenuHeaderByPageName(WebDriver driver, String pageName) {
 		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_MENU_HEADER_PAGE_BY_PAGE_NAME, pageName);
 		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_HEADER_PAGE_BY_PAGE_NAME, pageName);
+		sleepInSecond(2);
 	}
+	public void inputToDynamicTextbox(WebDriver driver, String nameAttributeValue, String inputValue) {
+	waitElementVisible(driver, AbstractNopCommercePageUIs.DYNAMIC_TEXTBOX, nameAttributeValue);
+	sendkeyToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_TEXTBOX,inputValue, nameAttributeValue);
 	
+}
 	
 	/*Dynamic Nopcommerce page*/
 	

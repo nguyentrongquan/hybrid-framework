@@ -21,7 +21,7 @@
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class
-				name="com.nopcommerce.user.User_05_Sort_Display_Paging" />
+				name="com.nopcommerce.user.User_03_MyAccount" />
 		</classes>
 	</test>
 <!-- 	<test name="Run on CHROME HEADLES"> -->

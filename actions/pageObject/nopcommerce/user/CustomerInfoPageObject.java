@@ -103,6 +103,12 @@ public class CustomerInfoPageObject extends AbstractPage {
 		waitElementVisible(driver, CustomerInfoPageUI.COMPANY_TEXTBOX);
 		return getAtributeValue(driver, CustomerInfoPageUI.COMPANY_TEXTBOX,attributeName);
 	}
+
+	public AddressPageObject clickToAddressLink() {
+		waitElementClickable(driver, CustomerInfoPageUI.ADDRESS_LINK);
+		clickToElement(driver, CustomerInfoPageUI.ADDRESS_LINK);
+		return PageGeneratorNopcommerceManager.getAddressPage(driver);
+	}
 	
 
 }

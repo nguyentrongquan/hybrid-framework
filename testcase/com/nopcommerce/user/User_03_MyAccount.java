@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 import commons.AbstractTest;
 import commons.PageGeneratorNopcommerceManager;
+import pageObject.nopcommerce.user.AddressPageObject;
 import pageObject.nopcommerce.user.CustomerInfoPageObject;
 import pageObject.nopcommerce.user.HomePageObject;
 import pageObject.nopcommerce.user.LoginPageObject;
@@ -21,18 +22,24 @@ public class User_03_MyAccount extends AbstractTest {
 	LoginPageObject loginPage;
 	MyAccountPageObject myAccountPage;
 	CustomerInfoPageObject customerInfoPage;
-	String firstName="Auto";
+	AddressPageObject addressPage;
+	String firstName="Automat";
 	String lastName="Fc";
-	String email="automationfc12.vn@gmail.com";
+	String email="automation"+randomEmail()+".vn@gmail.com";
 	String company="auto FC";
 	String password="123456";
 	String confirmpassword="123456";
 	String editFirstName="Automation";
 	String editLastName = "FC";
-	String editEmail = "automationfc1231.vn@gmail.com";
+	String editEmail = "automationfc"+randomEmail()+".vn@gmail.com";
 	String dateOfBirthDay="1";
 	String dateOfBirthMonth="January";
 	String dateOfBirthYear="1999";
+	String city="Ha Noi";
+	String address1="Ha Noi";
+	String zipCode="123456";
+	String country="Viet Nam";
+	String phone="0972655111";
 	
 	
 	@Parameters({ "browser", "url" })
@@ -42,28 +49,28 @@ public class User_03_MyAccount extends AbstractTest {
 		homePage = PageGeneratorNopcommerceManager.getHomePage(driver);
 		homePage.openMenuHeaderPageByPageName(driver, "Register");
 		registerPage = PageGeneratorNopcommerceManager.getRegisterPage(driver);
-		registerPage.inputToFirstNameTextbox(firstName);
-		registerPage.inputToLastNameTextbox(lastName);
-		registerPage.inputToEmailTextbox(email);
-		registerPage.inputToPasswordTextbox(password);
+		registerPage.inputToDynamicTextbox(driver,"FirstName",firstName);
+		registerPage.inputToDynamicTextbox(driver,"LastName",lastName);
+		registerPage.inputToDynamicTextbox(driver,"Email",email);
+		registerPage.inputToDynamicTextbox(driver,"Password",password);
+		registerPage.inputToDynamicTextbox(driver,"ConfirmPassword",confirmpassword);
 		registerPage.inputToConfirmPasswordTextbox(confirmpassword);
 		registerPage.clickToRegisterButton();
 		verifyTrue(registerPage.isMessageRegisterSuccessDisplayed());
-
 		registerPage.openMenuHeaderPageByPageName(driver, "My account");
-		customerInfoPage = PageGeneratorNopcommerceManager.getCustomerInfoPage(driver);
+		customerInfoPage = PageGeneratorNopcommerceManager.getCustomerPage(driver);
 	}
 
 	@Test
 	public void MyAccount_01_Customer_Info() {
 		customerInfoPage.clickToFemaleRadioButon();
-		customerInfoPage.inputToFirstNameTextbox(editFirstName);
-		customerInfoPage.inputToLastNameTextbox(editLastName);
+		customerInfoPage.inputToDynamicTextbox(driver,"FirstName",editFirstName);
+		customerInfoPage.inputToDynamicTextbox(driver,"LastName",editLastName);
 		customerInfoPage.selectToDateOfBirthDayDropdown(dateOfBirthDay);
 		customerInfoPage.selectToDateOfBirthMonthDropdown(dateOfBirthMonth);
 		customerInfoPage.selectToDateOfBirthYearDropdown(dateOfBirthYear);
-		customerInfoPage.inputToEmailTextbox(editEmail);
-		customerInfoPage.inputToCompanyTextbox(company);
+		customerInfoPage.inputToDynamicTextbox(driver,"Email",editEmail);
+		customerInfoPage.inputToDynamicTextbox(driver,"Company",company);
 		customerInfoPage.clickToSaveButton();
 		verifyTrue(customerInfoPage.isFemaleRadioButtonSelected());
 		verifyEquals(customerInfoPage.getFirstNameUpdateText("value"),editFirstName);
@@ -76,15 +83,18 @@ public class User_03_MyAccount extends AbstractTest {
 	}
 	@Test
 	public void MyAccount_02_Address() {
-//		myAccountPage.clickToAddressPageMenu();//li[@class='customer-addresses active']//a[contains(text(),'Addresses')]
-//		myAccountPage.clickToAddNewButton();//input[@class='button-1 add-address-button']
-//		myAccountPage.inputToFirstNameTextbox();//input[@id='Address_FirstName']
-//		myAccountPage.intputToLastNameTextbox();
-//		myAccountPage.intputToLastNameTextbox();
-//		myAccountPage.intputToLastNameTextbox();
-//		myAccountPage.intputToLastNameTextbox();
-//		myAccountPage.intputToLastNameTextbox();
-//		
+		addressPage = customerInfoPage.clickToAddressLink();
+		addressPage.clickToAddNewButton();
+		addressPage.inputToDynamicTextbox(driver, "Address.FirstName", editFirstName);
+		addressPage.inputToDynamicTextbox(driver, "Address.LastName", editLastName);
+		addressPage.inputToDynamicTextbox(driver, "Address.Email", editEmail);
+		addressPage.inputToDynamicTextbox(driver, "Address.Company", company);
+		addressPage.selectItemCountryDropDown(country);
+		addressPage.inputToDynamicTextbox(driver, "Address.City", city);
+		addressPage.inputToDynamicTextbox(driver, "Address.Address1", address1);
+		addressPage.inputToDynamicTextbox(driver, "Address.ZipPostalCode", zipCode);
+		addressPage.inputToDynamicTextbox(driver, "Address.PhoneNumber", phone);
+		addressPage.clickToSaveButton();
 		
 	}
 
