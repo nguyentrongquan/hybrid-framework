@@ -25,7 +25,6 @@ public class User_02_Login extends AbstractTest {
 	public void beforeClass(String browserName, String appUrl) {
 		driver = getBrowserDriver(browserName, appUrl);
 		homePage = PageGeneratorNopcommerceManager.getHomePage(driver);
-
 	}
 
 	@BeforeMethod

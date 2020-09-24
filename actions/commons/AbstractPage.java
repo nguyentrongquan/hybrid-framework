@@ -25,6 +25,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObject.wordPress.user.HomePageObject;
 import pageObject.wordPress.user.SearchResultPageObject;
 import pageObjects.wordPress.admin.DashboardPageObject;
+import pageUIs.wordPress.user.HomePageUI;
 
 public abstract class AbstractPage {
 
@@ -851,8 +852,8 @@ public abstract class AbstractPage {
 		
 	}
 	public void openPageMenuHeaderByPageName(WebDriver driver, String pageName) {
-		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_MENU_HEADER_PAGE_BY_PAGE_NAME, pageName);
-		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_HEADER_PAGE_BY_PAGE_NAME, pageName);
+		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME, pageName);
+		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME, pageName);
 	}
 	public void inputToDynamicByValueNameTextbox(WebDriver driver, String nameAttributeValue, String inputValue) {
 	waitElementVisible(driver, AbstractNopCommercePageUIs.DYNAMIC_TEXTBOX, nameAttributeValue);
@@ -863,7 +864,15 @@ public abstract class AbstractPage {
 		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_MENU_LIST_MYACCOUNT, menuName);
 		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_LIST_MYACCOUNT, menuName);
 	}
-	
+	public void clickToDynamicSubMenuByName(WebDriver driver, String menuName,String subMenuName) {
+		
+		waitElementClickable(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME,menuName);
+		hoverToElement(driver,  AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME,menuName);
+		waitElementClickable(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME,subMenuName);
+		hoverToElement(driver,  AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME,subMenuName);
+		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME,subMenuName);
+		
+	}
 	/*Dynamic Nopcommerce page*/
 	
 	

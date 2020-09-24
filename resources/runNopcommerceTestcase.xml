@@ -21,7 +21,7 @@
 		<parameter name="browser" value="FIREFOX" />
 		<classes>
 			<class
-				name="com.nopcommerce.user.User_03_MyAccount" />
+				name="com.nopcommerce.user.User_05_Sort_Display_Paging" />
 		</classes>
 	</test>
 <!-- 	<test name="Run on CHROME HEADLES"> -->

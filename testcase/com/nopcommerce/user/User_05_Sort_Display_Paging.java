@@ -31,10 +31,8 @@ public class User_05_Sort_Display_Paging extends AbstractTest {
 	public void beforeClass(String browserName, String appUrl) {
 		driver = getBrowserDriver(browserName, appUrl);
 		homePage = PageGeneratorNopcommerceManager.getHomePage(driver);
-		homePage.openPageMenuHeaderByPageName(driver, "Computers");
-		computerPage = PageGeneratorNopcommerceManager.getComputerPage(driver);
-		notebooksPage = computerPage.openToNotebooksPage();
-		
+		homePage.clickToDynamicSubMenuByName(driver,"Computers","Notebooks");
+		notebooksPage =PageGeneratorNopcommerceManager.getNotebooksPage(driver);
 	}
 
 	@Test
