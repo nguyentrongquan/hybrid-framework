@@ -26,7 +26,6 @@ import pageObject.wordPress.user.HomePageObject;
 import pageObject.wordPress.user.SearchResultPageObject;
 import pageObjects.wordPress.admin.DashboardPageObject;
 
-
 public abstract class AbstractPage {
 
 	public void openPageUrl(WebDriver driver, String pageUrl) {
@@ -849,18 +848,21 @@ public abstract class AbstractPage {
 	public void openMenuHeaderPageByPageName(WebDriver driver, String pageName) {
 		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_HEADER_PAGE_BY_PAGE_NAME, pageName);
 		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_HEADER_PAGE_BY_PAGE_NAME, pageName);
-		sleepInSecond(1);
+		
 	}
 	public void openPageMenuHeaderByPageName(WebDriver driver, String pageName) {
 		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_MENU_HEADER_PAGE_BY_PAGE_NAME, pageName);
 		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_HEADER_PAGE_BY_PAGE_NAME, pageName);
-		sleepInSecond(2);
 	}
-	public void inputToDynamicTextbox(WebDriver driver, String nameAttributeValue, String inputValue) {
+	public void inputToDynamicByValueNameTextbox(WebDriver driver, String nameAttributeValue, String inputValue) {
 	waitElementVisible(driver, AbstractNopCommercePageUIs.DYNAMIC_TEXTBOX, nameAttributeValue);
 	sendkeyToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_TEXTBOX,inputValue, nameAttributeValue);
 	
 }
+	public void openToDynamicMenuPageListMyAccount(WebDriver driver, String menuName) {
+		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_MENU_LIST_MYACCOUNT, menuName);
+		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_LIST_MYACCOUNT, menuName);
+	}
 	
 	/*Dynamic Nopcommerce page*/
 	
