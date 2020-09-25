@@ -849,20 +849,23 @@ public abstract class AbstractPage {
 	public void openMenuHeaderPageByPageName(WebDriver driver, String pageName) {
 		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_HEADER_PAGE_BY_PAGE_NAME, pageName);
 		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_HEADER_PAGE_BY_PAGE_NAME, pageName);
+		waitForJStoLoad(driver);
 		
 	}
 	public void openPageMenuHeaderByPageName(WebDriver driver, String pageName) {
 		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME, pageName);
 		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME, pageName);
+		waitForJStoLoad(driver);
 	}
 	public void inputToDynamicByValueNameTextbox(WebDriver driver, String nameAttributeValue, String inputValue) {
+	waitForJStoLoad(driver);
 	waitElementVisible(driver, AbstractNopCommercePageUIs.DYNAMIC_TEXTBOX, nameAttributeValue);
 	sendkeyToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_TEXTBOX,inputValue, nameAttributeValue);
-	
 }
 	public void openToDynamicMenuPageListMyAccount(WebDriver driver, String menuName) {
 		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_MENU_LIST_MYACCOUNT, menuName);
 		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_LIST_MYACCOUNT, menuName);
+		waitForJStoLoad(driver);
 	}
 	public void clickToDynamicSubMenuByName(WebDriver driver, String menuName,String subMenuName) {
 		
@@ -871,7 +874,12 @@ public abstract class AbstractPage {
 		waitElementClickable(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME,subMenuName);
 		hoverToElement(driver,  AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME,subMenuName);
 		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME,subMenuName);
-		
+		waitForJStoLoad(driver);
+	}
+	public void clickToPoductDetailByName(WebDriver driver, String nameProduct) {
+		waitElementClickable(driver, AbstractNopCommercePageUIs.DYNAMIC_PRODUCT_DETAIL_NAME,nameProduct);
+		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_PRODUCT_DETAIL_NAME,nameProduct);
+		waitForJStoLoad(driver);
 	}
 	/*Dynamic Nopcommerce page*/
 	

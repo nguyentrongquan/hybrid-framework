@@ -74,5 +74,6 @@ public class NotebooksPageObject extends AbstractPage{
 		int productsNumber= finds(driver, NotebooksPageUI.PRODUCT_NAME).size();
 		return isElementDisplayed(driver, NotebooksPageUI.PRODUCT_NAME) && productsNumber <=9;
 	}
+	
 
 }

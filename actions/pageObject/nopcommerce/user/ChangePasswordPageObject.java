@@ -24,5 +24,10 @@ public class ChangePasswordPageObject extends AbstractPage{
 		clickToElement(driver,  ChangePasswordPageUI.CHANGE_PASSWORD_BUTTON);
 	}
 
+	public boolean isMessageChangePasswordFailedDisplayed(String textMessage) {
+		waitElementVisible(driver, ChangePasswordPageUI.CHANGE_PASSWORD_FAILED_MESSAGE, textMessage);
+		return isElementDisplayed(driver, ChangePasswordPageUI.CHANGE_PASSWORD_FAILED_MESSAGE, textMessage);
+	}
+
 
 }

@@ -14,6 +14,10 @@ import pageObject.nopcommerce.user.CustomerInfoPageObject;
 import pageObject.nopcommerce.user.HomePageObject;
 import pageObject.nopcommerce.user.LoginPageObject;
 import pageObject.nopcommerce.user.MyAccountPageObject;
+import pageObject.nopcommerce.user.MyProductReviewPageObject;
+import pageObject.nopcommerce.user.NotebooksPageObject;
+import pageObject.nopcommerce.user.ProductDetailPageObject;
+import pageObject.nopcommerce.user.ProductReviewPageObject;
 import pageObject.nopcommerce.user.RegisterPageObject;
 
 public class User_03_MyAccount extends AbstractTest {
@@ -25,6 +29,10 @@ public class User_03_MyAccount extends AbstractTest {
 	CustomerInfoPageObject customerInfoPage;
 	AddressPageObject addressPage;
 	ChangePasswordPageObject changePasswordPage;
+	NotebooksPageObject notebooksPage;
+	MyProductReviewPageObject myProductReviewPage;
+	ProductDetailPageObject productDetailPage;
+	ProductReviewPageObject productReviewPage;
 	String firstName="Automatic";
 	String lastName="FC";
 	String email="automation"+randomEmail()+".vn@gmail.com";
@@ -45,7 +53,7 @@ public class User_03_MyAccount extends AbstractTest {
 	String country="Viet Nam";
 	String phone="0972655111";
 	String fax="123456551";
-	
+	String name=editFirstName+" "+editLastName;
 	@Parameters({ "browser", "url" })
 	
 	@BeforeClass
@@ -54,6 +62,7 @@ public class User_03_MyAccount extends AbstractTest {
 		homePage = PageGeneratorNopcommerceManager.getHomePage(driver);
 		homePage.openMenuHeaderPageByPageName(driver, "Register");
 		registerPage = PageGeneratorNopcommerceManager.getRegisterPage(driver);
+		sleepInSecond(1);
 		registerPage.inputToDynamicByValueNameTextbox(driver,"FirstName",firstName);
 		registerPage.inputToDynamicByValueNameTextbox(driver,"LastName",lastName);
 		registerPage.inputToDynamicByValueNameTextbox(driver,"Email",email);
@@ -64,7 +73,13 @@ public class User_03_MyAccount extends AbstractTest {
 		registerPage.openMenuHeaderPageByPageName(driver, "My account");
 		customerInfoPage = PageGeneratorNopcommerceManager.getCustomerPage(driver);
 	}
-
+	public void sleepInSecond(long timeout) {
+		try {
+			Thread.sleep(timeout * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 	@Test
 	public void MyAccount_01_Customer_Info() {
 		customerInfoPage.clickToFemaleRadioButon();
@@ -101,7 +116,7 @@ public class User_03_MyAccount extends AbstractTest {
 		addressPage.inputToDynamicByValueNameTextbox(driver, "Address.PhoneNumber", phone);
 		addressPage.inputToDynamicByValueNameTextbox(driver, "Address.FaxNumber", fax);
 		addressPage.clickToSaveButton();
-		verifyTrue(addressPage.isNameAddressDisplayed(editFirstName+" "+editLastName));
+		verifyTrue(addressPage.isNameAddressDisplayed(name));
 		verifyTrue(addressPage.isEmailAddressDisplayed(editEmail));
 		verifyTrue(addressPage.isPhoneNumberAddressDisplayed(phone));
 		verifyTrue(addressPage.isFaxAddressDisplayed(fax));
@@ -116,16 +131,39 @@ public class User_03_MyAccount extends AbstractTest {
 		 addressPage.openToDynamicMenuPageListMyAccount(driver, "Change password");
 		 changePasswordPage = PageGeneratorNopcommerceManager.getChangePasswordPage(driver);
 		 changePasswordPage.inputToDynamicByValueNameTextbox(driver,"OldPassword",password);
+		 changePasswordPage.inputToDynamicByValueNameTextbox(driver,"NewPassword",password);
+		 changePasswordPage.inputToDynamicByValueNameTextbox(driver,"ConfirmNewPassword",password);
+		 changePasswordPage.clickToChangePasswordButton();
+		 verifyTrue(changePasswordPage.isMessageChangePasswordFailedDisplayed("You entered the password that is the same as one of the last passwords you used. Please create a new password."));
+		 changePasswordPage.inputToDynamicByValueNameTextbox(driver,"OldPassword",password);
 		 changePasswordPage.inputToDynamicByValueNameTextbox(driver,"NewPassword",editpassword);
 		 changePasswordPage.inputToDynamicByValueNameTextbox(driver,"ConfirmNewPassword",editpassword);
 		 changePasswordPage.clickToChangePasswordButton();
 		 verifyTrue(changePasswordPage.isMessageChangePasswordSuccessDisplayed("Password was changed"));
 		
-		
+	}
+	@Test
+	public void MyAccount_04_My_Product_Reviews() {
+		changePasswordPage.clickToDynamicSubMenuByName(driver,"Computers","Notebooks");
+		notebooksPage =PageGeneratorNopcommerceManager.getNotebooksPage(driver);
+		notebooksPage.clickToPoductDetailByName(driver, "Apple MacBook Pro 13-inch");
+		productDetailPage = PageGeneratorNopcommerceManager.getProductDetailPage(driver);
+		productDetailPage.clickToAddYourReview();
+		productReviewPage = PageGeneratorNopcommerceManager.getProductReviewPage(driver);
+		productReviewPage.inputToReviewTitle("Review for Macbook Pro");
+		productReviewPage.inputToReviewText("Product very good");
+		productReviewPage.selectToRatingRadioButton("Excellent");
+		productReviewPage.clickToSubmitReviewButton();
+		verifyTrue(productReviewPage.isMessageProductReviewSuccessDisplayed("Product review is successfully added."));
+		productReviewPage.openMenuHeaderPageByPageName(driver, "My account");
+		customerInfoPage = PageGeneratorNopcommerceManager.getCustomerPage(driver);
+		customerInfoPage.openToDynamicMenuPageListMyAccount(driver, "My product reviews");
+		myProductReviewPage = PageGeneratorNopcommerceManager.getMyProductReviewPage(driver);
+		verifyTrue(myProductReviewPage.isProductYourReviewNameDisplayed("Apple MacBook Pro 13-inch"));
 	}
 	@AfterClass(alwaysRun = true)
 	public void afterClass() {
-		closeBrowserAndDriver(driver);
+		//closeBrowserAndDriver(driver);
 	}
 
 }
