@@ -16,7 +16,13 @@ public class User_01_Register extends AbstractTest {
 	WebDriver driver;
 	HomePageObject homePage;
 	RegisterPageObject registerPage;
-
+	String firstName="Automatic";
+	String lastName="FC";
+	String email="automation"+randomEmail()+".vn@gmail.com";
+	String company="auto FC";
+	String password="123456";
+	String confirmpassword="123456";
+	
 	@Parameters({ "browser", "url" })
 	@BeforeClass
 	public void beforeClass(String browserName, String appUrl) {
@@ -54,13 +60,13 @@ public class User_01_Register extends AbstractTest {
 
 	}
 
-	@Test
+	
 	public void Register_03_Email_Already_Exists() {
-		registerPage.inputToFirstNameTextbox("quan");
-		registerPage.inputToLastNameTextbox("nguyen");
-		registerPage.inputToEmailTextbox("automationfc.vn@gmail.com");
-		registerPage.inputToPasswordTextbox("123456");
-		registerPage.inputToConfirmPasswordTextbox("123456");
+		registerPage.inputToFirstNameTextbox(firstName);
+		registerPage.inputToLastNameTextbox(lastName);
+		registerPage.inputToEmailTextbox(email);
+		registerPage.inputToPasswordTextbox(password);
+		registerPage.inputToConfirmPasswordTextbox(confirmpassword);
 		registerPage.clickToRegisterButton();
 		verifyTrue(registerPage.isErrorMesageAtEmailAlreadyExistsDisplayed("The specified email already exists"));
 
@@ -86,16 +92,14 @@ public class User_01_Register extends AbstractTest {
 		verifyTrue(registerPage.isErrorMesageAtValueNameTextboxtDisplayed("Last name", "Last name is required."));
 		verifyTrue(registerPage.isErrorMesageAtValueNameTextboxtDisplayed("Email", "Email is required."));
 		verifyTrue(registerPage.isErrorMesageAtValueNameTextboxtDisplayed("Confirm password", "The password and confirmation password do not match."));
-		
 	}
 	@Test
 	public void Register_06_Valid_Data() {
-		
-		registerPage.inputToFirstNameTextbox("Automation");
-		registerPage.inputToLastNameTextbox("Fc");
-		registerPage.inputToEmailTextbox("automationfc123.vn@gmail.com");
-		registerPage.inputToPasswordTextbox("123456");
-		registerPage.inputToConfirmPasswordTextbox("123456");
+		registerPage.inputToFirstNameTextbox(firstName);
+		registerPage.inputToLastNameTextbox(lastName);
+		registerPage.inputToEmailTextbox(email);
+		registerPage.inputToPasswordTextbox(password);
+		registerPage.inputToConfirmPasswordTextbox(confirmpassword);
 		registerPage.clickToRegisterButton();
 		verifyTrue(registerPage.isMessageRegisterSuccessDisplayed());
 	}

@@ -62,7 +62,6 @@ public class User_03_MyAccount extends AbstractTest {
 		homePage = PageGeneratorNopcommerceManager.getHomePage(driver);
 		homePage.openMenuHeaderPageByPageName(driver, "Register");
 		registerPage = PageGeneratorNopcommerceManager.getRegisterPage(driver);
-		sleepInSecond(1);
 		registerPage.inputToDynamicByValueNameTextbox(driver,"FirstName",firstName);
 		registerPage.inputToDynamicByValueNameTextbox(driver,"LastName",lastName);
 		registerPage.inputToDynamicByValueNameTextbox(driver,"Email",email);
@@ -163,7 +162,7 @@ public class User_03_MyAccount extends AbstractTest {
 	}
 	@AfterClass(alwaysRun = true)
 	public void afterClass() {
-		//closeBrowserAndDriver(driver);
+		closeBrowserAndDriver(driver);
 	}
 
 }

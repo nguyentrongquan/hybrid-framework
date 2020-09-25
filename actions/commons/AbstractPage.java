@@ -847,9 +847,9 @@ public abstract class AbstractPage {
 	
 	/*Dynamic Nopcommerce page*/
 	public void openMenuHeaderPageByPageName(WebDriver driver, String pageName) {
+		waitForJStoLoad(driver);
 		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_HEADER_PAGE_BY_PAGE_NAME, pageName);
 		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_HEADER_PAGE_BY_PAGE_NAME, pageName);
-		waitForJStoLoad(driver);
 		
 	}
 	public void openPageMenuHeaderByPageName(WebDriver driver, String pageName) {

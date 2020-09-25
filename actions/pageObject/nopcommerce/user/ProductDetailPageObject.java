@@ -15,6 +15,7 @@ public class ProductDetailPageObject extends AbstractPage {
 	public void clickToAddYourReview() {
 		waitElementClickable(driver, ProductDetailPageUI.ADD_NEW_REVIEW_LINK);
 		clickToElement(driver, ProductDetailPageUI.ADD_NEW_REVIEW_LINK);
+		waitForJStoLoad(driver);
 	}
 
 	

@@ -13,6 +13,7 @@ public class ProductReviewPageObject extends AbstractPage {
 	}
 
 	public void inputToReviewTitle(String textTitle) {
+		waitForJStoLoad(driver);
 		waitElementVisible(driver, ProductReviewPageUI.PRODUCT_REVIEW_TITLE);
 		sendkeyToElement(driver, ProductReviewPageUI.PRODUCT_REVIEW_TITLE, textTitle);
 	}
@@ -30,6 +31,7 @@ public class ProductReviewPageObject extends AbstractPage {
 	public void clickToSubmitReviewButton() {
 		waitElementClickable(driver, ProductReviewPageUI.SUBMIT_REVIEW_BUTTON);
 		clickToElement(driver, ProductReviewPageUI.SUBMIT_REVIEW_BUTTON);
+		
 	}
 
 	public boolean isMessageProductReviewSuccessDisplayed(String textMessage) {
