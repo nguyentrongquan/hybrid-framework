@@ -55,12 +55,12 @@ public class RegisterPageObject extends AbstractPage {
 		waitElementVisible(driver, RegisterPageUI.ERROR_MESSAGE_LESS_6_CHARS);
 		return isElementDisplayed(driver, RegisterPageUI.ERROR_MESSAGE_LESS_6_CHARS);
 	}
+
 	public boolean isMessageRegisterSuccessDisplayed() {
 		waitElementVisible(driver, RegisterPageUI.MESSAGE_REGISTER_SUCCESS_TEXT);
 		return isElementDisplayed(driver, RegisterPageUI.MESSAGE_REGISTER_SUCCESS_TEXT);
 		
 	}
-
 	
 	
 }

@@ -847,15 +847,21 @@ public abstract class AbstractPage {
 	
 	/*Dynamic Nopcommerce page*/
 	public void openMenuHeaderPageByPageName(WebDriver driver, String pageName) {
-		waitForJStoLoad(driver);
 		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_HEADER_PAGE_BY_PAGE_NAME, pageName);
 		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_HEADER_PAGE_BY_PAGE_NAME, pageName);
+		sleepInSecond(1);
+		
+	}
+	public void openMenuFooterPageByPageName(WebDriver driver, String pageName) {
+		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_FOOTER_PAGE_BY_PAGE_NAME, pageName);
+		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_FOOTER_PAGE_BY_PAGE_NAME, pageName);
+		sleepInSecond(1);
 		
 	}
 	public void openPageMenuHeaderByPageName(WebDriver driver, String pageName) {
 		waitElementVisible(driver,AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME, pageName);
 		clickToElement(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME, pageName);
-		waitForJStoLoad(driver);
+		sleepInSecond(1);
 	}
 	public void inputToDynamicByValueNameTextbox(WebDriver driver, String nameAttributeValue, String inputValue) {
 	waitForJStoLoad(driver);
@@ -868,7 +874,6 @@ public abstract class AbstractPage {
 		waitForJStoLoad(driver);
 	}
 	public void clickToDynamicSubMenuByName(WebDriver driver, String menuName,String subMenuName) {
-		
 		waitElementClickable(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME,menuName);
 		hoverToElement(driver,  AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME,menuName);
 		waitElementClickable(driver, AbstractNopCommercePageUIs.DYNAMIC_MENU_OR_SUB_MENU_HEADER_NAME,subMenuName);

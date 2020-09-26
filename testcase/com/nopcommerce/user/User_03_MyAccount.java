@@ -54,8 +54,8 @@ public class User_03_MyAccount extends AbstractTest {
 	String phone="0972655111";
 	String fax="123456551";
 	String name=editFirstName+" "+editLastName;
-	@Parameters({ "browser", "url" })
 	
+	@Parameters({ "browser", "url" })
 	@BeforeClass
 	public void beforeClass(String browserName, String appUrl) {
 		driver = getBrowserDriver(browserName, appUrl);
@@ -71,13 +71,6 @@ public class User_03_MyAccount extends AbstractTest {
 		verifyTrue(registerPage.isMessageRegisterSuccessDisplayed());
 		registerPage.openMenuHeaderPageByPageName(driver, "My account");
 		customerInfoPage = PageGeneratorNopcommerceManager.getCustomerPage(driver);
-	}
-	public void sleepInSecond(long timeout) {
-		try {
-			Thread.sleep(timeout * 1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 	}
 	@Test
 	public void MyAccount_01_Customer_Info() {

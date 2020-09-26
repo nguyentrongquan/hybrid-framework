@@ -25,11 +25,12 @@ public class LoginPageObject extends AbstractPage {
 
 	public String getErrorMessageInvalidEmailDisplayed() {
 		waitElementVisible(driver,  LoginPageUI.GET_MESSAGE_INVALID_MAIL_TEXT);
-		return getTextElement(driver, LoginPageUI.GET_MESSAGE_INVALID_MAIL_TEXT);
+		String text =getTextElement(driver, LoginPageUI.GET_MESSAGE_INVALID_MAIL_TEXT);
+		System.out.println(text);
+		return text;
 	
 	}
 	public boolean isErrorMessageInvalidEmailDisplayed(String message) {
-		
 		
 		waitElementVisible(driver, LoginPageUI.GET_MESSAGE_INVALID_MAIL_TEXT, message);
 		return isElementDisplayed(driver, LoginPageUI.MESSAGE_INVALID_MAIL_TEXT, message);

@@ -40,8 +40,8 @@ public class User_02_Login extends AbstractTest {
 		registerPage.inputToDynamicByValueNameTextbox(driver,"ConfirmPassword",confirmpassword);
 		registerPage.clickToRegisterButton();
 		verifyTrue(registerPage.isMessageRegisterSuccessDisplayed());
-		registerPage.openMenuHeaderPageByPageName(driver, "Log out");
 		homePage = PageGeneratorNopcommerceManager.getHomePage(driver);
+		homePage.openMenuHeaderPageByPageName(driver, "Log out");
 		homePage.openMenuHeaderPageByPageName(driver, "Log in");
 		loginPage = PageGeneratorNopcommerceManager.getLoginPage(driver);
 	}
@@ -59,8 +59,7 @@ public class User_02_Login extends AbstractTest {
 	public void Login_02_Invalid_Email() {
 		loginPage.inputToDynamicByValueNameTextbox(driver, "Email", "123@123");
 		loginPage.clickToLoginButton();
-		verifyEquals(loginPage.getErrorMessageInvalidEmailDisplayed(),"Wrong email");
-		//verifyTrue(loginPage.isErrorMessageInvalidEmailDisplayed("Wrong email"));
+		verifyTrue(loginPage.isErrorMessageInvalidEmailDisplayed("Wrong email"));
 	}
 	@Test
 	public void Login_03_Incorrect_Email() {
