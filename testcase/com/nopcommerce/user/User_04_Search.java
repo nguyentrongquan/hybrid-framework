@@ -3,6 +3,7 @@ package com.nopcommerce.user;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -40,7 +41,9 @@ public class User_04_Search extends AbstractTest {
 		registerPage.inputToDynamicByValueNameTextbox(driver,"ConfirmPassword",confirmpassword);
 		registerPage.clickToRegisterButton();
 		verifyTrue(registerPage.isMessageRegisterSuccessDisplayed());
-		
+	}
+	@BeforeMethod
+	public void BeforeMethod() {
 		registerPage.openMenuFooterPageByPageName(driver, "Search");
 		searchPage = PageGeneratorNopcommerceManager.getSearchPage(driver);
 	}
@@ -57,39 +60,92 @@ public class User_04_Search extends AbstractTest {
 	}
 	@Test
 	public void Search_03_Products_Name_Relative() {
-		
+		searchPage.inputToSearchKeywordTextbox("Lenovo");
+		searchPage.clickToSearchButton();
+		verifyTrue(searchPage.isTwoProductNameDisplayed("Lenovo IdeaCentre 600 All-in-One PC"));
+		verifyTrue(searchPage.isTwoProductNameDisplayed("Lenovo Thinkpad X1 Carbon Laptop"));
 	}
 	@Test
 	public void Search_04_Products_Name_Absolute() {
+		searchPage.inputToSearchKeywordTextbox("Lenovo Thinkpad X1 Carbon Laptop");
+		searchPage.clickToSearchButton();
+		verifyTrue(searchPage.isOneProductNameDisplayed("Lenovo Thinkpad X1 Carbon Laptop"));
+	}
+	@Test
+	public void Search_05_Advenced_Search_Parent_Categories() {
+		searchPage.inputToSearchKeywordTextbox("Apple Macbook Pro");
+		searchPage.clickToAdvancedSearchCheckbox();
+		searchPage.SelectToCategoryDropdown("Computers");
+		searchPage.AutomaticallySearchSubCategoriesUnChecked();
+		searchPage.clickToSearchButton();
+		verifyTrue(searchPage.isErrorMessageDisplayed("No products were found that matched your criteria."));
 		
 	}
 	@Test
-	public void Advenced_Search_05_Parent_Categories() {
+	public void Search_06_Advenced_Search_Sub_Categories() {
+		searchPage.inputToSearchKeywordTextbox("Apple Macbook Pro");
+		searchPage.clickToAdvancedSearchCheckbox();
+		searchPage.SelectToCategoryDropdown("Computers");
+		searchPage.AutomaticallySearchSubCategoriesChecked();
+		searchPage.clickToSearchButton();
+		verifyTrue(searchPage.isOneProductNameDisplayed("Apple MacBook Pro 13-inch"));
 		
 	}
 	@Test
-	public void Advenced_Search_06_Sub_Categories() {
-		
+	public void Search_07_Advenced_Search_Incorrect_Manufacturer() {
+		searchPage.inputToSearchKeywordTextbox("Apple Macbook Pro");
+		searchPage.clickToAdvancedSearchCheckbox();
+		searchPage.SelectToCategoryDropdown("Computers");
+		searchPage.AutomaticallySearchSubCategoriesChecked();
+		searchPage.SelectToManufacturerDropdown("HP");
+		searchPage.clickToSearchButton();
+		verifyTrue(searchPage.isErrorMessageDisplayed("No products were found that matched your criteria."));
 	}
 	@Test
-	public void Advenced_Search_07_Incorrect_Manufacturer() {
-		
+	public void Search_08_Advenced_Search_Correct_Manufacturer() {
+		searchPage.inputToSearchKeywordTextbox("Apple Macbook Pro");
+		searchPage.clickToAdvancedSearchCheckbox();
+		searchPage.SelectToCategoryDropdown("Computers");
+		searchPage.AutomaticallySearchSubCategoriesChecked();
+		searchPage.SelectToManufacturerDropdown("Apple");
+		searchPage.clickToSearchButton();
+		verifyTrue(searchPage.isOneProductNameDisplayed("Apple MacBook Pro 13-inch"));
 	}
 	@Test
-	public void Advenced_Search_08_Correct_Manufacturer() {
-		
+	public void Search_09_Advenced_Search_Wihtin_Price_Range() {
+		searchPage.inputToSearchKeywordTextbox("Apple Macbook Pro");
+		searchPage.clickToAdvancedSearchCheckbox();
+		searchPage.SelectToCategoryDropdown("Computers");
+		searchPage.AutomaticallySearchSubCategoriesChecked();
+		searchPage.SelectToManufacturerDropdown("Apple");
+		searchPage.inputToPriceFromRange("1000");
+		searchPage.inputToPriceToRange("2000");
+		searchPage.clickToSearchButton();
+		verifyTrue(searchPage.isOneProductNameDisplayed("Apple MacBook Pro 13-inch"));
 	}
 	@Test
-	public void Advenced_Search_09_Wihtin_Price_Range() {
-		
+	public void Search_10_Advenced_Search_Price_Range_Less_Product_Price() {
+		searchPage.inputToSearchKeywordTextbox("Apple Macbook Pro");
+		searchPage.clickToAdvancedSearchCheckbox();
+		searchPage.SelectToCategoryDropdown("Computers");
+		searchPage.AutomaticallySearchSubCategoriesChecked();
+		searchPage.SelectToManufacturerDropdown("Apple");
+		searchPage.inputToPriceFromRange("1000");
+		searchPage.inputToPriceToRange("1700");
+		searchPage.clickToSearchButton();
+		verifyTrue(searchPage.isErrorMessageDisplayed("No products were found that matched your criteria."));
 	}
 	@Test
-	public void Advenced_Search_10_Price_Range_Less_Product_Price() {
-		
-	}
-	@Test
-	public void Advenced_Search_11_Price_Range_Than_Product_Price() {
-		
+	public void Search_11_Advenced_Search_Price_Range_Than_Product_Price() {
+		searchPage.inputToSearchKeywordTextbox("Apple Macbook Pro");
+		searchPage.clickToAdvancedSearchCheckbox();
+		searchPage.SelectToCategoryDropdown("Computers");
+		searchPage.AutomaticallySearchSubCategoriesChecked();
+		searchPage.SelectToManufacturerDropdown("Apple");
+		searchPage.inputToPriceFromRange("1900");
+		searchPage.inputToPriceToRange("5000");
+		searchPage.clickToSearchButton();
+		verifyTrue(searchPage.isErrorMessageDisplayed("No products were found that matched your criteria."));
 	}
 	
 	@AfterClass(alwaysRun = true)
