@@ -4,8 +4,10 @@ import org.openqa.selenium.WebDriver;
 
 import pageObject.nopcommerce.user.AddressPageObject;
 import pageObject.nopcommerce.user.ChangePasswordPageObject;
+import pageObject.nopcommerce.user.CheckoutPageObject;
 import pageObject.nopcommerce.user.ComputerPageObject;
 import pageObject.nopcommerce.user.CustomerInfoPageObject;
+import pageObject.nopcommerce.user.DesktopsPageObject;
 import pageObject.nopcommerce.user.HomePageObject;
 import pageObject.nopcommerce.user.LoginPageObject;
 import pageObject.nopcommerce.user.MyAccountPageObject;
@@ -15,6 +17,7 @@ import pageObject.nopcommerce.user.ProductDetailPageObject;
 import pageObject.nopcommerce.user.ProductReviewPageObject;
 import pageObject.nopcommerce.user.RegisterPageObject;
 import pageObject.nopcommerce.user.SearchPageObject;
+import pageObject.nopcommerce.user.ShoppingCartPageObject;
 
 
 public class PageGeneratorNopcommerceManager {
@@ -62,6 +65,16 @@ public class PageGeneratorNopcommerceManager {
 	
 	public static ProductDetailPageObject getProductDetailPage(WebDriver driver) {
 		return new ProductDetailPageObject(driver);
+	}
+	public static ShoppingCartPageObject getShoppingCartPage(WebDriver driver) {
+		return new ShoppingCartPageObject(driver);
+	}
+	public static DesktopsPageObject getDesktopsPage(WebDriver driver) {
+		return new DesktopsPageObject(driver);
+	}
+	
+	public static CheckoutPageObject getCheckoutPage(WebDriver driver) {
+		return new CheckoutPageObject(driver);
 	}
 	
 

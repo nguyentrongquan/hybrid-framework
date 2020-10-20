@@ -1,7 +1,6 @@
 package com.nopcommerce.user;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -17,7 +16,6 @@ import pageObject.nopcommerce.user.NotebooksPageObject;
 import pageObject.nopcommerce.user.RegisterPageObject;
 
 public class User_05_Sort_Display_Paging extends AbstractTest {
-	Actions action;
 	WebDriver driver;
 	HomePageObject homePage;
 	RegisterPageObject registerPage;
