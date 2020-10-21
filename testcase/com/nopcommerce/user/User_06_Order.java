@@ -9,9 +9,12 @@ import org.testng.annotations.Test;
 import commons.AbstractTest;
 import commons.PageGeneratorNopcommerceManager;
 import pageObject.nopcommerce.user.CheckoutPageObject;
+import pageObject.nopcommerce.user.CustomerInfoPageObject;
 import pageObject.nopcommerce.user.DesktopsPageObject;
 import pageObject.nopcommerce.user.HomePageObject;
 import pageObject.nopcommerce.user.LoginPageObject;
+import pageObject.nopcommerce.user.OrderDetailPageObject;
+import pageObject.nopcommerce.user.OrderPageObject;
 import pageObject.nopcommerce.user.ProductDetailPageObject;
 import pageObject.nopcommerce.user.RegisterPageObject;
 import pageObject.nopcommerce.user.SearchPageObject;
@@ -27,6 +30,9 @@ public class User_06_Order extends AbstractTest {
 	ShoppingCartPageObject shoppingCartPage;
 	ProductDetailPageObject productDetailPage;
 	CheckoutPageObject checkoutPage;
+	CustomerInfoPageObject customerInfoPage;
+	OrderPageObject orderPage;
+	OrderDetailPageObject orderDetailsPage;
 	
 	String firstName = "Automatic";
 	String lastName = "FC";
@@ -237,39 +243,58 @@ public class User_06_Order extends AbstractTest {
 		verifyTrue(checkoutPage.isConfirmOrderProductInfoDisplayed("subtotal","$3,600.00"));
 		
 
-//		checkoutPage.isSubTotalInCartInfoDisplayed("$3,600.00");
-//		checkoutPage.isShippingGroundInCartInfoDisplayed("$0.00");
-//		checkoutPage.isTaxInCartInfoDisplayed("$0.00");
-//		checkoutPage.isTotalInCartInfoDisplayed("$3,600.00");
-//		checkoutPage.clickToConfirmButton();
-//		
-//		checkoutPage.isMessageOrderSuccessDisplayed("Your order has been successfully processed!");
-//		orderNumber = checkoutPage.getOrderNumber();
-//		Assert.assertTrue(orderNumber);
-//		checkoutPage.openMenuHeaderPageByPageName("My account");
-//		checkoutPage.openToDynamicMenuPageListMyAccount("Order");
-//		orderPage.isOrderNumberDisplayed("");
-//		orderPage.clicktoDetailsLink();
-//		orderDetailsPage.isOrderNumberDisplayed("");
-//		orderDetailsPage.OrderDateDisplayed("Tuesday, October 06, 2020");
-//		orderDetailsPage.OrderStatusDisplayed("Pending");
-//		orderDetailsPage.OrderTotalDisplayed("$3,600.00");
-//		
-//		orderDetailsPage.isBillingAddressDisplayed("""""""""");
-//		orderDetailsPage.isPaymentMethodCheckMoneyOrderDisplayed();
-//		orderDetailsPage.isShippingAddressDisplayed();
-//		orderDetailsPage.isShippingMethodGroundDisplayed();
-//		orderDetailsPage.isShippingMethodGroundDisplayed();
-//		orderDetailsPage.isProductSKUDisplayed();
-//		orderDetailsPage.isProductNameisplayed("Apple MacBook Pro 13-inch");
-//		orderDetailsPage.isProductPriceDisplayed("$1,800.00");
-//		orderDetailsPage.isProductQtyDisplayed("2");
-//		orderDetailsPage.isProductTotalDisplayed("$3,600.00");
-//		
-//		orderDetailsPage.isSubTotalInCartInfoDisplayed("$3,600.00");
-//		orderDetailsPage.isShippingGroundInCartInfoDisplayed("$0.00");
-//		orderDetailsPage.isTaxInCartInfoDisplayed("$0.00");
-//		orderDetailsPage.isTotalInCartInfoDisplayed("$3,600.00");
+					
+		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("Sub-Total","$3,600.00"));
+		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("Shipping","$0.00"));
+		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("Tax","$0.00"));
+		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("Total","$3,600.00"));
+		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("You will earn","360 points"));
+		checkoutPage.clickToConfirmButton();
+		
+		verifyTrue(checkoutPage.isMessageOrderSuccessDisplayed("Your order has been successfully processed!"));
+		orderNumber = checkoutPage.getOrderNumber();
+		
+		checkoutPage.openMenuHeaderPageByPageName(driver, "My account");
+		customerInfoPage = PageGeneratorNopcommerceManager.getCustomerPage(driver);
+		customerInfoPage.openToDynamicMenuPageListMyAccount(driver, "Orders");
+		orderPage = PageGeneratorNopcommerceManager.getOrderPage(driver);
+		//verifyTrue(orderPage.isOrderNumberDisplayed(orderNumber));
+		orderPage.clicktoDetailsLink();
+		
+		orderDetailsPage = PageGeneratorNopcommerceManager.getOrderDetailPage(driver);
+		//orderDetailsPage.isOrderNumberDisplayed("");
+		verifyTrue(orderDetailsPage.isOrderDateDisplayed("Wednesday, October 21, 2020"));
+		verifyTrue(orderDetailsPage.isOrderStatusDisplayed("Pending"));
+		verifyTrue(orderDetailsPage.isOrderTotalDisplayed("$3,600.00"));
+		
+		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("name",firstName+" "+lastName));
+		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("email",email));
+		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("phone",phoneBillding));
+		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("address1",address1Billding));
+		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("city-state-zip",cityBillding +","+zipBillding));
+		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("country",country));
+		
+	
+		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("name",firstName+" "+lastName));
+		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("email",email));
+		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("phone",phoneShipping));
+		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("address1",address1Shipping));
+		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("city-state-zip",cityShipping +","+ zipShipping));
+		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("country",country));
+		
+		verifyTrue(orderDetailsPage.isPaymentMethodNameDisplayed("Check / Money Order"));
+		verifyTrue(orderDetailsPage.isShippingMethodGroundDisplayed("Ground"));
+		
+		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("sku","AP_MBP_13"));
+		verifyTrue(orderDetailsPage.isConfirmOrderProductNameInfoDisplayed("product","Apple MacBook Pro 13-inch"));
+		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("unit-price","$1,800.00"));
+		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("quantity","2"));
+		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("subtotal","$3,600.00"));
+		
+		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Sub-Total","$3,600.00"));
+		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Shipping","$0.00"));
+		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Tax","$0.00"));
+		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Order Total","$3,600.00"));
 		
 	}
 	@AfterClass(alwaysRun = true)

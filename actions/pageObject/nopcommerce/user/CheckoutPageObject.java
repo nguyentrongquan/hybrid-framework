@@ -87,6 +87,22 @@ public class CheckoutPageObject extends AbstractPage{
 		waitElementVisible(driver, CheckoutPageUI.CONFIRM_ORDER_PRODUCT_NAME_INFO, attributesValue,textValue);
 		return isElementDisplayed(driver, CheckoutPageUI.CONFIRM_ORDER_PRODUCT_NAME_INFO, attributesValue,textValue);
 	}
+	public boolean isDynamicCartTotalInforDisplayed(String fielName, String textValue) {
+		waitElementVisible(driver,CheckoutPageUI.CART_TOTAL_INFOR_TEXT ,fielName,textValue );
+		return isElementDisplayed(driver,CheckoutPageUI.CART_TOTAL_INFOR_TEXT ,fielName,textValue);
+	}
+	public void clickToConfirmButton() {
+		waitElementClickable(driver, CheckoutPageUI.CONFIRM_BUTTON);
+		clickToElement(driver, CheckoutPageUI.CONFIRM_BUTTON);
+	}
+	public boolean isMessageOrderSuccessDisplayed(String textValue) {
+		waitElementVisible(driver, CheckoutPageUI.MESSAGE_ORDER_SUCCESS_TEXT,textValue);
+		return isElementDisplayed(driver, CheckoutPageUI.MESSAGE_ORDER_SUCCESS_TEXT,textValue);
+	}
+	public String getOrderNumber() {
+		waitElementVisible(driver, CheckoutPageUI.ORDER_NUMBER_TEXT);
+		return getTextElement(driver,  CheckoutPageUI.ORDER_NUMBER_TEXT);
+	}
 	
 	
 	
