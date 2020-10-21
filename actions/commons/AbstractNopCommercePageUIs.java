@@ -9,7 +9,7 @@ public class AbstractNopCommercePageUIs {
 	public static final String DYNAMIC_SUB_MENU_LINK="//ul[@class='top-menu notmobile']//a[contains(text(),'%s')]";
 	public static final String DYNAMIC_PRODUCT_DETAIL_NAME="//h2[@class='product-title']//a[contains(text(),'%s')]";
 	public static final String GO_TO_CART_BUTTON="//input[@value='Go to cart']";
-	public static final String SHOPPING_CART_LINK="//li[@id='topcartlink']";
+	public static final String SHOPPING_CART_LINK="//span[text()='Shopping cart']";
 	
 	public static final String COUNT_ITEM_IN_SHOPPING_MINI_CART_TEXT="//div[@class='mini-shopping-cart']//div[@class='count']//a[text()='%s']";
 	public static final String PRODUCT_NAME_IN_SHOPPING_MINI_CART_TEXT="//div[@class='mini-shopping-cart']//div[@class='name']//a[contains(text(),'%s')]";

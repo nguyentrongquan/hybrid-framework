@@ -25,8 +25,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObject.wordPress.user.HomePageObject;
 import pageObject.wordPress.user.SearchResultPageObject;
 import pageObjects.wordPress.admin.DashboardPageObject;
-import pageUIs.nopcommerce.user.ProductDetailPageUI;
-import pageUIs.wordPress.user.HomePageUI;
 
 public abstract class AbstractPage {
 
@@ -139,6 +137,7 @@ public abstract class AbstractPage {
 		return By.xpath(xpathValue);
 	}
 	public void clickToElement(WebDriver driver, String xpathValue) {
+		waitForJStoLoad(driver);
 		if(driver.toString().contains("internet explorer")) {
 			clickToElementByJS(driver, xpathValue);
 			sleepInSecond(3);
@@ -149,6 +148,7 @@ public abstract class AbstractPage {
 	}
 
 	public void clickToElement(WebDriver driver, String xpathValue, String... values) {
+		waitForJStoLoad(driver);
 		if(driver.toString().contains("internet explorer")) {
 			clickToElementByJS(driver, xpathValue);
 			sleepInSecond(3);
@@ -897,6 +897,8 @@ public abstract class AbstractPage {
 		clickToElement(driver, AbstractNopCommercePageUIs.GO_TO_CART_BUTTON);
 	}
 	public void hoverToShoppingCartMenuHeader(WebDriver driver) {
+	//	scrollToTopPage(driver);
+		scrollToElement(driver, AbstractNopCommercePageUIs.SHOPPING_CART_LINK);
 		waitElementClickable(driver, AbstractNopCommercePageUIs.SHOPPING_CART_LINK);
 		hoverToElement(driver, AbstractNopCommercePageUIs.SHOPPING_CART_LINK);
 	}

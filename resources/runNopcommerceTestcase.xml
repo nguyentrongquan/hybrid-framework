@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Nopcommerce" parallel="tests" thread-count="2">
-	<parameter name="url"
-		value="https://demo.nopcommerce.com/" />
+	<parameter name="url" value="https://demo.nopcommerce.com/" />
 	<listeners>
 		<listener class-name="commons.MethodListener" />
 		<!-- extentReport version 2 -->
@@ -17,11 +16,10 @@
 		<listener
 			class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
-	<test name="Run on FIREFOX">
-		<parameter name="browser" value="FIREFOX" />
+	<test name="Run on CHROME">
+		<parameter name="browser" value="CHROME" />
 		<classes>
-			<class
-				name="com.nopcommerce.user.User_06_Order" />
+			<class name="com.nopcommerce.user.User_06_Order" />
 		</classes>
 	</test>
 

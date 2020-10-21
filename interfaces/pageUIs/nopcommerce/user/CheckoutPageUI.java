@@ -9,7 +9,7 @@ public class CheckoutPageUI {
 	public static final String DYNAMIC_NAME_SHIPPING_METHOD_RADIO_BUTTON="//label[contains(text(),'%s')]//preceding-sibling::input";
 	public static final String DYNAMIC_NAME_PAYMENT_METHOD_RADIO_BUTTON="//label[contains(text(),'%s')]//preceding-sibling::input";
 	public static final String DYNAMIC_BILLDING_ADDRESS_INFO_TEXT="//div[@class='billing-info']//li[@class='%s' and contains(text(),'%s')]";
-	public static final String DYNAMIC_SHIPPING_ADDRESS_INFO_TEXT="//div[@class='billing-info']//li[@class='%s' and contains(text(),'%s')]";
+	public static final String DYNAMIC_SHIPPING_ADDRESS_INFO_TEXT="//div[@class='shipping-info']//li[@class='%s' and contains(text(),'%s')]";
 	public static final String SHIPPING_NEW_ADDRESS_DROPDOWN="//select[@id='shipping-address-select']";
 	public static final String PAYMENT_METHOD_TEXT="//li[@class='payment-method']//span[@class='value' and contains(text(),'%s')]";
 	public static final String SHIPPING_METHOD_TEXT="//li[@class='shipping-method']//span[@class='value' and contains(text(),'%s')]";
