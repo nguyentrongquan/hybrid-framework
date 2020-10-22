@@ -66,7 +66,7 @@ public class User_06_Order extends AbstractTest {
 		registerPage.inputToDynamicByValueNameTextbox(driver, "ConfirmPassword", confirmpassword);
 		registerPage.clickToRegisterButton();
 		verifyTrue(registerPage.isMessageRegisterSuccessDisplayed());
-		homePage.clickToDynamicSubMenuByName(driver,"Computers", "Desktops");
+		registerPage.clickToDynamicSubMenuByName(driver,"Computers", "Desktops");
 		desktopsPage = PageGeneratorNopcommerceManager.getDesktopsPage(driver);
 		desktopsPage.clickToPoductDetailByName(driver, "Build your own computer"); 
 		productDetailPage =PageGeneratorNopcommerceManager.getProductDetailPage(driver);
@@ -87,15 +87,15 @@ public class User_06_Order extends AbstractTest {
 		verifyTrue(productDetailPage.isItemInShoppingMiniCartDisplayed(driver,"1 item(s)"));
 		verifyTrue(productDetailPage.isProductNameInShoppingMiniCartDisplayed(driver,"Build your own computer"));
 		verifyTrue(productDetailPage.isProductInforDetailInShoppingMiniCartDisplayed(driver,"Processor: 2.5 GHz Intel Pentium Dual-Core E2200"));
-		verifyTrue(productDetailPage.isProductRAMInYourCartDisplayed(driver,"RAM: 8GB [+$60.00]"));
-		verifyTrue(productDetailPage.isProductHDDInYourCartDisplayed(driver,"HDD: 400 GB [+$100.00]"));
-		verifyTrue(productDetailPage.isProductOSInYourCartDisplayed(driver,"OS: Vista Premium [+$60.00]"));
-		verifyTrue(productDetailPage.isProductSoftwareInYourCartDisplayed(driver,"Software: Microsoft Office [+$50.00]"));
-		verifyTrue(productDetailPage.isProductSoftwareInYourCartDisplayed(driver,"Software: Acrobat Reader [+$10.00]"));
-		//verifyTrue(productDetailPage.isProductSoftwareInYourCartDisplayed(driver,"Software: Total Commander [+$5.00]"));
-		verifyTrue(productDetailPage.isProductUnitPriceInYourCartDisplayed(driver,"$1,500.00"));
-		verifyTrue(productDetailPage.isProductQuantityInYourCartDisplayed(driver,"1"));
-		verifyTrue(productDetailPage.isProductSubToTalInYourCartDisplayed(driver,"$1,500.00"));
+		verifyTrue(productDetailPage.isProductRAMInShoppingMiniCartDisplayed(driver,"RAM: 8GB [+$60.00]"));
+		verifyTrue(productDetailPage.isProductHDDInShoppingMiniCartDisplayed(driver,"HDD: 400 GB [+$100.00]"));
+		verifyTrue(productDetailPage.isProductOSInShoppingMiniCartDisplayed(driver,"OS: Vista Premium [+$60.00]"));
+		verifyTrue(productDetailPage.isProductSoftwareInShoppingMiniCartDisplayed(driver,"Software: Microsoft Office [+$50.00]"));
+		verifyTrue(productDetailPage.isProductSoftwareInShoppingMiniCartDisplayed(driver,"Software: Acrobat Reader [+$10.00]"));
+		verifyTrue(productDetailPage.isProductSoftwareInShoppingMiniCartDisplayed(driver,"Software: Total Commander [+$5.00]"));
+		verifyTrue(productDetailPage.isProductUnitPriceInShoppingMiniCartDisplayed(driver,"$1,500.00"));
+		verifyTrue(productDetailPage.isProductQuantityInShoppingMiniCartDisplayed(driver,"1"));
+		verifyTrue(productDetailPage.isProductSubToTalInShoppingMiniCartDisplayed(driver,"$1,500.00"));
 		productDetailPage.clickToGoToCartButton(driver);
 		shoppingCartPage = PageGeneratorNopcommerceManager.getShoppingCartPage(driver);
 	}
@@ -116,15 +116,15 @@ public class User_06_Order extends AbstractTest {
 		productDetailPage.clickToCloseMessageProdoductAddedSuccessButton();
 		productDetailPage.hoverToShoppingCartMenuHeader(driver);
 		verifyTrue(	productDetailPage.isItemInShoppingMiniCartDisplayed(driver,"2 item(s)"));
-	//	verifyTrue(	productDetailPage.isProductNameInYourCartDisplayed(driver,"Build your own computer"));
-	//	verifyTrue(	productDetailPage.isProductProcessorInYourCartDisplayed(driver,"Processor: 2.2 GHz Intel Pentium Dual-Core E2200"));
-		verifyTrue(productDetailPage.isProductRAMInYourCartDisplayed(driver,"RAM: 4GB [+$20.00]"));
-		verifyTrue(productDetailPage.isProductHDDInYourCartDisplayed(driver,"HDD: 320 GB"));
-		verifyTrue(productDetailPage.isProductOSInYourCartDisplayed(driver,"OS: Vista Home [+$50.00]"));
-		//verifyTrue(productDetailPage.isProductSoftwareInYourCartDisplayed(driver,"Software: Microsoft Office [+$50.00]"));
-		verifyTrue(productDetailPage.isProductUnitPriceInYourCartDisplayed(driver,"$1,320.00"));
-		verifyTrue(productDetailPage.isProductQuantityInYourCartDisplayed(driver,"2"));
-		verifyTrue(productDetailPage.isProductSubToTalInYourCartDisplayed(driver,"$2,640.00"));
+		verifyTrue(	productDetailPage.isProductNameInShoppingMiniCartDisplayed(driver,"Build your own computer"));
+		verifyTrue(	productDetailPage.isProductInforDetailInShoppingMiniCartDisplayed(driver,"Processor: 2.2 GHz Intel Pentium Dual-Core E2200"));
+		verifyTrue(productDetailPage.isProductRAMInShoppingMiniCartDisplayed(driver,"RAM: 4GB [+$20.00]"));
+		verifyTrue(productDetailPage.isProductHDDInShoppingMiniCartDisplayed(driver,"HDD: 320 GB"));
+		verifyTrue(productDetailPage.isProductOSInShoppingMiniCartDisplayed(driver,"OS: Vista Home [+$50.00]"));
+		verifyTrue(productDetailPage.isProductSoftwareInShoppingMiniCartDisplayed(driver,"Software: Microsoft Office [+$50.00]"));
+		verifyTrue(productDetailPage.isProductUnitPriceInShoppingMiniCartDisplayed(driver,"$1,320.00"));
+		verifyTrue(productDetailPage.isProductQuantityInShoppingMiniCartDisplayed(driver,"2"));
+		verifyTrue(productDetailPage.isProductSubToTalInShoppingMiniCartDisplayed(driver,"$2,640.00"));
 		productDetailPage.clickToGoToCartButton(driver);
 		shoppingCartPage = PageGeneratorNopcommerceManager.getShoppingCartPage(driver);
 		verifyTrue(	shoppingCartPage.isProductNameInShoppingCartDisplayed("Build your own computer"));
@@ -156,10 +156,10 @@ public class User_06_Order extends AbstractTest {
 		productDetailPage.clickToCloseMessageProdoductAddedSuccessButton();
 		productDetailPage.hoverToShoppingCartMenuHeader(driver);
 		verifyTrue(productDetailPage.isItemInShoppingMiniCartDisplayed(driver,"1 item(s)"));
-	//	verifyTrue(productDetailPage.isProductNameInYourCartDisplayed(driver,"Lenovo IdeaCentre 600 All-in-One PC"));
-		verifyTrue(productDetailPage.isProductUnitPriceInYourCartDisplayed(driver,"$500.00"));
-		verifyTrue(productDetailPage.isProductQuantityInYourCartDisplayed(driver,"1"));
-		verifyTrue(productDetailPage.isProductSubToTalInYourCartDisplayed(driver,"$500.00"));
+		verifyTrue(productDetailPage.isProductNameInShoppingMiniCartDisplayed(driver,"Lenovo IdeaCentre 600 All-in-One PC"));
+		verifyTrue(productDetailPage.isProductUnitPriceInShoppingMiniCartDisplayed(driver,"$500.00"));
+		verifyTrue(productDetailPage.isProductQuantityInShoppingMiniCartDisplayed(driver,"1"));
+		verifyTrue(productDetailPage.isProductSubToTalInShoppingMiniCartDisplayed(driver,"$500.00"));
 		productDetailPage.clickToGoToCartButton(driver);
 		shoppingCartPage = PageGeneratorNopcommerceManager.getShoppingCartPage(driver);
 		shoppingCartPage.inputToQtyValue("5");
@@ -183,7 +183,6 @@ public class User_06_Order extends AbstractTest {
 		shoppingCartPage = PageGeneratorNopcommerceManager.getShoppingCartPage(driver);
 		shoppingCartPage.clickToAgreeTermsOfServiceCheckbox();
 		shoppingCartPage.clickToCheckoutButton();
-		
 		checkoutPage =PageGeneratorNopcommerceManager.getCheckoutPage(driver);
 		checkoutPage.deselectToShipToTheSameAddressCheckbox();
 		checkoutPage.inputToDynamicBilldingAddressTextbox("First name", firstName);
@@ -263,7 +262,7 @@ public class User_06_Order extends AbstractTest {
 		
 		orderDetailsPage = PageGeneratorNopcommerceManager.getOrderDetailPage(driver);
 		//orderDetailsPage.isOrderNumberDisplayed("");
-		verifyTrue(orderDetailsPage.isOrderDateDisplayed("Wednesday, October 21, 2020"));
+//		verifyTrue(orderDetailsPage.isOrderDateDisplayed("Wednesday, October 21, 2020"));
 		verifyTrue(orderDetailsPage.isOrderStatusDisplayed("Pending"));
 		verifyTrue(orderDetailsPage.isOrderTotalDisplayed("$3,600.00"));
 		
@@ -289,7 +288,7 @@ public class User_06_Order extends AbstractTest {
 		verifyTrue(orderDetailsPage.isConfirmOrderProductNameInfoDisplayed("product","Apple MacBook Pro 13-inch"));
 		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("unit-price","$1,800.00"));
 		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("quantity","2"));
-		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("subtotal","$3,600.00"));
+		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("total","$3,600.00"));
 		
 		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Sub-Total","$3,600.00"));
 		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Shipping","$0.00"));
@@ -297,6 +296,135 @@ public class User_06_Order extends AbstractTest {
 		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Order Total","$3,600.00"));
 		
 	}
+	@Test
+	public void Order_06_Checkout_Cart_01() {
+		orderDetailsPage.clickToDynamicSubMenuByName(driver,"Computers", "Notebooks");
+		desktopsPage = PageGeneratorNopcommerceManager.getDesktopsPage(driver);
+		desktopsPage.clickToPoductDetailByName(driver, "Apple MacBook Pro 13-inch");
+		productDetailPage = PageGeneratorNopcommerceManager.getProductDetailPage(driver);
+		productDetailPage.clickToADDTOCARTButton();
+		verifyTrue(productDetailPage.isMessageProductAddedCartSuccessDisplayed());
+		productDetailPage.clickToCloseMessageProdoductAddedSuccessButton();
+		productDetailPage.hoverToShoppingCartMenuHeader(driver);
+		productDetailPage.clickToGoToCartButton(driver);
+		shoppingCartPage = PageGeneratorNopcommerceManager.getShoppingCartPage(driver);
+		shoppingCartPage.clickToAgreeTermsOfServiceCheckbox();
+		shoppingCartPage.clickToCheckoutButton();
+		checkoutPage =PageGeneratorNopcommerceManager.getCheckoutPage(driver);
+		checkoutPage.deselectToShipToTheSameAddressCheckbox();
+		checkoutPage.inputToDynamicBilldingAddressTextbox("First name", firstName);
+		checkoutPage.inputToDynamicBilldingAddressTextbox("Last name", lastName);
+		checkoutPage.inputToDynamicBilldingAddressTextbox("Email", email);
+		checkoutPage.inputToDynamicBilldingAddressTextbox("Company", company);
+		checkoutPage.selectToCountryBillAddressDropdown("Country",country);
+		checkoutPage.inputToDynamicBilldingAddressTextbox("City", cityBillding);
+		checkoutPage.inputToDynamicBilldingAddressTextbox("Address 1", address1Billding);
+		checkoutPage.inputToDynamicBilldingAddressTextbox("Zip", zipBillding);
+		checkoutPage.inputToDynamicBilldingAddressTextbox("Phone number", phoneBillding);
+		
+		checkoutPage.clickToDynamicCheckoutContineButton("Billing address");
+		checkoutPage.selectToNewAddressShippingDropdown("New Address");
+		
+		checkoutPage.inputToDynamicShippingAddressTextbox("First name", firstName);
+		checkoutPage.inputToDynamicShippingAddressTextbox("Last name", lastName);
+		checkoutPage.inputToDynamicShippingAddressTextbox("Email", email);
+		checkoutPage.inputToDynamicShippingAddressTextbox("Company", company);
+		checkoutPage.selectToCountryShippingAddressDropdown("Country",country);
+		checkoutPage.inputToDynamicShippingAddressTextbox("City", cityShipping);
+		checkoutPage.inputToDynamicShippingAddressTextbox("Address 1", address1Shipping);
+		checkoutPage.inputToDynamicShippingAddressTextbox("Zip", zipShipping);
+		checkoutPage.inputToDynamicShippingAddressTextbox("Phone number", phoneShipping);
+		checkoutPage.clickToDynamicCheckoutContineButton("Shipping address");
+		
+		checkoutPage.selectToDynamicNameShippingMethodRadioButton("Ground");
+		checkoutPage.clickToDynamicCheckoutContineButton("Shipping method");
+		checkoutPage.selectToDynamicPaymentMethodRadioButton("Check / Money Order");
+		checkoutPage.clickToDynamicCheckoutContineButton("Payment method");
+		verifyTrue(checkoutPage.isPaymentInformationDisplayed());
+		checkoutPage.clickToDynamicCheckoutContineButton("Payment information");
+		
+		
+		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("name",firstName+" "+lastName));
+		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("email",email));
+		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("phone",phoneBillding));
+		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("address1",address1Billding));
+		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("city-state-zip",cityBillding +","+zipBillding));
+		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("country",country));
+		
+	
+		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("name",firstName+" "+lastName));
+		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("email",email));
+		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("phone",phoneShipping));
+		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("address1",address1Shipping));
+		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("city-state-zip",cityShipping +","+ zipShipping));
+		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("country",country));
+		
+		verifyTrue(checkoutPage.isPaymentMethodNameDisplayed("Check / Money Order"));
+		verifyTrue(checkoutPage.isShippingMethodGroundDisplayed("Ground"));
+		
+		verifyTrue(checkoutPage.isConfirmOrderProductInfoDisplayed("sku","AP_MBP_13"));
+		verifyTrue(checkoutPage.isConfirmOrderProductNameInfoDisplayed("product","Apple MacBook Pro 13-inch"));
+		verifyTrue(checkoutPage.isConfirmOrderProductInfoDisplayed("unit-price","$1,800.00"));
+		verifyTrue(checkoutPage.isConfirmOrderProductInfoDisplayed("quantity","2"));
+		verifyTrue(checkoutPage.isConfirmOrderProductInfoDisplayed("subtotal","$3,600.00"));
+		
+
+					
+		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("Sub-Total","$3,600.00"));
+		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("Shipping","$0.00"));
+		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("Tax","$0.00"));
+		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("Total","$3,600.00"));
+		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("You will earn","360 points"));
+		checkoutPage.clickToConfirmButton();
+		
+		verifyTrue(checkoutPage.isMessageOrderSuccessDisplayed("Your order has been successfully processed!"));
+		orderNumber = checkoutPage.getOrderNumber();
+		
+		checkoutPage.openMenuHeaderPageByPageName(driver, "My account");
+		customerInfoPage = PageGeneratorNopcommerceManager.getCustomerPage(driver);
+		customerInfoPage.openToDynamicMenuPageListMyAccount(driver, "Orders");
+		orderPage = PageGeneratorNopcommerceManager.getOrderPage(driver);
+		//verifyTrue(orderPage.isOrderNumberDisplayed(orderNumber));
+		orderPage.clicktoDetailsLink();
+		
+		orderDetailsPage = PageGeneratorNopcommerceManager.getOrderDetailPage(driver);
+		//orderDetailsPage.isOrderNumberDisplayed("");
+//		verifyTrue(orderDetailsPage.isOrderDateDisplayed("Wednesday, October 21, 2020"));
+		verifyTrue(orderDetailsPage.isOrderStatusDisplayed("Pending"));
+		verifyTrue(orderDetailsPage.isOrderTotalDisplayed("$3,600.00"));
+		
+		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("name",firstName+" "+lastName));
+		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("email",email));
+		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("phone",phoneBillding));
+		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("address1",address1Billding));
+		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("city-state-zip",cityBillding +","+zipBillding));
+		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("country",country));
+		
+	
+		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("name",firstName+" "+lastName));
+		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("email",email));
+		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("phone",phoneShipping));
+		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("address1",address1Shipping));
+		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("city-state-zip",cityShipping +","+ zipShipping));
+		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("country",country));
+		
+		verifyTrue(orderDetailsPage.isPaymentMethodNameDisplayed("Check / Money Order"));
+		verifyTrue(orderDetailsPage.isShippingMethodGroundDisplayed("Ground"));
+		
+		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("sku","AP_MBP_13"));
+		verifyTrue(orderDetailsPage.isConfirmOrderProductNameInfoDisplayed("product","Apple MacBook Pro 13-inch"));
+		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("unit-price","$1,800.00"));
+		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("quantity","2"));
+		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("total","$3,600.00"));
+		
+		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Sub-Total","$3,600.00"));
+		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Shipping","$0.00"));
+		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Tax","$0.00"));
+		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Order Total","$3,600.00"));
+		
+	}
+	
+	
 	@AfterClass(alwaysRun = true)
 	public void afterClass() {
 		closeBrowserAndDriver(driver);

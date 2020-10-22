@@ -913,42 +913,42 @@ public abstract class AbstractPage {
 	}
 
 	public boolean isProductInforDetailInShoppingMiniCartDisplayed(WebDriver driver,String processorValue) {
-		waitElementVisible(driver, AbstractNopCommercePageUIs.PRODUCT_DETAIL_PROCESSOR_IN_YOUR_CART_TEXT,processorValue);
-		return isElementDisplayed(driver, AbstractNopCommercePageUIs.PRODUCT_DETAIL_PROCESSOR_IN_YOUR_CART_TEXT,processorValue);
+		waitElementVisible(driver, AbstractNopCommercePageUIs.PRODUCT_DETAIL_PROCESSOR_IN_SHOPPING_MINI_CART_TEXT,processorValue);
+		return isElementDisplayed(driver, AbstractNopCommercePageUIs.PRODUCT_DETAIL_PROCESSOR_IN_SHOPPING_MINI_CART_TEXT,processorValue);
 	}
 
-	public boolean isProductRAMInYourCartDisplayed(WebDriver driver,String ramValue) {
-		waitElementVisible(driver,AbstractNopCommercePageUIs.PRODUCT_DETAIL_IN_YOUR_CART_TEXT,ramValue);
-		return isElementDisplayed(driver,AbstractNopCommercePageUIs. PRODUCT_DETAIL_IN_YOUR_CART_TEXT,ramValue);
+	public boolean isProductRAMInShoppingMiniCartDisplayed(WebDriver driver,String ramValue) {
+		waitElementVisible(driver,AbstractNopCommercePageUIs.PRODUCT_DETAIL_IN_SHOPPING_MINI_CART_TEXT,ramValue);
+		return isElementDisplayed(driver,AbstractNopCommercePageUIs. PRODUCT_DETAIL_IN_SHOPPING_MINI_CART_TEXT,ramValue);
 	}
 
-	public boolean isProductHDDInYourCartDisplayed(WebDriver driver,String hddValue) {
-		waitElementVisible(driver, AbstractNopCommercePageUIs.PRODUCT_DETAIL_IN_YOUR_CART_TEXT,hddValue);
-		return isElementDisplayed(driver, AbstractNopCommercePageUIs.PRODUCT_DETAIL_IN_YOUR_CART_TEXT,hddValue);
+	public boolean isProductHDDInShoppingMiniCartDisplayed(WebDriver driver,String hddValue) {
+		waitElementVisible(driver, AbstractNopCommercePageUIs.PRODUCT_DETAIL_IN_SHOPPING_MINI_CART_TEXT,hddValue);
+		return isElementDisplayed(driver, AbstractNopCommercePageUIs.PRODUCT_DETAIL_IN_SHOPPING_MINI_CART_TEXT,hddValue);
 	}
 
-	public boolean isProductSoftwareInYourCartDisplayed(WebDriver driver,String softwaveValue) {
-		waitElementVisible(driver,AbstractNopCommercePageUIs.PRODUCT_DETAIL_IN_YOUR_CART_TEXT,softwaveValue);
-		return isElementDisplayed(driver,AbstractNopCommercePageUIs.PRODUCT_DETAIL_IN_YOUR_CART_TEXT,softwaveValue);
+	public boolean isProductSoftwareInShoppingMiniCartDisplayed(WebDriver driver,String softwaveValue) {
+		waitElementVisible(driver,AbstractNopCommercePageUIs.PRODUCT_DETAIL_IN_SHOPPING_MINI_CART_TEXT,softwaveValue);
+		return isElementDisplayed(driver,AbstractNopCommercePageUIs.PRODUCT_DETAIL_IN_SHOPPING_MINI_CART_TEXT,softwaveValue);
 	}
 
-	public boolean isProductOSInYourCartDisplayed(WebDriver driver,String textValue) {
-		waitElementVisible(driver,AbstractNopCommercePageUIs.PRODUCT_DETAIL_IN_YOUR_CART_TEXT,textValue);
-		return isElementDisplayed(driver,AbstractNopCommercePageUIs.PRODUCT_DETAIL_IN_YOUR_CART_TEXT,textValue);
+	public boolean isProductOSInShoppingMiniCartDisplayed(WebDriver driver,String textValue) {
+		waitElementVisible(driver,AbstractNopCommercePageUIs.PRODUCT_DETAIL_IN_SHOPPING_MINI_CART_TEXT,textValue);
+		return isElementDisplayed(driver,AbstractNopCommercePageUIs.PRODUCT_DETAIL_IN_SHOPPING_MINI_CART_TEXT,textValue);
 	}
 
-	public boolean isProductUnitPriceInYourCartDisplayed(WebDriver driver,String priceValue) {
-		waitElementVisible(driver, AbstractNopCommercePageUIs.PRODUCT_UNIT_PRICE_IN_YOUR_CART_TEXT,priceValue);
-		return isElementDisplayed(driver, AbstractNopCommercePageUIs.PRODUCT_UNIT_PRICE_IN_YOUR_CART_TEXT,priceValue);
+	public boolean isProductUnitPriceInShoppingMiniCartDisplayed(WebDriver driver,String priceValue) {
+		waitElementVisible(driver, AbstractNopCommercePageUIs.PRODUCT_UNIT_PRICE_IN_SHOPPING_MINI_CART_TEXT,priceValue);
+		return isElementDisplayed(driver, AbstractNopCommercePageUIs.PRODUCT_UNIT_PRICE_IN_SHOPPING_MINI_CART_TEXT,priceValue);
 	}
-	public boolean isProductQuantityInYourCartDisplayed(WebDriver driver,String quantityValue) {
-		waitElementVisible(driver, AbstractNopCommercePageUIs.PRODUCT_QUANTITY_IN_YOUR_CART_TEXT,quantityValue);
-		return isElementDisplayed(driver, AbstractNopCommercePageUIs.PRODUCT_QUANTITY_IN_YOUR_CART_TEXT,quantityValue);
+	public boolean isProductQuantityInShoppingMiniCartDisplayed(WebDriver driver,String quantityValue) {
+		waitElementVisible(driver, AbstractNopCommercePageUIs.PRODUCT_QUANTITY_IN_SHOPPING_MINI_CART_TEXT,quantityValue);
+		return isElementDisplayed(driver, AbstractNopCommercePageUIs.PRODUCT_QUANTITY_IN_SHOPPING_MINI_CART_TEXT,quantityValue);
 	}
 
-	public boolean isProductSubToTalInYourCartDisplayed(WebDriver driver,String totalPriceValue) {
-		waitElementVisible(driver, AbstractNopCommercePageUIs.PRODUCT_SUB_TOTAL_IN_YOUR_CART_TEXT,totalPriceValue);
-		return isElementDisplayed(driver, AbstractNopCommercePageUIs.PRODUCT_SUB_TOTAL_IN_YOUR_CART_TEXT,totalPriceValue);
+	public boolean isProductSubToTalInShoppingMiniCartDisplayed(WebDriver driver,String totalPriceValue) {
+		waitElementVisible(driver, AbstractNopCommercePageUIs.PRODUCT_SUB_TOTAL_IN_SHOPPING_MINI_CART_TEXT,totalPriceValue);
+		return isElementDisplayed(driver, AbstractNopCommercePageUIs.PRODUCT_SUB_TOTAL_IN_SHOPPING_MINI_CART_TEXT,totalPriceValue);
 	}
 	
 	/*Dynamic Nopcommerce page*/

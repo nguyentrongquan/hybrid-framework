@@ -12,10 +12,12 @@ public class CheckoutPageObject extends AbstractPage{
 		
 	}
 	public void deselectToShipToTheSameAddressCheckbox() {
+		waitForJStoLoad(driver);
 		waitElementClickable(driver, CheckoutPageUI.SHIP_TO_THE_SAME_ADDRESS_CHECKBOX);
 		clickToElement(driver, CheckoutPageUI.SHIP_TO_THE_SAME_ADDRESS_CHECKBOX);
 	}
 	public void inputToDynamicBilldingAddressTextbox(String fieldName,String inputvalue) {
+		waitForJStoLoad(driver);
 		waitElementVisible(driver, CheckoutPageUI.DYNAMIC_BIILDING_TEXTBOX, fieldName);
 		sendkeyToElement(driver, CheckoutPageUI.DYNAMIC_BIILDING_TEXTBOX, inputvalue,fieldName);
 		
