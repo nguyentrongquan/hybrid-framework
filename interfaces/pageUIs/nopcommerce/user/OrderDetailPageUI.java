@@ -14,5 +14,6 @@ public class OrderDetailPageUI {
 	public static final String SHIP_TO_THE_SAME_ADDRESS_CHECKBOX="//input[@id='ShipToSameAddress']";
 	public static final String PAYMENT_INFORMATION_MESSAGE_TEXT="//b[contains(text(),'NOP SOLUTIONS')]";
 	public static final String CART_TOTAL_INFOR_TEXT="//label[contains(text(),'%s')]//parent::td//following-sibling::td//span[text()='%s']";
+	public static final String CART_ORDER_TOTAL_PRICE="//label[contains(text(),'%s')]//parent::td//following-sibling::td//strong[text()='%s']";
 
 }

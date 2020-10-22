@@ -27,7 +27,7 @@ public class OrderDetailPageObject extends AbstractPage{
 		waitElementVisible(driver, OrderDetailPageUI.ORDER_TOTAL_TEXT,orderTotal);
 		return isElementDisplayed(driver, OrderDetailPageUI.ORDER_TOTAL_TEXT, orderTotal);
 	}
-	public boolean isDynamicBilldingInfodisplayed(String attributesValue, String textValue) {
+	public boolean isBilldingInfodisplayed(String attributesValue, String textValue) {
 		waitElementVisible(driver, OrderDetailPageUI.DYNAMIC_BILLDING_ADDRESS_INFO_TEXT, attributesValue,textValue);
 		return isElementDisplayed(driver, OrderDetailPageUI.DYNAMIC_BILLDING_ADDRESS_INFO_TEXT, attributesValue,textValue);
 		
@@ -36,7 +36,7 @@ public class OrderDetailPageObject extends AbstractPage{
 		waitElementVisible(driver, OrderDetailPageUI.PAYMENT_METHOD_TEXT, paymentMethod);
 		return isElementDisplayed(driver, OrderDetailPageUI.PAYMENT_METHOD_TEXT, paymentMethod);
 	}
-	public boolean isDynamicShippingInfodisplayed(String attributesValue, String textValue) {
+	public boolean isShippingInfodisplayed(String attributesValue, String textValue) {
 		waitElementVisible(driver, OrderDetailPageUI.DYNAMIC_SHIPPING_ADDRESS_INFO_TEXT, attributesValue,textValue);
 		return isElementDisplayed(driver, OrderDetailPageUI.DYNAMIC_SHIPPING_ADDRESS_INFO_TEXT, attributesValue,textValue);
 	}
@@ -53,9 +53,15 @@ public class OrderDetailPageObject extends AbstractPage{
 		waitElementVisible(driver, OrderDetailPageUI.CONFIRM_ORDER_PRODUCT_NAME_INFO, attributesValue,textValue);
 		return isElementDisplayed(driver, OrderDetailPageUI.CONFIRM_ORDER_PRODUCT_NAME_INFO, attributesValue,textValue);
 	}
-	public boolean isDynamicCartTotalInforDisplayed(String fielName, String textValue) {
-		waitElementVisible(driver,OrderDetailPageUI.CART_TOTAL_INFOR_TEXT ,fielName,textValue );
-		return isElementDisplayed(driver,OrderDetailPageUI.CART_TOTAL_INFOR_TEXT ,fielName,textValue);
+	public boolean isCartTotalInforDisplayed(String fieldName, String textValue) {
+		waitElementVisible(driver,OrderDetailPageUI.CART_TOTAL_INFOR_TEXT ,fieldName,textValue );
+		return isElementDisplayed(driver,OrderDetailPageUI.CART_TOTAL_INFOR_TEXT ,fieldName,textValue);
+	}
+
+
+	public boolean isCartOrderTotalInforDisplayed(String fieldName, String textvalue) {
+		waitElementVisible(driver,OrderDetailPageUI.CART_ORDER_TOTAL_PRICE ,fieldName,textvalue);
+		return isElementDisplayed(driver,OrderDetailPageUI.CART_ORDER_TOTAL_PRICE ,fieldName,textvalue);
 	}
 
 

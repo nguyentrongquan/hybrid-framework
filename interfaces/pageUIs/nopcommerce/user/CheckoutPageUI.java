@@ -22,5 +22,12 @@ public class CheckoutPageUI {
 	public static final String MESSAGE_ORDER_SUCCESS_TEXT="//strong[contains(text(),'%s')]";
 	public static final String ORDER_NUMBER_TEXT="//div[@class='order-number']//strong";
 	
+	public static final String CREDIT_CARD_DOPDOWN="//select[@id='CreditCardType']";
+	public static final String CARDHOLDER_NAME_TEXTBOX="//input[@id='CardholderName']";
+	public static final String CARD_NUMBER_TEXTBOX="//input[@id='CardNumber']";
+	public static final String EXPIRATION_MONTH_DROPDOWN="//select[@id='ExpireMonth']";
+	public static final String EXPIRATION_YEAR_DROPDOWN="//select[@id='ExpireYear']";
+	public static final String CARD_CODE_TEXTBOX="//input[@id='CardCode']";
+	
 
 }

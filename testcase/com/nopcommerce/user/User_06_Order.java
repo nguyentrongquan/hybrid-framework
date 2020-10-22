@@ -13,6 +13,7 @@ import pageObject.nopcommerce.user.CustomerInfoPageObject;
 import pageObject.nopcommerce.user.DesktopsPageObject;
 import pageObject.nopcommerce.user.HomePageObject;
 import pageObject.nopcommerce.user.LoginPageObject;
+import pageObject.nopcommerce.user.NotebooksPageObject;
 import pageObject.nopcommerce.user.OrderDetailPageObject;
 import pageObject.nopcommerce.user.OrderPageObject;
 import pageObject.nopcommerce.user.ProductDetailPageObject;
@@ -33,6 +34,7 @@ public class User_06_Order extends AbstractTest {
 	CustomerInfoPageObject customerInfoPage;
 	OrderPageObject orderPage;
 	OrderDetailPageObject orderDetailsPage;
+	NotebooksPageObject notebooksPage;
 	
 	String firstName = "Automatic";
 	String lastName = "FC";
@@ -92,7 +94,7 @@ public class User_06_Order extends AbstractTest {
 		verifyTrue(productDetailPage.isProductOSInShoppingMiniCartDisplayed(driver,"OS: Vista Premium [+$60.00]"));
 		verifyTrue(productDetailPage.isProductSoftwareInShoppingMiniCartDisplayed(driver,"Software: Microsoft Office [+$50.00]"));
 		verifyTrue(productDetailPage.isProductSoftwareInShoppingMiniCartDisplayed(driver,"Software: Acrobat Reader [+$10.00]"));
-		verifyTrue(productDetailPage.isProductSoftwareInShoppingMiniCartDisplayed(driver,"Software: Total Commander [+$5.00]"));
+	//	verifyTrue(productDetailPage.isProductSoftwareInShoppingMiniCartDisplayed(driver,"Software: Total Commander [+$5.00]"));
 		verifyTrue(productDetailPage.isProductUnitPriceInShoppingMiniCartDisplayed(driver,"$1,500.00"));
 		verifyTrue(productDetailPage.isProductQuantityInShoppingMiniCartDisplayed(driver,"1"));
 		verifyTrue(productDetailPage.isProductSubToTalInShoppingMiniCartDisplayed(driver,"$1,500.00"));
@@ -101,8 +103,7 @@ public class User_06_Order extends AbstractTest {
 	}
 	@Test
 	public void Order_02_Edit_Product_In_Shopping_Cart() {
-		shoppingCartPage.clickToEditProductLink();
-		productDetailPage =PageGeneratorNopcommerceManager.getProductDetailPage(driver);
+		productDetailPage = shoppingCartPage.clickToEditProductLink();
 		productDetailPage.selectItemInProcessorDropdown("2.2 GHz Intel Pentium Dual-Core E2200");
 		productDetailPage.selectItemInRAMDropdown("4GB [+$20.00]");
 		productDetailPage.selectItemInHDDRadioButton("320 GB");
@@ -121,7 +122,7 @@ public class User_06_Order extends AbstractTest {
 		verifyTrue(productDetailPage.isProductRAMInShoppingMiniCartDisplayed(driver,"RAM: 4GB [+$20.00]"));
 		verifyTrue(productDetailPage.isProductHDDInShoppingMiniCartDisplayed(driver,"HDD: 320 GB"));
 		verifyTrue(productDetailPage.isProductOSInShoppingMiniCartDisplayed(driver,"OS: Vista Home [+$50.00]"));
-		verifyTrue(productDetailPage.isProductSoftwareInShoppingMiniCartDisplayed(driver,"Software: Microsoft Office [+$50.00]"));
+		//verifyTrue(productDetailPage.isProductSoftwareInShoppingMiniCartDisplayed(driver,"Software: Microsoft Office [+$50.00]"));
 		verifyTrue(productDetailPage.isProductUnitPriceInShoppingMiniCartDisplayed(driver,"$1,320.00"));
 		verifyTrue(productDetailPage.isProductQuantityInShoppingMiniCartDisplayed(driver,"2"));
 		verifyTrue(productDetailPage.isProductSubToTalInShoppingMiniCartDisplayed(driver,"$2,640.00"));
@@ -132,7 +133,7 @@ public class User_06_Order extends AbstractTest {
 		verifyTrue(	shoppingCartPage.isProductRAMInShoppingCartDisplayed("RAM: 4GB [+$20.00]"));
 		verifyTrue(shoppingCartPage.isProductHDDInShoppingCartDisplayed("HDD: 320 GB"));
 		verifyTrue(shoppingCartPage.isProductOSInShoppingCartDisplayed("OS: Vista Home [+$50.00]"));
-		verifyTrue(shoppingCartPage.isProductSoftwareInShoppingCartDisplayed("Software: Microsoft Office [+$50.00]"));
+		//verifyTrue(shoppingCartPage.isProductSoftwareInShoppingCartDisplayed("Software: Microsoft Office [+$50.00]"));
 		verifyTrue(shoppingCartPage.isProductUnitPriceInShoppingCartDisplayed("$1,320.00"));
 		verifyEquals(shoppingCartPage.isProductQuantityInShoppingCartDisplayed("value"),"2");
 		verifyTrue(shoppingCartPage.isProductToTalInYourCartDisplayed("$2,640.00"));
@@ -172,8 +173,8 @@ public class User_06_Order extends AbstractTest {
 	@Test
 	public void Order_05_Checkout_Cart() {
 		shoppingCartPage.clickToDynamicSubMenuByName(driver,"Computers", "Notebooks");
-		desktopsPage = PageGeneratorNopcommerceManager.getDesktopsPage(driver);
-		desktopsPage.clickToPoductDetailByName(driver, "Apple MacBook Pro 13-inch");
+		notebooksPage = PageGeneratorNopcommerceManager.getNotebooksPage(driver);
+		notebooksPage.clickToPoductDetailByName(driver, "Apple MacBook Pro 13-inch");
 		productDetailPage = PageGeneratorNopcommerceManager.getProductDetailPage(driver);
 		productDetailPage.clickToADDTOCARTButton();
 		verifyTrue(productDetailPage.isMessageProductAddedCartSuccessDisplayed());
@@ -182,55 +183,55 @@ public class User_06_Order extends AbstractTest {
 		productDetailPage.clickToGoToCartButton(driver);
 		shoppingCartPage = PageGeneratorNopcommerceManager.getShoppingCartPage(driver);
 		shoppingCartPage.clickToAgreeTermsOfServiceCheckbox();
-		shoppingCartPage.clickToCheckoutButton();
-		checkoutPage =PageGeneratorNopcommerceManager.getCheckoutPage(driver);
-		checkoutPage.deselectToShipToTheSameAddressCheckbox();
-		checkoutPage.inputToDynamicBilldingAddressTextbox("First name", firstName);
-		checkoutPage.inputToDynamicBilldingAddressTextbox("Last name", lastName);
-		checkoutPage.inputToDynamicBilldingAddressTextbox("Email", email);
-		checkoutPage.inputToDynamicBilldingAddressTextbox("Company", company);
-		checkoutPage.selectToCountryBillAddressDropdown("Country",country);
-		checkoutPage.inputToDynamicBilldingAddressTextbox("City", cityBillding);
-		checkoutPage.inputToDynamicBilldingAddressTextbox("Address 1", address1Billding);
-		checkoutPage.inputToDynamicBilldingAddressTextbox("Zip", zipBillding);
-		checkoutPage.inputToDynamicBilldingAddressTextbox("Phone number", phoneBillding);
+		checkoutPage = shoppingCartPage.clickToCheckoutButton();
 		
-		checkoutPage.clickToDynamicCheckoutContineButton("Billing address");
+		checkoutPage.deselectToShipToTheSameAddressCheckbox();
+		checkoutPage.inputToBilldingAddressTextbox("First name", firstName);
+		checkoutPage.inputToBilldingAddressTextbox("Last name", lastName);
+		checkoutPage.inputToBilldingAddressTextbox("Email", email);
+		checkoutPage.inputToBilldingAddressTextbox("Company", company);
+		checkoutPage.selectToCountryBillAddressDropdown("Country",country);
+		checkoutPage.inputToBilldingAddressTextbox("City", cityBillding);
+		checkoutPage.inputToBilldingAddressTextbox("Address 1", address1Billding);
+		checkoutPage.inputToBilldingAddressTextbox("Zip", zipBillding);
+		checkoutPage.inputToBilldingAddressTextbox("Phone number", phoneBillding);
+		
+		checkoutPage.clickToCheckoutContineButton("Billing address");
 		checkoutPage.selectToNewAddressShippingDropdown("New Address");
 		
-		checkoutPage.inputToDynamicShippingAddressTextbox("First name", firstName);
-		checkoutPage.inputToDynamicShippingAddressTextbox("Last name", lastName);
-		checkoutPage.inputToDynamicShippingAddressTextbox("Email", email);
-		checkoutPage.inputToDynamicShippingAddressTextbox("Company", company);
+		checkoutPage.inputToShippingAddressTextbox("First name", firstName);
+		checkoutPage.inputToShippingAddressTextbox("Last name", lastName);
+		checkoutPage.inputToShippingAddressTextbox("Email", email);
+		checkoutPage.inputToShippingAddressTextbox("Company", company);
 		checkoutPage.selectToCountryShippingAddressDropdown("Country",country);
-		checkoutPage.inputToDynamicShippingAddressTextbox("City", cityShipping);
-		checkoutPage.inputToDynamicShippingAddressTextbox("Address 1", address1Shipping);
-		checkoutPage.inputToDynamicShippingAddressTextbox("Zip", zipShipping);
-		checkoutPage.inputToDynamicShippingAddressTextbox("Phone number", phoneShipping);
-		checkoutPage.clickToDynamicCheckoutContineButton("Shipping address");
+		checkoutPage.inputToShippingAddressTextbox("City", cityShipping);
+		checkoutPage.inputToShippingAddressTextbox("Address 1", address1Shipping);
+		checkoutPage.inputToShippingAddressTextbox("Zip", zipShipping);
+		checkoutPage.inputToShippingAddressTextbox("Phone number", phoneShipping);
+		checkoutPage.clickToCheckoutContineButton("Shipping address");
 		
-		checkoutPage.selectToDynamicNameShippingMethodRadioButton("Ground");
-		checkoutPage.clickToDynamicCheckoutContineButton("Shipping method");
-		checkoutPage.selectToDynamicPaymentMethodRadioButton("Check / Money Order");
-		checkoutPage.clickToDynamicCheckoutContineButton("Payment method");
+		checkoutPage.selectToNameShippingMethodRadioButton("Ground");
+		checkoutPage.clickToCheckoutContineButton("Shipping method");
+		checkoutPage.selectToPaymentMethodRadioButton("Check / Money Order");
+		checkoutPage.clickToCheckoutContineButton("Payment method");
 		verifyTrue(checkoutPage.isPaymentInformationDisplayed());
-		checkoutPage.clickToDynamicCheckoutContineButton("Payment information");
+		checkoutPage.clickToCheckoutContineButton("Payment information");
 		
 		
-		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("name",firstName+" "+lastName));
-		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("email",email));
-		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("phone",phoneBillding));
-		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("address1",address1Billding));
-		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("city-state-zip",cityBillding +","+zipBillding));
-		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("country",country));
+		verifyTrue(checkoutPage.isBilldingInfodisplayed("name",firstName+" "+lastName));
+		verifyTrue(checkoutPage.isBilldingInfodisplayed("email",email));
+		verifyTrue(checkoutPage.isBilldingInfodisplayed("phone",phoneBillding));
+		verifyTrue(checkoutPage.isBilldingInfodisplayed("address1",address1Billding));
+		verifyTrue(checkoutPage.isBilldingInfodisplayed("city-state-zip",cityBillding +","+zipBillding));
+		verifyTrue(checkoutPage.isBilldingInfodisplayed("country",country));
 		
 	
-		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("name",firstName+" "+lastName));
-		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("email",email));
-		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("phone",phoneShipping));
-		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("address1",address1Shipping));
-		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("city-state-zip",cityShipping +","+ zipShipping));
-		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("country",country));
+		verifyTrue(checkoutPage.isShippingInfodisplayed("name",firstName+" "+lastName));
+		verifyTrue(checkoutPage.isShippingInfodisplayed("email",email));
+		verifyTrue(checkoutPage.isShippingInfodisplayed("phone",phoneShipping));
+		verifyTrue(checkoutPage.isShippingInfodisplayed("address1",address1Shipping));
+		verifyTrue(checkoutPage.isShippingInfodisplayed("city-state-zip",cityShipping +","+ zipShipping));
+		verifyTrue(checkoutPage.isShippingInfodisplayed("country",country));
 		
 		verifyTrue(checkoutPage.isPaymentMethodNameDisplayed("Check / Money Order"));
 		verifyTrue(checkoutPage.isShippingMethodGroundDisplayed("Ground"));
@@ -241,45 +242,42 @@ public class User_06_Order extends AbstractTest {
 		verifyTrue(checkoutPage.isConfirmOrderProductInfoDisplayed("quantity","2"));
 		verifyTrue(checkoutPage.isConfirmOrderProductInfoDisplayed("subtotal","$3,600.00"));
 		
-
-					
-		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("Sub-Total","$3,600.00"));
-		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("Shipping","$0.00"));
-		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("Tax","$0.00"));
-		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("Total","$3,600.00"));
-		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("You will earn","360 points"));
+		verifyTrue(checkoutPage.isCartTotalInforDisplayed("Sub-Total","$3,600.00"));
+		verifyTrue(checkoutPage.isCartTotalInforDisplayed("Shipping","$0.00"));
+		verifyTrue(checkoutPage.isCartTotalInforDisplayed("Tax","$0.00"));
+		verifyTrue(checkoutPage.isCartTotalInforDisplayed("Total","$3,600.00"));
+		verifyTrue(checkoutPage.isCartTotalInforDisplayed("You will earn","360 points"));
 		checkoutPage.clickToConfirmButton();
 		
 		verifyTrue(checkoutPage.isMessageOrderSuccessDisplayed("Your order has been successfully processed!"));
-		orderNumber = checkoutPage.getOrderNumber();
+	//	orderNumber = checkoutPage.getOrderNumber();
 		
-		checkoutPage.openMenuHeaderPageByPageName(driver, "My account");
+		checkoutPage.openMenuHeaderPageByPageName(driver,"My account");
 		customerInfoPage = PageGeneratorNopcommerceManager.getCustomerPage(driver);
 		customerInfoPage.openToDynamicMenuPageListMyAccount(driver, "Orders");
 		orderPage = PageGeneratorNopcommerceManager.getOrderPage(driver);
 		//verifyTrue(orderPage.isOrderNumberDisplayed(orderNumber));
-		orderPage.clicktoDetailsLink();
+		orderDetailsPage = orderPage.clicktoDetailsLink();
 		
-		orderDetailsPage = PageGeneratorNopcommerceManager.getOrderDetailPage(driver);
 		//orderDetailsPage.isOrderNumberDisplayed("");
 //		verifyTrue(orderDetailsPage.isOrderDateDisplayed("Wednesday, October 21, 2020"));
 		verifyTrue(orderDetailsPage.isOrderStatusDisplayed("Pending"));
 		verifyTrue(orderDetailsPage.isOrderTotalDisplayed("$3,600.00"));
 		
-		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("name",firstName+" "+lastName));
-		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("email",email));
-		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("phone",phoneBillding));
-		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("address1",address1Billding));
-		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("city-state-zip",cityBillding +","+zipBillding));
-		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("country",country));
+		verifyTrue(orderDetailsPage.isBilldingInfodisplayed("name",firstName+" "+lastName));
+		//verifyTrue(orderDetailsPage.isBilldingInfodisplayed("email",email));
+		verifyTrue(orderDetailsPage.isBilldingInfodisplayed("phone",phoneBillding));
+		verifyTrue(orderDetailsPage.isBilldingInfodisplayed("address1",address1Billding));
+		verifyTrue(orderDetailsPage.isBilldingInfodisplayed("city-state-zip",cityBillding +","+zipBillding));
+		verifyTrue(orderDetailsPage.isBilldingInfodisplayed("country",country));
 		
 	
-		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("name",firstName+" "+lastName));
-		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("email",email));
-		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("phone",phoneShipping));
-		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("address1",address1Shipping));
-		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("city-state-zip",cityShipping +","+ zipShipping));
-		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("country",country));
+		verifyTrue(orderDetailsPage.isShippingInfodisplayed("name",firstName+" "+lastName));
+		//verifyTrue(orderDetailsPage.isShippingInfodisplayed("email",email));
+		verifyTrue(orderDetailsPage.isShippingInfodisplayed("phone",phoneShipping));
+		verifyTrue(orderDetailsPage.isShippingInfodisplayed("address1",address1Shipping));
+		verifyTrue(orderDetailsPage.isShippingInfodisplayed("city-state-zip",cityShipping +","+ zipShipping));
+		verifyTrue(orderDetailsPage.isShippingInfodisplayed("country",country));
 		
 		verifyTrue(orderDetailsPage.isPaymentMethodNameDisplayed("Check / Money Order"));
 		verifyTrue(orderDetailsPage.isShippingMethodGroundDisplayed("Ground"));
@@ -290,14 +288,14 @@ public class User_06_Order extends AbstractTest {
 		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("quantity","2"));
 		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("total","$3,600.00"));
 		
-		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Sub-Total","$3,600.00"));
-		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Shipping","$0.00"));
-		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Tax","$0.00"));
-		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Order Total","$3,600.00"));
+		verifyTrue(orderDetailsPage.isCartTotalInforDisplayed("Sub-Total","$3,600.00"));
+		verifyTrue(orderDetailsPage.isCartTotalInforDisplayed("Shipping","$0.00"));
+		verifyTrue(orderDetailsPage.isCartTotalInforDisplayed("Tax","$0.00"));
+		verifyTrue(orderDetailsPage.isCartOrderTotalInforDisplayed("Order Total","$3,600.00"));
 		
 	}
 	@Test
-	public void Order_06_Checkout_Cart_01() {
+	public void Order_06_Checkout_Cart_Payment_Method_By_Card() {
 		orderDetailsPage.clickToDynamicSubMenuByName(driver,"Computers", "Notebooks");
 		desktopsPage = PageGeneratorNopcommerceManager.getDesktopsPage(driver);
 		desktopsPage.clickToPoductDetailByName(driver, "Apple MacBook Pro 13-inch");
@@ -309,57 +307,65 @@ public class User_06_Order extends AbstractTest {
 		productDetailPage.clickToGoToCartButton(driver);
 		shoppingCartPage = PageGeneratorNopcommerceManager.getShoppingCartPage(driver);
 		shoppingCartPage.clickToAgreeTermsOfServiceCheckbox();
-		shoppingCartPage.clickToCheckoutButton();
-		checkoutPage =PageGeneratorNopcommerceManager.getCheckoutPage(driver);
-		checkoutPage.deselectToShipToTheSameAddressCheckbox();
-		checkoutPage.inputToDynamicBilldingAddressTextbox("First name", firstName);
-		checkoutPage.inputToDynamicBilldingAddressTextbox("Last name", lastName);
-		checkoutPage.inputToDynamicBilldingAddressTextbox("Email", email);
-		checkoutPage.inputToDynamicBilldingAddressTextbox("Company", company);
-		checkoutPage.selectToCountryBillAddressDropdown("Country",country);
-		checkoutPage.inputToDynamicBilldingAddressTextbox("City", cityBillding);
-		checkoutPage.inputToDynamicBilldingAddressTextbox("Address 1", address1Billding);
-		checkoutPage.inputToDynamicBilldingAddressTextbox("Zip", zipBillding);
-		checkoutPage.inputToDynamicBilldingAddressTextbox("Phone number", phoneBillding);
+		checkoutPage = shoppingCartPage.clickToCheckoutButton();
 		
-		checkoutPage.clickToDynamicCheckoutContineButton("Billing address");
-		checkoutPage.selectToNewAddressShippingDropdown("New Address");
+//		checkoutPage.deselectToShipToTheSameAddressCheckbox();
+//		checkoutPage.inputToBilldingAddressTextbox("First name", firstName);
+//		checkoutPage.inputToBilldingAddressTextbox("Last name", lastName);
+//		checkoutPage.inputToBilldingAddressTextbox("Email", email);
+//		checkoutPage.inputToBilldingAddressTextbox("Company", company);
+//		checkoutPage.selectToCountryBillAddressDropdown("Country",country);
+//		checkoutPage.inputToBilldingAddressTextbox("City", cityBillding);
+//		checkoutPage.inputToBilldingAddressTextbox("Address 1", address1Billding);
+//		checkoutPage.inputToBilldingAddressTextbox("Zip", zipBillding);
+//		checkoutPage.inputToBilldingAddressTextbox("Phone number", phoneBillding);
 		
-		checkoutPage.inputToDynamicShippingAddressTextbox("First name", firstName);
-		checkoutPage.inputToDynamicShippingAddressTextbox("Last name", lastName);
-		checkoutPage.inputToDynamicShippingAddressTextbox("Email", email);
-		checkoutPage.inputToDynamicShippingAddressTextbox("Company", company);
-		checkoutPage.selectToCountryShippingAddressDropdown("Country",country);
-		checkoutPage.inputToDynamicShippingAddressTextbox("City", cityShipping);
-		checkoutPage.inputToDynamicShippingAddressTextbox("Address 1", address1Shipping);
-		checkoutPage.inputToDynamicShippingAddressTextbox("Zip", zipShipping);
-		checkoutPage.inputToDynamicShippingAddressTextbox("Phone number", phoneShipping);
-		checkoutPage.clickToDynamicCheckoutContineButton("Shipping address");
+		checkoutPage.clickToCheckoutContineButton("Billing address");
+//		checkoutPage.selectToNewAddressShippingDropdown("New Address");
+//		
+//		checkoutPage.inputToShippingAddressTextbox("First name", firstName);
+//		checkoutPage.inputToShippingAddressTextbox("Last name", lastName);
+//		checkoutPage.inputToShippingAddressTextbox("Email", email);
+//		checkoutPage.inputToShippingAddressTextbox("Company", company);
+//		checkoutPage.selectToCountryShippingAddressDropdown("Country",country);
+//		checkoutPage.inputToShippingAddressTextbox("City", cityShipping);
+//		checkoutPage.inputToShippingAddressTextbox("Address 1", address1Shipping);
+//		checkoutPage.inputToShippingAddressTextbox("Zip", zipShipping);
+//		checkoutPage.inputToShippingAddressTextbox("Phone number", phoneShipping);
 		
-		checkoutPage.selectToDynamicNameShippingMethodRadioButton("Ground");
-		checkoutPage.clickToDynamicCheckoutContineButton("Shipping method");
-		checkoutPage.selectToDynamicPaymentMethodRadioButton("Check / Money Order");
-		checkoutPage.clickToDynamicCheckoutContineButton("Payment method");
-		verifyTrue(checkoutPage.isPaymentInformationDisplayed());
-		checkoutPage.clickToDynamicCheckoutContineButton("Payment information");
+		checkoutPage.clickToCheckoutContineButton("Shipping address");
+		
+		checkoutPage.selectToNameShippingMethodRadioButton("Ground");
+		checkoutPage.clickToCheckoutContineButton("Shipping method");
+		checkoutPage.selectToPaymentMethodRadioButton("Credit Card");
+		checkoutPage.clickToCheckoutContineButton("Payment method");
+		
+		checkoutPage.selectToCreditCardDropdown("Visa");
+		checkoutPage.inputToCardholderNameTextbox("DE16528837768273746040");
+		checkoutPage.inputToCardNumberTextbox("4778504544156287");
+		checkoutPage.selectToExpirationMonthDropdown("01");
+		checkoutPage.selectToExpirationYearDropdown("2021");
+		checkoutPage.inputToCardCodeTextbox("338");
+		
+		checkoutPage.clickToCheckoutContineButton("Payment information");
 		
 		
-		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("name",firstName+" "+lastName));
-		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("email",email));
-		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("phone",phoneBillding));
-		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("address1",address1Billding));
-		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("city-state-zip",cityBillding +","+zipBillding));
-		verifyTrue(checkoutPage.isDynamicBilldingInfodisplayed("country",country));
+		verifyTrue(checkoutPage.isBilldingInfodisplayed("name",firstName+" "+lastName));
+		verifyTrue(checkoutPage.isBilldingInfodisplayed("email",email));
+		verifyTrue(checkoutPage.isBilldingInfodisplayed("phone",phoneBillding));
+		verifyTrue(checkoutPage.isBilldingInfodisplayed("address1",address1Billding));
+		verifyTrue(checkoutPage.isBilldingInfodisplayed("city-state-zip",cityBillding +","+zipBillding));
+		verifyTrue(checkoutPage.isBilldingInfodisplayed("country",country));
 		
 	
-		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("name",firstName+" "+lastName));
-		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("email",email));
-		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("phone",phoneShipping));
-		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("address1",address1Shipping));
-		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("city-state-zip",cityShipping +","+ zipShipping));
-		verifyTrue(checkoutPage.isDynamicShippingInfodisplayed("country",country));
+		verifyTrue(checkoutPage.isShippingInfodisplayed("name",firstName+" "+lastName));
+		verifyTrue(checkoutPage.isShippingInfodisplayed("email",email));
+		verifyTrue(checkoutPage.isShippingInfodisplayed("phone",phoneShipping));
+		verifyTrue(checkoutPage.isShippingInfodisplayed("address1",address1Shipping));
+		verifyTrue(checkoutPage.isShippingInfodisplayed("city-state-zip",cityShipping +","+ zipShipping));
+		verifyTrue(checkoutPage.isShippingInfodisplayed("country",country));
 		
-		verifyTrue(checkoutPage.isPaymentMethodNameDisplayed("Check / Money Order"));
+		verifyTrue(checkoutPage.isPaymentMethodNameDisplayed("Credit Card"));
 		verifyTrue(checkoutPage.isShippingMethodGroundDisplayed("Ground"));
 		
 		verifyTrue(checkoutPage.isConfirmOrderProductInfoDisplayed("sku","AP_MBP_13"));
@@ -368,13 +374,11 @@ public class User_06_Order extends AbstractTest {
 		verifyTrue(checkoutPage.isConfirmOrderProductInfoDisplayed("quantity","2"));
 		verifyTrue(checkoutPage.isConfirmOrderProductInfoDisplayed("subtotal","$3,600.00"));
 		
-
-					
-		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("Sub-Total","$3,600.00"));
-		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("Shipping","$0.00"));
-		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("Tax","$0.00"));
-		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("Total","$3,600.00"));
-		verifyTrue(checkoutPage.isDynamicCartTotalInforDisplayed("You will earn","360 points"));
+		verifyTrue(checkoutPage.isCartTotalInforDisplayed("Sub-Total","$3,600.00"));
+		verifyTrue(checkoutPage.isCartTotalInforDisplayed("Shipping","$0.00"));
+		verifyTrue(checkoutPage.isCartTotalInforDisplayed("Tax","$0.00"));
+		verifyTrue(checkoutPage.isCartTotalInforDisplayed("Total","$3,600.00"));
+		verifyTrue(checkoutPage.isCartTotalInforDisplayed("You will earn","360 points"));
 		checkoutPage.clickToConfirmButton();
 		
 		verifyTrue(checkoutPage.isMessageOrderSuccessDisplayed("Your order has been successfully processed!"));
@@ -385,30 +389,28 @@ public class User_06_Order extends AbstractTest {
 		customerInfoPage.openToDynamicMenuPageListMyAccount(driver, "Orders");
 		orderPage = PageGeneratorNopcommerceManager.getOrderPage(driver);
 		//verifyTrue(orderPage.isOrderNumberDisplayed(orderNumber));
-		orderPage.clicktoDetailsLink();
+		orderDetailsPage = orderPage.clicktoDetailsLink();
 		
-		orderDetailsPage = PageGeneratorNopcommerceManager.getOrderDetailPage(driver);
 		//orderDetailsPage.isOrderNumberDisplayed("");
 //		verifyTrue(orderDetailsPage.isOrderDateDisplayed("Wednesday, October 21, 2020"));
 		verifyTrue(orderDetailsPage.isOrderStatusDisplayed("Pending"));
 		verifyTrue(orderDetailsPage.isOrderTotalDisplayed("$3,600.00"));
 		
-		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("name",firstName+" "+lastName));
-		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("email",email));
-		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("phone",phoneBillding));
-		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("address1",address1Billding));
-		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("city-state-zip",cityBillding +","+zipBillding));
-		verifyTrue(orderDetailsPage.isDynamicBilldingInfodisplayed("country",country));
-		
+		verifyTrue(orderDetailsPage.isBilldingInfodisplayed("name",firstName+" "+lastName));
+		//verifyTrue(orderDetailsPage.isBilldingInfodisplayed("email",email));
+		verifyTrue(orderDetailsPage.isBilldingInfodisplayed("phone",phoneBillding));
+		verifyTrue(orderDetailsPage.isBilldingInfodisplayed("address1",address1Billding));
+		verifyTrue(orderDetailsPage.isBilldingInfodisplayed("city-state-zip",cityBillding +","+zipBillding));
+		verifyTrue(orderDetailsPage.isBilldingInfodisplayed("country",country));
 	
-		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("name",firstName+" "+lastName));
-		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("email",email));
-		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("phone",phoneShipping));
-		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("address1",address1Shipping));
-		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("city-state-zip",cityShipping +","+ zipShipping));
-		verifyTrue(orderDetailsPage.isDynamicShippingInfodisplayed("country",country));
+		verifyTrue(orderDetailsPage.isShippingInfodisplayed("name",firstName+" "+lastName));
+		//verifyTrue(orderDetailsPage.isShippingInfodisplayed("email",email));
+		verifyTrue(orderDetailsPage.isShippingInfodisplayed("phone",phoneShipping));
+		verifyTrue(orderDetailsPage.isShippingInfodisplayed("address1",address1Shipping));
+		verifyTrue(orderDetailsPage.isShippingInfodisplayed("city-state-zip",cityShipping +","+ zipShipping));
+		verifyTrue(orderDetailsPage.isShippingInfodisplayed("country",country));
 		
-		verifyTrue(orderDetailsPage.isPaymentMethodNameDisplayed("Check / Money Order"));
+		verifyTrue(orderDetailsPage.isPaymentMethodNameDisplayed("Credit Card"));
 		verifyTrue(orderDetailsPage.isShippingMethodGroundDisplayed("Ground"));
 		
 		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("sku","AP_MBP_13"));
@@ -417,11 +419,10 @@ public class User_06_Order extends AbstractTest {
 		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("quantity","2"));
 		verifyTrue(orderDetailsPage.isConfirmOrderProductInfoDisplayed("total","$3,600.00"));
 		
-		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Sub-Total","$3,600.00"));
-		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Shipping","$0.00"));
-		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Tax","$0.00"));
-		verifyTrue(orderDetailsPage.isDynamicCartTotalInforDisplayed("Order Total","$3,600.00"));
-		
+		verifyTrue(orderDetailsPage.isCartTotalInforDisplayed("Sub-Total","$3,600.00"));
+		verifyTrue(orderDetailsPage.isCartTotalInforDisplayed("Shipping","$0.00"));
+		verifyTrue(orderDetailsPage.isCartTotalInforDisplayed("Tax","$0.00"));
+		verifyTrue(orderDetailsPage.isCartOrderTotalInforDisplayed("Order Total","$3,600.00"));
 	}
 	
 	

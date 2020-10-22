@@ -3,6 +3,7 @@ package pageObject.nopcommerce.user;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
+import commons.PageGeneratorNopcommerceManager;
 import pageUIs.nopcommerce.user.OrderPageUI;
 
 public class OrderPageObject extends AbstractPage{
@@ -16,9 +17,9 @@ public class OrderPageObject extends AbstractPage{
 		return isElementDisplayed(driver, OrderPageUI.ORDER_NUMBER_TEXT, orderNumber);
 	}
 
-	public void clicktoDetailsLink() {
+	public OrderDetailPageObject clicktoDetailsLink() {
 		waitElementClickable(driver, OrderPageUI.DETAIL_LINK);
 		clickToElement(driver, OrderPageUI.DETAIL_LINK);
-		
+		return PageGeneratorNopcommerceManager.getOrderDetailPage(driver);
 	}
 }

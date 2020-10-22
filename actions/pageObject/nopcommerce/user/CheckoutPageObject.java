@@ -12,18 +12,17 @@ public class CheckoutPageObject extends AbstractPage{
 		
 	}
 	public void deselectToShipToTheSameAddressCheckbox() {
-		waitForJStoLoad(driver);
+		sleepInSecond(1);
 		waitElementClickable(driver, CheckoutPageUI.SHIP_TO_THE_SAME_ADDRESS_CHECKBOX);
-		clickToElement(driver, CheckoutPageUI.SHIP_TO_THE_SAME_ADDRESS_CHECKBOX);
+		uncheckToTheCheckbox(driver, CheckoutPageUI.SHIP_TO_THE_SAME_ADDRESS_CHECKBOX);
 	}
-	public void inputToDynamicBilldingAddressTextbox(String fieldName,String inputvalue) {
+	public void inputToBilldingAddressTextbox(String fieldName,String inputvalue) {
 		waitForJStoLoad(driver);
 		waitElementVisible(driver, CheckoutPageUI.DYNAMIC_BIILDING_TEXTBOX, fieldName);
 		sendkeyToElement(driver, CheckoutPageUI.DYNAMIC_BIILDING_TEXTBOX, inputvalue,fieldName);
-		
 	}
 	
-	public void inputToDynamicShippingAddressTextbox(String fieldName,String inputvalue) {
+	public void inputToShippingAddressTextbox(String fieldName,String inputvalue) {
 		waitElementVisible(driver, CheckoutPageUI.DYNAMIC_SHIPPING_TEXTBOX, fieldName);
 		sendkeyToElement(driver, CheckoutPageUI.DYNAMIC_SHIPPING_TEXTBOX, inputvalue,fieldName);
 		
@@ -39,7 +38,7 @@ public class CheckoutPageObject extends AbstractPage{
 		selectItemInDropdown(driver, CheckoutPageUI.COUNTRY_SHIPPING_DROPDOWN,ValueDropdown,fieldName);
 		
 	}
-	public void clickToDynamicCheckoutContineButton(String fieldName) {
+	public void clickToCheckoutContineButton(String fieldName) {
 		waitElementClickable(driver,CheckoutPageUI.DYNAMIC_CONTINUE_BUTTON,fieldName);
 		clickToElement(driver, CheckoutPageUI.DYNAMIC_CONTINUE_BUTTON,fieldName);
 		
@@ -49,11 +48,11 @@ public class CheckoutPageObject extends AbstractPage{
 		selectItemInDropdown(driver, CheckoutPageUI.SHIPPING_NEW_ADDRESS_DROPDOWN, dropDownValue);
 		
 	}
-	public void selectToDynamicNameShippingMethodRadioButton(String nameMethod) {
+	public void selectToNameShippingMethodRadioButton(String nameMethod) {
 		waitElementClickable(driver, CheckoutPageUI.DYNAMIC_NAME_SHIPPING_METHOD_RADIO_BUTTON,nameMethod);
 		clickToElement(driver, CheckoutPageUI.DYNAMIC_NAME_SHIPPING_METHOD_RADIO_BUTTON,nameMethod);
 	}
-	public void selectToDynamicPaymentMethodRadioButton(String paymentMethod) {
+	public void selectToPaymentMethodRadioButton(String paymentMethod) {
 		waitElementClickable(driver, CheckoutPageUI.DYNAMIC_NAME_PAYMENT_METHOD_RADIO_BUTTON,paymentMethod);
 		clickToElement(driver, CheckoutPageUI.DYNAMIC_NAME_PAYMENT_METHOD_RADIO_BUTTON,paymentMethod);
 		
@@ -63,7 +62,7 @@ public class CheckoutPageObject extends AbstractPage{
 		return isElementDisplayed(driver, CheckoutPageUI.PAYMENT_INFORMATION_MESSAGE_TEXT);
 		
 	}
-	public boolean isDynamicBilldingInfodisplayed(String attributesValue, String textValue) {
+	public boolean isBilldingInfodisplayed(String attributesValue, String textValue) {
 		waitElementVisible(driver, CheckoutPageUI.DYNAMIC_BILLDING_ADDRESS_INFO_TEXT, attributesValue,textValue);
 		return isElementDisplayed(driver, CheckoutPageUI.DYNAMIC_BILLDING_ADDRESS_INFO_TEXT, attributesValue,textValue);
 		
@@ -72,7 +71,7 @@ public class CheckoutPageObject extends AbstractPage{
 		waitElementVisible(driver, CheckoutPageUI.PAYMENT_METHOD_TEXT, paymentMethod);
 		return isElementDisplayed(driver, CheckoutPageUI.PAYMENT_METHOD_TEXT, paymentMethod);
 	}
-	public boolean isDynamicShippingInfodisplayed(String attributesValue, String textValue) {
+	public boolean isShippingInfodisplayed(String attributesValue, String textValue) {
 		waitElementVisible(driver, CheckoutPageUI.DYNAMIC_SHIPPING_ADDRESS_INFO_TEXT, attributesValue,textValue);
 		return isElementDisplayed(driver, CheckoutPageUI.DYNAMIC_SHIPPING_ADDRESS_INFO_TEXT, attributesValue,textValue);
 	}
@@ -89,7 +88,7 @@ public class CheckoutPageObject extends AbstractPage{
 		waitElementVisible(driver, CheckoutPageUI.CONFIRM_ORDER_PRODUCT_NAME_INFO, attributesValue,textValue);
 		return isElementDisplayed(driver, CheckoutPageUI.CONFIRM_ORDER_PRODUCT_NAME_INFO, attributesValue,textValue);
 	}
-	public boolean isDynamicCartTotalInforDisplayed(String fielName, String textValue) {
+	public boolean isCartTotalInforDisplayed(String fielName, String textValue) {
 		waitElementVisible(driver,CheckoutPageUI.CART_TOTAL_INFOR_TEXT ,fielName,textValue );
 		return isElementDisplayed(driver,CheckoutPageUI.CART_TOTAL_INFOR_TEXT ,fielName,textValue);
 	}
@@ -104,6 +103,35 @@ public class CheckoutPageObject extends AbstractPage{
 	public String getOrderNumber() {
 		waitElementVisible(driver, CheckoutPageUI.ORDER_NUMBER_TEXT);
 		return getTextElement(driver,  CheckoutPageUI.ORDER_NUMBER_TEXT);
+	}
+	public void selectToCreditCardDropdown(String itemValue) {
+		waitElementClickable(driver, CheckoutPageUI.CREDIT_CARD_DOPDOWN);
+		selectItemInDropdown(driver, CheckoutPageUI.CREDIT_CARD_DOPDOWN, itemValue);
+	}
+	public void inputToCardholderNameTextbox(String cardholderName) {
+		waitElementVisible(driver, CheckoutPageUI.CARDHOLDER_NAME_TEXTBOX);
+		sendkeyToElement(driver,  CheckoutPageUI.CARDHOLDER_NAME_TEXTBOX, cardholderName);
+		
+	}
+	public void inputToCardNumberTextbox(String cardNumber) {
+		waitElementVisible(driver, CheckoutPageUI.CARD_NUMBER_TEXTBOX);
+		sendkeyToElement(driver,  CheckoutPageUI.CARD_NUMBER_TEXTBOX, cardNumber);
+		
+	}
+	public void selectToExpirationMonthDropdown(String month) {
+		waitElementClickable(driver, CheckoutPageUI.EXPIRATION_MONTH_DROPDOWN);
+		selectItemInDropdown(driver, CheckoutPageUI.EXPIRATION_MONTH_DROPDOWN, month);
+		
+	}
+	public void selectToExpirationYearDropdown(String year) {
+		waitElementClickable(driver, CheckoutPageUI.EXPIRATION_YEAR_DROPDOWN);
+		selectItemInDropdown(driver, CheckoutPageUI.EXPIRATION_YEAR_DROPDOWN, year);
+		
+	}
+	public void inputToCardCodeTextbox(String cardCode) {
+		waitElementVisible(driver, CheckoutPageUI.CARD_CODE_TEXTBOX);
+		sendkeyToElement(driver,  CheckoutPageUI.CARD_CODE_TEXTBOX, cardCode);
+		
 	}
 	
 	

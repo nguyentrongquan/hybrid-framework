@@ -3,6 +3,7 @@ package pageObject.nopcommerce.user;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
+import commons.PageGeneratorNopcommerceManager;
 import pageUIs.nopcommerce.user.ShoppingCartPageUI;
 
 public class ShoppingCartPageObject extends AbstractPage{
@@ -12,10 +13,11 @@ public class ShoppingCartPageObject extends AbstractPage{
 		this.driver=driver;
 	}
 
-	public void clickToEditProductLink() {
+	public ProductDetailPageObject clickToEditProductLink() {
 		sleepInSecond(1);
 		waitElementClickable(driver, ShoppingCartPageUI.EDIT_PRODUCT_CART_LINK);
 		clickToElement(driver, ShoppingCartPageUI.EDIT_PRODUCT_CART_LINK);
+		return PageGeneratorNopcommerceManager.getProductDetailPage(driver);
 	}
 
 	public boolean isProductNameInShoppingCartDisplayed(String name) {
@@ -91,9 +93,10 @@ public class ShoppingCartPageObject extends AbstractPage{
 		clickToElement(driver, ShoppingCartPageUI.TERM_OF_SERVICE_CHECKBOX);
 	}
 
-	public void clickToCheckoutButton() {
+	public CheckoutPageObject clickToCheckoutButton() {
 		waitElementClickable(driver, ShoppingCartPageUI.CHECK_OUT_BUTTON);
 		clickToElement(driver, ShoppingCartPageUI.CHECK_OUT_BUTTON);
+		return PageGeneratorNopcommerceManager.getCheckoutPage(driver);
 		
 	}
 	
