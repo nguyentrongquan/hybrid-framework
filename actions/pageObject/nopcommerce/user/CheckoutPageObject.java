@@ -43,6 +43,12 @@ public class CheckoutPageObject extends AbstractPage{
 		clickToElement(driver, CheckoutPageUI.DYNAMIC_CONTINUE_BUTTON,fieldName);
 		
 	}
+	public void selectToNewAddressBilldingDropdown(String dropDownValue) {
+		sleepInSecond(10);
+		waitElementClickable(driver,CheckoutPageUI.BILLDING_NEW_ADDRESS_DROPDOWN);
+		selectItemInDropdown(driver, CheckoutPageUI.BILLDING_NEW_ADDRESS_DROPDOWN, dropDownValue);
+		
+	}
 	public void selectToNewAddressShippingDropdown(String dropDownValue) {
 		waitElementClickable(driver,CheckoutPageUI.SHIPPING_NEW_ADDRESS_DROPDOWN);
 		selectItemInDropdown(driver, CheckoutPageUI.SHIPPING_NEW_ADDRESS_DROPDOWN, dropDownValue);
@@ -102,7 +108,8 @@ public class CheckoutPageObject extends AbstractPage{
 	}
 	public String getOrderNumber() {
 		waitElementVisible(driver, CheckoutPageUI.ORDER_NUMBER_TEXT);
-		return getTextElement(driver,  CheckoutPageUI.ORDER_NUMBER_TEXT);
+		String orderNumber = getTextElement(driver,  CheckoutPageUI.ORDER_NUMBER_TEXT);
+		return orderNumber.toLowerCase();
 	}
 	public void selectToCreditCardDropdown(String itemValue) {
 		waitElementClickable(driver, CheckoutPageUI.CREDIT_CARD_DOPDOWN);

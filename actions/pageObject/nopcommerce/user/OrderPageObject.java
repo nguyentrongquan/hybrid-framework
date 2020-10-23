@@ -12,9 +12,11 @@ public class OrderPageObject extends AbstractPage{
 	public OrderPageObject(WebDriver driver) {
 		this.driver=driver;
 	}
-	public boolean isOrderNumberDisplayed(String orderNumber) {
-		waitElementVisible(driver,OrderPageUI.ORDER_NUMBER_TEXT,orderNumber);
-		return isElementDisplayed(driver, OrderPageUI.ORDER_NUMBER_TEXT, orderNumber);
+	public String getOrderNumberInMyaccount( ) {
+		
+		waitElementVisible(driver,OrderPageUI.ORDER_NUMBER_TEXT);
+		String	orderNumber = getTextElement(driver, OrderPageUI.ORDER_NUMBER_TEXT);
+		return orderNumber.toLowerCase();
 	}
 
 	public OrderDetailPageObject clicktoDetailsLink() {

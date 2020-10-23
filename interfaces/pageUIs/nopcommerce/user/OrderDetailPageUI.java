@@ -15,5 +15,6 @@ public class OrderDetailPageUI {
 	public static final String PAYMENT_INFORMATION_MESSAGE_TEXT="//b[contains(text(),'NOP SOLUTIONS')]";
 	public static final String CART_TOTAL_INFOR_TEXT="//label[contains(text(),'%s')]//parent::td//following-sibling::td//span[text()='%s']";
 	public static final String CART_ORDER_TOTAL_PRICE="//label[contains(text(),'%s')]//parent::td//following-sibling::td//strong[text()='%s']";
+	public static final String RE_ORDER_BUTTON="//input[@value='Re-order']";
 
 }

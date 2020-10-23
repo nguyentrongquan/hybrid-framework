@@ -3,6 +3,7 @@ package pageObject.nopcommerce.user;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
+import commons.PageGeneratorNopcommerceManager;
 import pageUIs.nopcommerce.user.OrderDetailPageUI;
 
 public class OrderDetailPageObject extends AbstractPage{
@@ -62,6 +63,13 @@ public class OrderDetailPageObject extends AbstractPage{
 	public boolean isCartOrderTotalInforDisplayed(String fieldName, String textvalue) {
 		waitElementVisible(driver,OrderDetailPageUI.CART_ORDER_TOTAL_PRICE ,fieldName,textvalue);
 		return isElementDisplayed(driver,OrderDetailPageUI.CART_ORDER_TOTAL_PRICE ,fieldName,textvalue);
+	}
+
+
+	public ShoppingCartPageObject clickToReOrderButton() {
+		waitElementClickable(driver, OrderDetailPageUI.RE_ORDER_BUTTON);
+		clickToElement(driver, OrderDetailPageUI.RE_ORDER_BUTTON);
+		return PageGeneratorNopcommerceManager.getShoppingCartPage(driver);
 	}
 
 
