@@ -134,8 +134,10 @@ public abstract class AbstractTest {
 		try {
 			if (condition == true) {
 				log.info(" -------------------------- PASSED -------------------------- ");
+				
 			} else {
 				log.info(" -------------------------- FAILED -------------------------- ");
+				
 			}
 			Assert.assertTrue(condition);
 		} catch (Throwable e) {

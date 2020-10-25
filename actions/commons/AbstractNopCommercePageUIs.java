@@ -14,7 +14,7 @@ public class AbstractNopCommercePageUIs {
 	public static final String COUNT_ITEM_IN_SHOPPING_MINI_CART_TEXT="//div[@class='mini-shopping-cart']//div[@class='count']//a[text()='%s']";
 	public static final String PRODUCT_NAME_IN_SHOPPING_MINI_CART_TEXT="//div[@class='mini-shopping-cart']//div[@class='name']//a[contains(text(),'%s')]";
 	public static final String PRODUCT_DETAIL_PROCESSOR_IN_SHOPPING_MINI_CART_TEXT="//div[@class='mini-shopping-cart']//div[@class='attributes' and contains(text(),'%s')]";
-	public static final String PRODUCT_DETAIL_IN_SHOPPING_MINI_CART_TEXT="//div[@class='mini-shopping-cart']//div[@class='attributes' and text()='%s']";
+	public static final String PRODUCT_DETAIL_IN_SHOPPING_MINI_CART_TEXT="//div[@class='mini-shopping-cart']//div[@class='attributes' and contains(string(),'%s')]";
 	public static final String PRODUCT_UNIT_PRICE_IN_SHOPPING_MINI_CART_TEXT="//div[@class='mini-shopping-cart']//div[@class='price' and contains(text(),'Unit price:')]//span[text()='%s']";
 	public static final String PRODUCT_QUANTITY_IN_SHOPPING_MINI_CART_TEXT="//div[@class='mini-shopping-cart']//div[@class='quantity']//span[text()='%s']";
 	public static final String PRODUCT_SUB_TOTAL_IN_SHOPPING_MINI_CART_TEXT="//div[@class='mini-shopping-cart']//div[@class='totals']//strong[text()='%s']";

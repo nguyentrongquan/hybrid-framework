@@ -7,7 +7,7 @@
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="libraries/selenium-server-standalone-3.141.59.jar"/>
-	<classpathentry kind="lib" path="libraries/testng-6.14.3.jar"/>
+	<classpathentry kind="lib" path="libraries/testng-6.14.3.jar" sourcepath="C:/Users/Admin/AppData/Local/Temp/.org.sf.feeling.decompiler1599654331858/source/testng-6.14.3-sources.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManagerLatest/commons-codec-1.13.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManagerLatest/commons-compress-1.18.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManagerLatest/commons-io-2.7.jar"/>
