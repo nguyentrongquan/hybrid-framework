@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Nopcommerce" parallel="tests" thread-count="2">
+	<parameter name="url" value="http://live.demoguru99.com/" />
+	<listeners>
+		<listener class-name="commons.MethodListener" />
+		<!-- extentReport version 2 -->
+		<!-- <listener class-name="reportConfig.ExtentReportListener" /> -->
+
+		<!-- extentReport version 3 -->
+		<!-- <listener class-name="reportConfig.ExtentTestListener" /> -->
+
+		<!-- extentReport version 4 -->
+		<listener class-name="reportConfig.ExtentListener" />
+
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener
+			class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+	<test name="Run on CHROME">
+		<parameter name="browser" value="CHROME" />
+		<classes>
+			<class name="com.liveguru.user.User_001_Register" />
+		</classes>
+	</test>
+
+</suite>
